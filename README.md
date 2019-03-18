@@ -1,4 +1,16 @@
-# blog-markdown
+# vue-markdown-blog
+> Creating a simple blog using Vue with markdown.
+
+## Getting started
+```
+git clone https://github.com/josephharveyangeles/vue-markdown-blog
+cd vue-markdown-blog
+yarn install
+yarn serve
+```
+
+## Demo
+Demo website is over here: [vue-markdown-blog.netlify.com](https://vue-markdown-blog.netlify.com/)
 
 ## Project setup
 ```
@@ -15,15 +27,7 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
 ### Lints and fixes files
 ```
 yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
