@@ -1,0 +1,48 @@
+{
+  "2019": [
+    {
+      "id": "vue-markdown-blog",
+      "date": "March 18, 2019",
+      "title": "Creating a Simple Blog using Vue + Markdown",
+      "description": "Simple and neat way to add a blogging feature to add on your website."
+    }
+  ],
+  "stories": [
+    {
+      "id": "maud-sparrow",
+      "date": "April 21, 2018",
+      "title": "Maud Sparrow and the Four Wicked Horses",
+      "description": "Once upon a time there was a generous girl called Maud Sparrow. She was on the way to see her Albert Connor, when she decided to take a short cut through Spittleton Woods..."
+    },
+    {
+      "id": "nico-borbaki",
+      "date": "May 5, 2018",
+      "title": "Nefarious Nico Borbaki",
+      "description": "Nico Borbaki looked at the enchanted newspaper in his hands and felt conflicted..."
+    },
+    {
+      "id": "jack-butterscotch",
+      "date": "June 10, 2018",
+      "title": "Jack Butterscotch | The Dragon",
+      "description": "In a hole there lived a tender, silver dragon named Jack Butterscotch. Not an enchanted red, stripy hole, filled with flamingos and a cold smell, nor yet a short, hairy, skinny hole with nothing in it to sit down on or to eat: it was a dragon-hole, and that means happiness..."
+    },
+    {
+      "id": "tiny-arrow-wars",
+      "date": "July 27, 2018",
+      "title": "Galactic Tiny Arrow Wars",
+      "description": "A long, long time ago in a tiny, tiny galaxy..."
+    },
+    {
+      "id": "gargoyle-club",
+      "date": "August 7, 2018",
+      "title": "Club of Gargoyle",
+      "description": "Molly Thornhill suspected something was a little off when her creepy daddy tried to club her when she was just six years old. Nevertheless, she lived a relatively normal life among other humans."
+    },
+    {
+      "id": "simon-plumb",
+      "date": "September 20, 2018",
+      "title": "Simon Plumb and the Two Kind Gerbils",
+      "description": "Once upon a time there was a virtuous boy called Simon Plumb. He was on the way to see his Annie Superhalk, when he decided to take a short cut through Thetford Forest..."
+    }
+  ]
+}

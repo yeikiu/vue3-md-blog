@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <!-- <foo />
+    <foo2 />-->
     <h1 class="headline center">v-m-blog</h1>
     <img alt="Vue logo" src="../assets/logo.png">
     <div class="sections">
@@ -20,18 +22,20 @@
 </template>
 
 <script>
-import BLOGENTRIES from '@/statics/data/blogs.json'
+import Foo from "@/components/foo.md";
+import Foo2 from "@/components/foo2.vue";
+import BLOGENTRIES from "@/assets/data/blogs.json";
 
 export default {
-  name: 'home',
+  name: "home",
   computed: {
     entries() {
-      return BLOGENTRIES
+      return BLOGENTRIES;
     }
   }
-}
+};
 </script>
-<style lang="scss" scoped>
+/* <style lang="scss" scoped>
 .center {
   text-align: center;
 }
@@ -61,14 +65,14 @@ h3 {
   }
   .subtitle {
     color: grey;
-    font-size: .98rem;
+    font-size: 0.98rem;
     float: right;
     font-weight: normal;
   }
 }
 
 p {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .sections {
@@ -84,5 +88,4 @@ p {
 .group {
   margin-bottom: 4rem;
 }
-
-</style>
+</style> */

@@ -1,9 +1,18 @@
 <template>
-  <div class="blog">
-    <router-view/>
-    <router-link to="/" tag="a" class="back">&laquo; Back</router-link>
+  <div class="post">
+    {{postUrl}}
   </div>
 </template>
+
+<script>
+export default {
+  name: "post",
+  props: ['postUrl'],
+  mounted() {
+    console.log("beforeCreate!", this.postUrl);
+  }
+};
+</script>
 
 /* <style lang="scss" scoped>
 .blog {
