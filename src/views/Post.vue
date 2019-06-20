@@ -1,15 +1,31 @@
-<template>
-  <div class="post">
-    {{postUrl}}
-  </div>
-</template>
-
 <script>
+import VueWithCompiler from "vue/dist/vue.esm";
+
 export default {
   name: "post",
-  props: ['postUrl'],
-  mounted() {
-    console.log("beforeCreate!", this.postUrl);
+  props: ['postHtml'],
+
+  data() {
+    return {
+      templateRender: null,
+    }
+  },
+  
+  render (createElement) {
+    if (this.templateRender) {
+      return this.templateRender();
+    } else {
+      return createElement("div", "Loading");
+    }
+  },
+  
+  created () {
+    const compiled = VueWithCompiler.compile(`<div>${this.postHtml}</div>`);
+    this.templateRender = compiled.render;
+    this.$options.staticRenderFns = [];
+    for (const staticRenderFunction of compiled.staticRenderFns) {
+      this.$options.staticRenderFns.push(staticRenderFunction);
+    }
   }
 };
 </script>
@@ -26,9 +42,9 @@ export default {
     text-decoration: none;
     padding: 10px 15px;
     border: 1px solid currentColor;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     display: inline-block;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     &:hover {
       background-color: transparent;
       color: #42b883;
@@ -37,7 +53,7 @@ export default {
   /deep/ {
     h1 {
       font-size: 3rem;
-      margin-bottom: .2rem;
+      margin-bottom: 0.2rem;
       color: #42b883;
     }
     h4 {
@@ -48,7 +64,7 @@ export default {
       overflow-x: auto;
       background-color: #35495e;
       color: white;
-      border-radius: .3rem;
+      border-radius: 0.3rem;
       padding: 1rem;
     }
     img {

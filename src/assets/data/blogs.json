@@ -4,7 +4,8 @@
       "id": "vue-markdown-blog",
       "date": "March 18, 2019",
       "title": "Creating a Simple Blog using Vue + Markdown",
-      "description": "Simple and neat way to add a blogging feature to add on your website."
+      "description": "Simple and neat way to add a blogging feature to add on your website.",
+      "url": "http://localhost:8081/vue-markdown-blog.md"
     }
   ],
   "stories": [

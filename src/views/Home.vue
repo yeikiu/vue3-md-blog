@@ -9,7 +9,7 @@
         <h2 class="center">{{section}}</h2>
         <div class="section" v-for="entry in entries[section]" :key="entry.id">
           <div class="entry">
-            <h3 @click="$router.push({name: entry.id})">
+            <h3 @click="loadPostMD(entry.id, entry.url)">
               {{entry.title}}
               <span class="subtitle">{{entry.date}}</span>
             </h3>
@@ -31,6 +31,13 @@ export default {
   computed: {
     entries() {
       return BLOGENTRIES;
+    }
+  },
+  methods: {
+    loadPostMD(id, url) {
+      console.log('loadPostMD', {id, url})
+      this.$store.dispatch('fetchPost', url)
+      this.$router.push({name: id})
     }
   }
 };

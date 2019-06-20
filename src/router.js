@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-import BlogEntries from './statics/data/blogs.json';
+import BlogEntries from '@/assets/data/blogs.json';
 
 const blogRoutes = Object.keys(BlogEntries).map(section => {
   const children = BlogEntries[section].map(child => ({
@@ -13,7 +13,7 @@ const blogRoutes = Object.keys(BlogEntries).map(section => {
     //component: () => import(`@/markdowns/${section}/${child.id}.md`)
     component: () => import('./views/Post.vue'),
     props: {
-      postUrl: `@/markdowns/${section}/${child.id}.md`
+      postHtml: `@/markdowns/${section}/${child.id}.md`
     }
   }))
   return {
