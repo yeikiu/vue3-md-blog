@@ -1,27 +1,10 @@
 <template>
   <div class="blog">
-    <post :postHtml="compiledMarkdown"/>
+    <router-view />
     <router-link to="/" tag="a" class="back">&laquo; Back</router-link>
   </div>
 </template>
-
-<script>
-import Post from "@/views/Post.vue";
-import MarkdownIt from "markdown-it";
-
-export default {
-  name: "blog",
-  components: { Post },
-  data() {
-    return {
-      compiledMarkdown: new MarkdownIt({ html: true }).render(this.$store.state.currentPost)
-    }
-  }
-}
-  
-</script>
-
-/* <style lang="scss" scoped>
+<style lang="scss" scoped>
 .blog {
   max-width: 50vw;
   margin: 10rem auto;
@@ -63,4 +46,4 @@ export default {
     }
   }
 }
-</style> */
+</style>
