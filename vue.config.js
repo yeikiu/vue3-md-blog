@@ -12,6 +12,6 @@ module.exports = {
       })
   },
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-base-blog/'
+    ? `/${process.env.DIST_PUBLIC_PATH}`
     : '/'
 }

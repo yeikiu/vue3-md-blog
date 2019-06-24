@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Export the vars in .env into your shell:
+export $(egrep -v '^#' .env | xargs)
+
 # build
 yarn build
 
@@ -15,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:yeikiu/vue-base-blog.git master:gh-pages
+git push -f $DIST_TARGET_REPO master:$DIST_TARGET_BRANCH
 
 cd -
