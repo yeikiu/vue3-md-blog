@@ -10,9 +10,10 @@
 
 <style lang="scss" scoped>
 /* Custom SCSS here */
-  /deep/ {
-    p {
-      margin: 1.2rem 0;
-    }
+
+/deep/ {
+  p {
+    margin: 1.2rem 0;
   }
+}
 </style>

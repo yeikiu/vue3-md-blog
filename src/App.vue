@@ -8,6 +8,7 @@
 
 <style lang="scss" scoped>
  /* Custom SCSS here */
+ 
 /deep/ {
   font-weight: lighter;
   h3 {

@@ -23,6 +23,7 @@
 
 <style lang="scss" scoped>
  /* Custom SCSS here */
+ 
   h3 {
     color: #42b883;
     margin-bottom: 0;
