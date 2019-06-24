@@ -5,6 +5,8 @@ import App from './App.vue'
 import Home from './views/Home.vue'
 import axios from 'axios'
 
+require('dotenv').config()
+
 const getBlogRoutes = (BlogEntries) => {
   const routes = [];
   const sections = Object.keys(BlogEntries);
@@ -28,7 +30,7 @@ const getBlogRoutes = (BlogEntries) => {
 
 // Fetch index file
 const fetchPostsIndex = async() => {
-  return (await axios.get('https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/posts_index.json')).data
+  return (await axios.get(process.env.VUE_APP_POSTS_INDEX_URL)).data
 }
 
 const loadApp = async() => {
