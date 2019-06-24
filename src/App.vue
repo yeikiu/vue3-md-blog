@@ -14,7 +14,6 @@
       color: #42b883;
     }
     h1 {
-      font-size: 3rem;
       margin-bottom: .2rem;
       color: #42b883;
     }
