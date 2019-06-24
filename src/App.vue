@@ -8,24 +8,22 @@
 
 <style lang="scss" scoped>
  /* Custom SCSS here */
- #app {
-  /deep/ {
-    h3 {
-      color: #42b883;
-    }
-    h1 {
-      margin-bottom: .2rem;
-      color: #42b883;
-    }
-    h4 {
-      margin-bottom: 3rem;
-      color: #35495e;
-    }
+/deep/ {
+  font-weight: lighter;
+  h3 {
+    color: #42b883;
   }
-}
-
-.container {
-  max-width: 65vw;
-  margin: 0 auto;
+  h1 {
+    margin-bottom: .2rem;
+    color: #42b883;
+  }
+  h4 {
+    margin-bottom: 3rem;
+    color: #35495e;
+  }
+  .container {
+    max-width: 65vw;
+    margin: 0 auto;
+  }
 }
 </style>
