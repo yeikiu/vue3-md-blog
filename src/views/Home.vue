@@ -3,12 +3,16 @@
     <h1 class="headline center">v-m-blog</h1>
     <img alt="Vue logo" src="../assets/logo.png">
     <div class="sections">
-      <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index" class="group">
+      <div
+        v-for="(section, index) in Object.keys($store.state.postsIndex)"
+        :key="index"
+        class="group"
+      >
         <h2 class="center">{{section}}</h2>
         <div class="section" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
           <div class="entry">
             <h3>
-              <router-link :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
+              <router-link tag="p" :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
               <span class="subtitle">{{entry.date}}</span>
             </h3>
             <p>{{entry.description}}</p>
@@ -49,14 +53,14 @@ h3 {
   }
   .subtitle {
     color: grey;
-    font-size: .98rem;
+    font-size: 0.98rem;
     float: right;
     font-weight: normal;
   }
 }
 
 p {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .sections {
@@ -72,5 +76,4 @@ p {
 .group {
   margin-bottom: 4rem;
 }
-
 </style>

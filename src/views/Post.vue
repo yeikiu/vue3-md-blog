@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 
 export default {
   name: "post",
-  props: ['section', 'mdURL'],
+  props: ['section', 'id'],
 
   data() {
     return {
@@ -24,13 +24,13 @@ export default {
   created () {
     const compilePost = async()=> {
       // Fetch current post md
-      const url = this.$store.state.postsIndex[this.section].filter(p => p.id === this.mdURL)[0].url
+      const url = this.$store.state.postsIndex[this.section].filter(p => p.id === this.id)[0].url
       const md = (await axios.get(url)).data
 
       // MarkDown to HTML
       const html = new MarkdownIt({ html: true }).render(md)
 
-      const compiled = VueWithCompiler.compile(`<div>${html}</div>`);
+      const compiled = VueWithCompiler.compile(`<div class="container">${html}</div>`);
       this.templateRender = compiled.render;
       this.$options.staticRenderFns = [];
       for (const staticRenderFunction of compiled.staticRenderFns) {

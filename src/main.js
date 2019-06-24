@@ -1,9 +1,12 @@
 import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import Vuex from 'vuex'
 import Router from 'vue-router'
 import App from './App.vue'
-import Home from './views/Home.vue'
 import axios from 'axios'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 require('dotenv').config()
 
@@ -13,7 +16,7 @@ const getBlogRoutes = (BlogEntries) => {
   
   sections.forEach(section => {
     const children = [{
-      path: `/:section/:mdURL`,
+      path: `/:section/:id`,
       component: () => import('./views/Post.vue'),
       props: true
     }];
@@ -35,6 +38,7 @@ const fetchPostsIndex = async() => {
 
 const loadApp = async() => {
   Vue.config.productionTip = false
+  Vue.use(BootstrapVue)
   Vue.use(Vuex)
   Vue.use(Router)
 
@@ -52,7 +56,7 @@ const loadApp = async() => {
       {
         path: '/',
         name: 'home',
-        component: Home
+        component: () => import('./views/Home.vue'),
       },
       ...getBlogRoutes(postsIndex)
     ]
