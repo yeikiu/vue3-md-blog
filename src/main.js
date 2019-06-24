@@ -28,7 +28,7 @@ const getBlogRoutes = (BlogEntries) => {
 
 // Fetch index file
 const fetchPostsIndex = async() => {
-  return (await axios.get('https://raw.githubusercontent.com/yeikiu/codekomodo-blog/master/blogs.json')).data
+  return (await axios.get('https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/posts_index.json')).data
 }
 
 const loadApp = async() => {
