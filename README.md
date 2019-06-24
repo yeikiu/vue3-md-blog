@@ -1,33 +1,24 @@
-# vue-markdown-blog
-> Creating a simple blog using Vue with markdown.
+# vue-base-blog
+> Creating a simple blog using Vue + GitHub Pages to host the client.
+> Posts are stored externally (in a public GitHub repo) as markdowns sources and compiled in runtime.
 
 ## Getting started
 ```
-git clone https://github.com/josephharveyangeles/vue-markdown-blog
-cd vue-markdown-blog
-yarn install
+git clone https://yeikiu.github.io/vue-base-blog
+cd vue-base-blog
+yarn
 yarn serve
 ```
 
 ## Demo
-Demo website is over here: [vue-markdown-blog.netlify.com](https://vue-markdown-blog.netlify.com/)
+Demo website is over here: [https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
 
-## Project setup
+### Compile for production
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-yarn run lint
+yarn lint
 ```
