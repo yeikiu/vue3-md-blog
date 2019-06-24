@@ -1,49 +1,28 @@
 <template>
-  <div class="home">
-    <h1 class="headline center">v-m-blog</h1>
+  <div class="container text-center">
+
+    <p class="text-uppercase display-3 my-5">v-m-blog</p>
+
     <img alt="Vue logo" src="../assets/logo.png">
-    <div class="sections">
-      <div
-        v-for="(section, index) in Object.keys($store.state.postsIndex)"
-        :key="index"
-        class="group"
-      >
-        <h2 class="center">{{section}}</h2>
-        <div class="section" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
-          <div class="entry">
-            <h3>
-              <router-link tag="p" :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
-              <span class="subtitle">{{entry.date}}</span>
-            </h3>
-            <p>{{entry.description}}</p>
-          </div>
-        </div>
+
+    <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index" class="section m-5 px-5">
+
+      <p class="display-4 text-capitalize">{{section}}</p>
+      <div class="text-right" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
+        <h3 class="text-left mb-0 pb-0">
+          <router-link tag="span" :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
+        </h3>
+        <small class="date_subtitle">{{entry.date}}</small>
+        <h4 class="text-left text-secondary mt-2">{{entry.description}}</h4>
       </div>
+
     </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
-.center {
-  text-align: center;
-}
-.headline {
-  text-transform: uppercase;
-  margin: 4rem auto;
-  font-size: 4rem;
-}
-img {
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-}
-
-h2 {
-  color: #35495e;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-}
-
+ /* Custom SCSS here */
 h3 {
   color: #42b883;
   margin-bottom: 0;
@@ -51,29 +30,11 @@ h3 {
   &:hover {
     text-decoration: underline;
   }
-  .subtitle {
-    color: grey;
-    font-size: 0.98rem;
-    float: right;
-    font-weight: normal;
-  }
 }
 
-p {
-  margin-top: 0.4rem;
-}
-
-.sections {
-  max-width: 40vw;
-  margin: 0 auto;
-  margin-top: 4rem;
-}
-
-.section {
-  margin-bottom: 3rem;
-}
-
-.group {
-  margin-bottom: 4rem;
+.date_subtitle {
+  color: grey;
+  font-size: 0.98rem;
+  font-weight: normal;
 }
 </style>

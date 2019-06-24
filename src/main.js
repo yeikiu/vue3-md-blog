@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import Vuex from 'vuex'
@@ -7,8 +9,6 @@ import axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-require('dotenv').config()
 
 const getBlogRoutes = (BlogEntries) => {
   const routes = [];
