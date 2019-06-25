@@ -6,8 +6,8 @@
       <img alt="Vue logo" src="../assets/logo.png">
     </div>
 
-    <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index" class="section m-5 px-5">
-      <p class="text-center display-4 text-capitalize mx-5 px-5">{{section}}</p>
+    <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index">
+      <p class="text-center display-4 text-capitalize my-5">{{section}}</p>
       <div class="text-right mb-5" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
         
         <h3 class="text-left mb-0 pb-0">
