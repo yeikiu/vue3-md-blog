@@ -1,12 +1,13 @@
 <template>
-  <div class="text-center mx-lg-5 px-lg-5">
+  <div class="mx-lg-5 px-lg-5">
 
-    <p class="text-uppercase display-3 my-5">v-m-blog</p>
-
-    <img alt="Vue logo" src="../assets/logo.png">
+    <div class="text-center">
+      <p class="text-uppercase display-3 my-5">v-m-blog</p>
+      <img alt="Vue logo" src="../assets/logo.png">
+    </div>
 
     <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index" class="section m-5 px-5">
-      <p class="display-4 text-capitalize mx-5 px-5">{{section}}</p>
+      <p class="text-center display-4 text-capitalize mx-5 px-5">{{section}}</p>
       <div class="text-right mb-5" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
         
         <h3 class="text-left mb-0 pb-0">

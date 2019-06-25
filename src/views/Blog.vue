@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-5 py-5">
     <router-view/>
 
     <router-link to="/" class="my-5">
