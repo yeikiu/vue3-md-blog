@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="m-5">
-    <div>
+  <div id="app" class="container">
+    <div class="mx-lg-5 px-lg-5">
       <router-view/>
     </div>
   </div>
@@ -22,9 +22,9 @@
     margin-bottom: 3rem;
     color: #35495e;
   }
-  .container {
+  /* .container {
     max-width: 65vw;
     margin: 0 auto;
-  }
+  } */
 }
 </style>

@@ -1,16 +1,16 @@
 <template>
-  <div class="container text-center">
+  <div class="text-center mx-lg-5 px-lg-5">
 
     <p class="text-uppercase display-3 my-5">v-m-blog</p>
 
     <img alt="Vue logo" src="../assets/logo.png">
 
     <div v-for="(section, index) in Object.keys($store.state.postsIndex)" :key="index" class="section m-5 px-5">
-      <p class="display-4 text-capitalize">{{section}}</p>
+      <p class="display-4 text-capitalize mx-5 px-5">{{section}}</p>
       <div class="text-right mb-5" v-for="entry in $store.state.postsIndex[section]" :key="entry.id">
         
         <h3 class="text-left mb-0 pb-0">
-          <router-link tag="span" :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
+          <router-link tag="p" :to="{ path:`${section}/${entry.id}` }">{{entry.title}}</router-link>
         </h3>
         <small class="date_subtitle">{{entry.date}}</small>
         <p class="text-left">{{entry.description}}</p>
