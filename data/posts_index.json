@@ -1,6 +1,12 @@
 {
   "2019": [
     {
+      "id": "posts-with-markdown-it",
+      "date": "June 26, 2019",
+      "title": "Posts are compiled with markdown-it",
+      "description": "Quick sample demonstrating realtime markdown rendering...",
+      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/2019/posts-with-markdown-it.md"
+    },{
       "id": "test-video",
       "date": "June 24, 2019",
       "title": "Testing embeded YouTube with Markdown",
