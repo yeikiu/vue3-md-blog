@@ -9,6 +9,7 @@ import axios from 'axios'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'github-markdown-css/github-markdown.css'
 
 const getBlogRoutes = (BlogEntries) => {
   const routes = [];

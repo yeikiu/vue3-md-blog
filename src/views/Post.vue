@@ -32,7 +32,7 @@ export default {
       // MarkDown to HTML
       const html = new MarkdownIt({ html: true }).render(md);
 
-      const compiled = VueWithCompiler.compile(`<div>${html}</div>`);
+      const compiled = VueWithCompiler.compile(`<div class="markdown-body">${html}</div>`);
       this.templateRender = compiled.render;
       this.$options.staticRenderFns = [];
       for (const staticRenderFunction of compiled.staticRenderFns) {

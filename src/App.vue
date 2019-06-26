@@ -33,6 +33,12 @@
     }
   }
 
+  .post img {
+    max-width: 35%;
+    vertical-align: middle;
+    border: 0;
+  }
+
   .post p {
     font-weight: lighter;
     margin: 1.2rem 0;
