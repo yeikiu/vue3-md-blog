@@ -1,10 +1,21 @@
 <template>
-  <div id="app" class="container">
-    <div class="mx-lg-5 px-lg-5">
+  <div id="app">
+    <nav-bar></nav-bar>
+    <div class="container mx-lg-5 px-lg-5">
       <router-view/>
     </div>
   </div>
 </template>
+
+<script>
+  import navBar from "@/components/navBar.vue";
+
+  export default {
+    components: {
+      navBar
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
  /* Custom SCSS here */
