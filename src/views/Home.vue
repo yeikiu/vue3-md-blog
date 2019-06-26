@@ -18,8 +18,8 @@
           :to="{ path:`${section}/${entry.id}` }"
         >{{entry.title}}</router-link>
 
-        <p class="font-weight-normal text-muted m-0 p-0">{{entry.date}}</p>
-        <p class="text-left text-justify mt-1">{{entry.description}}</p>
+        <p class="text-muted m-0 p-0">{{entry.date}}</p>
+        <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
       </div>
     </div>
   </div>

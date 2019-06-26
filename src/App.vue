@@ -10,7 +10,6 @@
  /* Custom SCSS here */
  
 /deep/ {
-  font-weight: lighter;
   h1, h3 {
     color: #42b883;
     font-weight: normal;
@@ -24,6 +23,7 @@
   }
 
   .post p {
+    font-weight: lighter;
     margin: 1.2rem 0;
     text-align: justify;
   }
