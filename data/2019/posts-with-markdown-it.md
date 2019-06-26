@@ -1,4 +1,4 @@
-# h1 Posts are compiled with markdown-it
+# Posts are compiled with markdown-it
 #### June 26, 2019
 
 ---
