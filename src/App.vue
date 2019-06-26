@@ -39,6 +39,12 @@
     border: 0;
   }
 
+  .post iframe {
+    max-width: 95%;
+    vertical-align: middle;
+    border: 0;
+  }
+
   .post p {
     font-weight: lighter;
     margin: 1.2rem 0;
