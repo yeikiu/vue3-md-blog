@@ -11,20 +11,25 @@
  
 /deep/ {
   font-weight: lighter;
-  h3 {
+  h1, h3 {
     color: #42b883;
+    font-weight: normal;
   }
-  h1 {
-    margin-bottom: .2rem;
-    color: #42b883;
+  
+  .link {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  h4 {
+
+  .post p {
+    margin: 1.2rem 0;
+    text-align: justify;
+  }
+  .post h4 {
     margin-bottom: 3rem;
     color: #35495e;
   }
-  /* .container {
-    max-width: 65vw;
-    margin: 0 auto;
-  } */
 }
 </style>

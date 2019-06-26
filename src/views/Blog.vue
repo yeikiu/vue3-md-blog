@@ -1,5 +1,5 @@
 <template>
-  <div class="my-5 py-5">
+  <div class="post my-5 py-5">
     <router-view/>
 
     <router-link to="/" class="my-5">
@@ -11,10 +11,4 @@
 <style lang="scss" scoped>
 /* Custom SCSS here */
 
-/deep/ {
-  p {
-    margin: 1.2rem 0;
-    text-align: justify;
-  }
-}
 </style>

@@ -5,39 +5,46 @@ import MarkdownIt from "markdown-it";
 
 export default {
   name: "post",
-  props: ['section', 'id'],
+  props: ["section", "id"],
 
   data() {
     return {
-      templateRender: null,
-    }
+      templateRender: null
+    };
   },
-  
-  render (createElement) {
+
+  render(createElement) {
     if (this.templateRender) {
       return this.templateRender();
     } else {
       return createElement("div", "Loading...");
     }
   },
-  
-  created () {
-    const compilePost = async()=> {
+
+  created() {
+    const compilePost = async () => {
       // Fetch current post md
-      const url = this.$store.state.postsIndex[this.section].filter(p => p.id === this.id)[0].url
-      const md = (await axios.get(url)).data
+      const url = this.$store.state.postsIndex[this.section].filter(
+        p => p.id === this.id
+      )[0].url;
+      const md = (await axios.get(url)).data;
 
       // MarkDown to HTML
-      const html = new MarkdownIt({ html: true }).render(md)
+      const html = new MarkdownIt({ html: true }).render(md);
 
-      const compiled = VueWithCompiler.compile(`<div class="container">${html}</div>`);
+      const compiled = VueWithCompiler.compile(`<div>${html}</div>`);
       this.templateRender = compiled.render;
       this.$options.staticRenderFns = [];
       for (const staticRenderFunction of compiled.staticRenderFns) {
         this.$options.staticRenderFns.push(staticRenderFunction);
       }
-    }
+    };
     compilePost();
   }
 };
 </script>
+
+<style lang="scss" scoped>
+/* Custom SCSS here */
+
+</style>
