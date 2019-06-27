@@ -21,13 +21,13 @@
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/2019/vue-markdown-blog.md"
     }
   ],
-  "stories": [
+  "features": [
     {
-      "id": "maud-sparrow",
-      "date": "April 21, 2018",
-      "title": "Maud Sparrow and the Four Wicked Horses",
-      "description": "Once upon a time there was a generous girl called Maud Sparrow. She was on the way to see her Albert Connor, when she decided to take a short cut through Spittleton Woods...",
-      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/stories/maud-sparrow.md"
+      "id": "inline-bootstrap-html",
+      "date": "June 27, 2019",
+      "title": "Use inline bootstrap-ready html",
+      "description": "Another advantage of runtime template compilation is that we can make good use of bootstrap predefined classes since our app has already loaded all its css.",
+      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/features/inline-bootstrap-html.md"
     },
     {
       "id": "nico-borbaki",
