@@ -3,8 +3,8 @@
     {
       "id": "vue-markdown-blog",
       "date": "June 27, 2019",
-      "title": "Setup your new Vue Blog in less than 5 minutes (10 with custom domain)",
-      "description": "We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?",
+      "title": "Setup your new Vue Blog in less than 5 minutes",
+      "description": "(Less than 10 with custom domain). We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?",
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/guide/vue-markdown-blog.md"
     }
   ],
