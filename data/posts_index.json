@@ -1,17 +1,10 @@
 {
   "guide": [
     {
-      "id": "test-video",
-      "date": "June 24, 2019",
-      "title": "Testing embeded YouTube with Markdown",
-      "description": "Can look cool if it works...",
-      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/guide/test-video.md"
-    },
-    {
       "id": "vue-markdown-blog",
-      "date": "March 18, 2019",
-      "title": "Creating a Simple Blog using Vue + Markdown",
-      "description": "Simple and neat way to add a blogging feature to add on your website.",
+      "date": "June 27, 2019",
+      "title": "Setup your new Vue Blog in less than 5 minutes (10 with custom domain)",
+      "description": "We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?",
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/guide/vue-markdown-blog.md"
     }
   ],
@@ -29,6 +22,13 @@
       "title": "Use inline bootstrap-ready html",
       "description": "Another advantage of runtime template compilation is that we can make good use of bootstrap predefined classes since our app has already loaded all its css.",
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/features/inline-bootstrap-html.md"
+    },
+    {
+      "id": "embed-youtube-video",
+      "date": "June 24, 2019",
+      "title": "Testing embeded YouTube with Markdown",
+      "description": "Can look cool if it works...",
+      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/features/embed-youtube-video.md"
     }
   ]
 }
