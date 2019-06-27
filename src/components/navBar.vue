@@ -16,7 +16,7 @@
               href="#">
               All
             </b-dropdown-item>
-            <b-dropdown-item
+            <b-dropdown-item class="text-capitalize"
               v-for="(section, index) in sections" :key="index"
               @click="$router.push({path: `/${section}`})"
               href="#">

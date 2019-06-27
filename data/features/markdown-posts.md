@@ -1,6 +1,12 @@
 # Posts are compiled with markdown-it
 #### June 26, 2019
 
+> You can simply edit your markdownns online and your blog will reflect changes shortly after.
+
+### Markdown Post features
+* Host your .md file anywhere (publicly accessible by URL)
+* Use (iniline html with bootstrap)[https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html] classes
+* GitHub Pages CSS by deafult
 
 ## Headings
 
