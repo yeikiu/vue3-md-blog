@@ -15,6 +15,8 @@ classes since our app has already loaded all its css.
 <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
 <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
 
+---
+
 ````
 # Use inline bootstrap-ready html
 #### June 26, 2019
