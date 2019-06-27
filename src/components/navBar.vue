@@ -1,6 +1,6 @@
   <template>
    <div>
-    <b-navbar toggleable="sm" type="dark" variant="" class="nav-bar">
+    <b-navbar toggleable="sm" type="dark" variant="" class="nav-bar" fixed="top">
 
       <b-navbar-brand href="#" @click="$router.push({name: 'home'})">v-m-blog</b-navbar-brand>
       
