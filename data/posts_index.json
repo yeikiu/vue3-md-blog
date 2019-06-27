@@ -13,7 +13,7 @@
       "id": "markdown-posts",
       "date": "June 26, 2019",
       "title": "Posts are compiled with markdown-it",
-      "description": "You can simply edit your markdownns online and your blog will reflect changes shortly after.",
+      "description": "You can simply edit your markdownns online and your blog will reflect the changes shortly after.",
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/features/markdown-posts.md"
     },
     {
