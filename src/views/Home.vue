@@ -1,9 +1,7 @@
 <template>
   <div class="mx-lg-5 px-lg-5">
-    <div class="text-center">
-      <p class="text-uppercase display-3 my-5">v-m-blog</p>
-      <img alt="Vue logo" src="../assets/logo.png">
-    </div>
+    
+    <blog-header class="markddown-body mb-5"></blog-header>
 
     <div v-for="(section, index) in Object.keys(displayPosts)" :key="index">
       <p class="text-center display-4 text-capitalize my-5">{{section}}</p>
@@ -36,10 +34,14 @@
 </template>
 
 <script>
+  import blogHeader from "@/components/blogHeader.md";
+
   export default {
     name: "home",
     props: ["section"],
-
+    components: {
+      blogHeader
+    },
     data() {
       return {
         perPage: this.$store.state.VUE_APP_POSTS_PER_PAGE,
