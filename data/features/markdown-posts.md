@@ -5,7 +5,7 @@
 
 ### Markdown Post features
 * Host your .md file anywhere (publicly accessible by URL)
-* Use (iniline html with bootstrap)[https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html] classes
+* Use [iniline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes
 * GitHub Pages CSS by deafult
 
 ## Headings
