@@ -2,6 +2,9 @@
 import VueWithCompiler from "vue/dist/vue.esm";
 import axios from "axios";
 import MarkdownIt from "markdown-it";
+import emoji from "markdown-it-emoji";
+
+const markDownIt = new MarkdownIt({ html: true }).use(emoji);
 
 export default {
   name: "post",
@@ -30,7 +33,7 @@ export default {
       const md = (await axios.get(url)).data;
 
       // MarkDown to HTML
-      const html = new MarkdownIt({ html: true }).render(md);
+      const html = markDownIt.render(md);
 
       const compiled = VueWithCompiler.compile(`<div class="markdown-body">${html}</div>`);
       this.templateRender = compiled.render;

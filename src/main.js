@@ -1,4 +1,8 @@
 require('dotenv').config()
+const { 
+  VUE_APP_POSTS_INDEX_URL,
+  VUE_APP_POSTS_PER_PAGE
+} = process.env;
 
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
@@ -34,7 +38,7 @@ const getBlogRoutes = (BlogEntries) => {
 
 // Fetch index file
 const fetchPostsIndex = async() => {
-  return (await axios.get(process.env.VUE_APP_POSTS_INDEX_URL)).data
+  return (await axios.get(VUE_APP_POSTS_INDEX_URL)).data
 }
 
 const loadApp = async() => {
@@ -46,13 +50,14 @@ const loadApp = async() => {
   const postsIndex = await fetchPostsIndex();
   const store = new Vuex.Store({
     state: {
-      postsIndex
+      postsIndex,
+      VUE_APP_POSTS_PER_PAGE
     }
   });
 
   const router = new Router({
     mode: 'hash',
-    base: process.env.BASE_URL,
+    //base: '/',
     routes: [
       {
         path: '/',

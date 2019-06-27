@@ -21,6 +21,10 @@
  /* Custom SCSS here */
  
 /deep/ {
+  .nav-bar {
+    background-color:#42b883;
+  }
+
   h1, h3 {
     color: #42b883;
     font-weight: normal;
@@ -31,6 +35,15 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .page-link{
+    color: #42b883;
+  }
+
+  .page-item.active .page-link{
+    border-color: #42b883;
+    background-color: #42b883;
   }
 
   .post img {

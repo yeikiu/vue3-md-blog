@@ -16,7 +16,6 @@
 </template>
 
 <style>
-.nav-bar {
-  background-color: #42b883;
-}
+/* Custom SCSS here */
+
 </style>
