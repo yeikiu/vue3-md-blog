@@ -3,12 +3,17 @@ import VueWithCompiler from "vue/dist/vue.esm";
 import axios from "axios";
 import MarkdownIt from "markdown-it";
 import emoji from "markdown-it-emoji";
+import spinner from "@/components/spinner.md"
+import backButton from "@/components/backButton.md"
 
 const markDownIt = new MarkdownIt({ html: true }).use(emoji);
 
 export default {
   name: "post",
   props: ["section", "id"],
+  components: {
+    backButton
+  },
 
   data() {
     return {
@@ -20,7 +25,7 @@ export default {
     if (this.templateRender) {
       return this.templateRender();
     } else {
-      return createElement("div", "Loading...");
+      return createElement(spinner);
     }
   },
 
@@ -40,10 +45,7 @@ export default {
           <div class="markdown-body">
             ${html}
           </div>
-
-          <router-link to="/" class="my-5">
-            <button type="button" class="mt-4 btn btn-outline-success">&laquo; Back</button>
-          </router-link>
+          <back-button></back-button>
         </div>
       `);
       this.templateRender = compiled.render;
@@ -52,7 +54,7 @@ export default {
         this.$options.staticRenderFns.push(staticRenderFunction);
       }
     };
-    compilePost();
+    setTimeout(compilePost(), 7000);
   }
 };
 </script>

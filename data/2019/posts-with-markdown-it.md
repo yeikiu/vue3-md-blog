@@ -1,9 +1,6 @@
 # Posts are compiled with markdown-it
 #### June 26, 2019
 
-<div class="mx-auto" style="width: 200px;">
-  Centered element
-</div>
 
 ## Headings
 
