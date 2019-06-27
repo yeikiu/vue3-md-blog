@@ -15,27 +15,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'github-markdown-css/github-markdown.css'
 
-const getBlogRoutes = (BlogEntries) => {
-  const routes = [];
-  const sections = Object.keys(BlogEntries);
-  
-  sections.forEach(section => {
-    const children = [{
-      path: `/:section/:id`,
-      component: () => import('./views/Post.vue'),
-      props: true
-    }];
-
-    routes.push({
-      path: `/${section}`,
-      component: () => import('./views/Blog.vue'),
-      children
-    });
-  });
-
-  return routes;
-}
-
 // Fetch index file
 const fetchPostsIndex = async() => {
   return (await axios.get(VUE_APP_POSTS_INDEX_URL)).data
@@ -60,11 +39,16 @@ const loadApp = async() => {
     //base: '/',
     routes: [
       {
-        path: '/',
+        path: '/:section?',
         name: 'home',
         component: () => import('./views/Home.vue'),
-      },
-      ...getBlogRoutes(postsIndex)
+        props: true,
+      }, {
+        path: '/:section/:id',
+        name: 'post',
+        component: () => import('./views/Post.vue'),
+        props: true,
+      }
     ]
   });
 

@@ -28,7 +28,6 @@
         class="pagination"
         align="center"
         v-model="currentPage"
-        v-on:input="changePage"
         :total-rows="rows"
         :per-page="perPage"
       ></b-pagination>
@@ -37,30 +36,34 @@
 </template>
 
 <script>
-  require('dotenv').config()
   export default {
+    name: "home",
+    props: ["section"],
+
     data() {
       return {
         perPage: this.$store.state.VUE_APP_POSTS_PER_PAGE,
-        currentPage: 1
+        currentPage: 1,        
       }
     },
 
     computed: {
+      sections() {
+        return this.section ?
+          [this.section] : Object.keys(this.$store.state.postsIndex)
+      },
       rows() {
-        const sections = Object.keys(this.$store.state.postsIndex);
         const reducer = (accumulator, currentValue) => accumulator + this.$store.state.postsIndex[currentValue].length;
-        return sections.reduce(reducer, 0);
+        return this.sections.reduce(reducer, 0);
       },
 
-      displayPosts() { 
-        const sections = Object.keys(this.$store.state.postsIndex);
+      displayPosts() {
         const skip = this.currentPage > 1 ? (this.currentPage-1)*this.perPage : 0;
         let skipped = 0;
         let added = 0;
         const result = {};
 
-        for (const section of sections) {
+        for (const section of this.sections) {
           for (const post of this.$store.state.postsIndex[section]) {
             if (skip > 0 && skipped < skip) {
               skipped++;
@@ -79,13 +82,6 @@
 
         return result;
       },
-    },
-
-    methods: {
-      changePage: function(page) {
-        console.log('YO', this.currentPage);
-        console.log('YO2', page);
-      }
     }
   }
 </script>

@@ -35,7 +35,17 @@ export default {
       // MarkDown to HTML
       const html = markDownIt.render(md);
 
-      const compiled = VueWithCompiler.compile(`<div class="markdown-body">${html}</div>`);
+      const compiled = VueWithCompiler.compile(`
+        <div class="post my-5 py-5">
+          <div class="markdown-body">
+            ${html}
+          </div>
+
+          <router-link to="/" class="my-5">
+            <button type="button" class="mt-4 btn btn-outline-success">&laquo; Back</button>
+          </router-link>
+        </div>
+      `);
       this.templateRender = compiled.render;
       this.$options.staticRenderFns = [];
       for (const staticRenderFunction of compiled.staticRenderFns) {
