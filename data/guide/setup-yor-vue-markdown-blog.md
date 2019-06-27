@@ -1,4 +1,4 @@
-# Setup your new Vue Blog in less than 5 minutes
+# Setup your Vue Markdown Blog in less than 5 minutes
 #### June 27, 2019
 
 (Less than 10 with custom domain). We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?
