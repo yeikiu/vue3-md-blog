@@ -2,7 +2,8 @@
 #### June 26, 2019
 ---
 
-Another advantage of runtime template compilation is that we can make good use of bootstrap predefined classes since our app has already loaded all its css.
+Another advantage of runtime template compilation is that we can make good use of bootstrap predefined 
+classes since our app has already loaded all its css.
 
 <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
 <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
@@ -19,7 +20,8 @@ Another advantage of runtime template compilation is that we can make good use o
 #### June 26, 2019
 ---
 
-Another advantage of runtime template compilation is that we can make good use of bootstrap predefined classes since our app has already loaded all its css.
+Another advantage of runtime template compilation is that we can make good use of bootstrap predefined 
+classes since our app has already loaded all its css.
 
 <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
 <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
