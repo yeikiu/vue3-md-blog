@@ -7,20 +7,20 @@ Another advantage of runtime template compilation is that we can make good use o
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://picsum.photos/300/600" alt="First slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://picsum.photos/300/600" alt="Second slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://picsum.photos/300/600" alt="Third slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="Third slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a class="carousel-control-next" href="" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -36,13 +36,13 @@ Another advantage of runtime template compilation is that we can make good use o
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+      <img class="d-block w-100" src="https://picsum.photos/600/300" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
