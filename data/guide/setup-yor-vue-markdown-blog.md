@@ -5,7 +5,30 @@
 
 ## Step 1 - Get your own repo ready
 
-![Use GitHub Template](../assets/step1-github.png)
+Login into your GitHub account and start a new repo [using vue-base-blog as a template](https://github.com/yeikiu/vue-base-blog/generate).
+
+![Use GitHub Template](https://github.com/yeikiu/vue-base-blog/raw/master/data/assets/step1-github.png)
+
+## Step 2 - Configure your .env file
+
+````
+# Use only when deploying with no custom domain enabled in your repo's GitHub pages settings. Must match your repo name.
+DIST_PUBLIC_PATH=<YOUR_REPO_NAME>
+
+DIST_TARGET_REPO=git@github.com:<YOUR_GITHUB_USER>/<YOUR_REPO_NAME>.git
+DIST_TARGET_BRANCH=gh-pages
+
+VUE_APP_POSTS_INDEX_URL=https://raw.githubusercontent.com/<YOUR_GITHUB_USER>/<YOUR_REPO_NAME>/master/data/posts_index.json
+VUE_APP_POSTS_PER_PAGE=10
+```
+
+## Step 3 - Fetch dependencies
+
+Make sure your terminal is within your repos root folder and run `yarn install' or simply `yarn`.
+
+## Step 4 - Test local dev environment
+
+Run `yarn serve` and you should be able to access it under http://localhost:8080 
 
 I'm not a 'natural' frontend developer, learning vue and re-learning Javascript with my Java knowledge came as a challenge. Not to mention all those bundlers, builders, like webpack, gulp, grunt and other weird noises that adds to the overall complexitiy of learning modern web frameworks. But if there's one thing that helped me in learning new technologies that is, to just jump right in and build little projects. Teaching is also a widely accepted technique that will greatly help you in learning. It doesn't mean that you have to gather a huge audience that will listen to you teach something. Sometimes, the audience you need is just yourself. Write what you've learn with the intention of teaching it to your old (or future) stupid self. It's kinda weird and paradoxical I know but just roll with me on this.
 
