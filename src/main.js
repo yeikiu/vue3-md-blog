@@ -15,6 +15,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'github-markdown-css/github-markdown.css'
 
+import ForkeMeOnGithub from 'fork-me-on-github-vue';
+
 // Fetch index file
 const fetchPostsIndex = async() => {
   return (await axios.get(VUE_APP_POSTS_INDEX_URL)).data
@@ -25,6 +27,7 @@ const loadApp = async() => {
   Vue.use(BootstrapVue)
   Vue.use(Vuex)
   Vue.use(Router)
+  Vue.use(ForkeMeOnGithub)
 
   const postsIndex = await fetchPostsIndex();
   const store = new Vuex.Store({

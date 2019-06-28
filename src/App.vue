@@ -65,7 +65,7 @@
   }
   .post h4 {
     margin-bottom: 3rem;
-    color: #35495e;
+    color: #404d61;
   }
 }
 </style>

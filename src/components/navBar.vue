@@ -1,16 +1,16 @@
   <template>
    <div>
-    <b-navbar toggleable="sm" type="dark" variant="" class="nav-bar" fixed="top">
+    <b-navbar type="dark" variant="" class="nav-bar pr-5" fixed="top">
 
       <b-navbar-brand href="#" @click="$router.push({name: 'home'})">v-m-blog</b-navbar-brand>
       
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
+        <b-navbar-nav class="ml-auto mr-5 pr-5">
+          
           <b-nav-item target="_blank" href="https://github.com/yeikiu/vue-base-blog/blob/master/README.md">About</b-nav-item>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Category" right>
+
+          <b-nav-item-dropdown text="Section" right>
             <b-dropdown-item
               @click="$router.push({path: `/`})"
               href="#">
@@ -23,8 +23,13 @@
               {{section}}
             </b-dropdown-item>
           </b-nav-item-dropdown>
+
         </b-navbar-nav>
       </b-collapse>
+
+      <Ribbon
+      v-bind="ribbonOptions"
+    ></Ribbon>
 
     </b-navbar>
  </div>
@@ -36,6 +41,11 @@
     data() {
       return {
         sections: Object.keys(this.$store.state.postsIndex),
+        ribbonOptions: {
+          text: 'Fork me on GitHub',
+          linkUrl: 'https://github.com/yeikiu/vue-base-blog',
+          border: false
+        }
       }
     }
   }
@@ -44,4 +54,7 @@
 <style>
 /* Custom SCSS here */
 
+.github-ribbon a {
+  background-color: #404d61!important;
+}
 </style>
