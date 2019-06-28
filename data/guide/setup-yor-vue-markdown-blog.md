@@ -3,6 +3,10 @@
 
 (Less than 10 with custom domain). We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?
 
+## Step 1 - Get your own repo ready
+
+![Use GitHub Template](../assets/step1-github.png)
+
 I'm not a 'natural' frontend developer, learning vue and re-learning Javascript with my Java knowledge came as a challenge. Not to mention all those bundlers, builders, like webpack, gulp, grunt and other weird noises that adds to the overall complexitiy of learning modern web frameworks. But if there's one thing that helped me in learning new technologies that is, to just jump right in and build little projects. Teaching is also a widely accepted technique that will greatly help you in learning. It doesn't mean that you have to gather a huge audience that will listen to you teach something. Sometimes, the audience you need is just yourself. Write what you've learn with the intention of teaching it to your old (or future) stupid self. It's kinda weird and paradoxical I know but just roll with me on this.
 
 With that mind, exactly a year ago, I decided to add a blog section on my personal website just for fun. I just ported my previous portfolio to Vue and I was wondering what's the most simplest way to add blogging functionality to it. I know, some people will probably frown at the idea of using a frontend framework to develop a measly portfolio website in the first place. But if your goal is to really just getting yourself up and running with a framework, I'd argue that using it to build your portfolio website is a good start. It's a simple project that will really familiarize you with the basics and will give you enough motivation to complete it.
