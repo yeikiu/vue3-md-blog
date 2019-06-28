@@ -11,7 +11,7 @@ Login into your GitHub account and start a new repo [using vue-base-blog as a te
 
 ## Step 2 - Configure your .env file
 
-````
+```
 # Use only when deploying with no custom domain enabled in your repo's GitHub pages settings. Must match your repo name.
 DIST_PUBLIC_PATH=<YOUR_REPO_NAME>
 
