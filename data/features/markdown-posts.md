@@ -3,10 +3,12 @@
 
 > You can simply edit your markdownns online and your blog will reflect the changes shortly after.
 
-### Markdown Post features
-* Host your .md file anywhere (publicly accessible by URL)
-* Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go
-* GitHub Pages CSS by deafult
+## Features:
+
+### * Posts are compiled from Markdown to html in runtime
+### * Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
+### * Host your .md file anywheres (publicly accessible by URL)
+### * Support for GitHub Pages CSS and emojis
 
 ---
 
