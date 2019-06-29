@@ -11,7 +11,7 @@
       "id": "README",
       "date": "June 27, 2019",
       "title": "README",
-      "description": "Directly loaded from GitHub public repo",
+      "description": "Directly loading the raw Markdown from GitHub public repo and displaying it into the Post component",
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/README.md"
     }
   ],
