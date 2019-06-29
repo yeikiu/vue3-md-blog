@@ -2,7 +2,7 @@
    <div>
     <b-navbar type="dark" toggleable="sm" variant="" class="nav-bar pr-sm-5" fixed="top">
 
-      <b-navbar-brand href="#" @click="$router.push({name: 'home'})">v-m-blog</b-navbar-brand>
+      <b-navbar-brand href="#" @click="$router.push({name: 'home'})">v-b-blog</b-navbar-brand>
       
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
