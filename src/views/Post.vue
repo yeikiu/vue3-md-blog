@@ -29,6 +29,10 @@ export default {
     }
   },
 
+  beforeRouteUpdate() {
+    document.location.reload()
+  },
+
   created() {
     const compilePost = async () => {
       // Fetch current post md
