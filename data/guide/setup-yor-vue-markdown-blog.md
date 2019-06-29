@@ -36,7 +36,7 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 - Confirm the branch `gh-pages`was generated on your repo
 - Activate GitHub pages option under your repo's settings menu (make sure to choose the branch `gh-pages`)
 - Your new blog should be available soon under https://<YOUR_GITHUB_USER>.github.io/<YOUR_REPO_NAME>/ if you want to
-use a custom domain there are 2 little additional steps to do. You can check them [here](https://yeikiu.github.io/vue-base-blog/#/guide/using-custom-domain).
+use a custom domain there are 2 little additional steps to do. You can check them [https://yeikiu.github.io/vue-base-blog/#/guide/using-custom-domain](here).
 
 You will need to repeat *step 5* for any further changes you want to deploy to your site, but posting is another story,
-check [here](https://yeikiu.github.io/vue-base-blog/#/features/markdown-posts) how easy that is after deployment.
+check [https://yeikiu.github.io/vue-base-blog/#/features/markdown-posts](here) how easy that is after deployment.
