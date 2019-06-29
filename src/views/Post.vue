@@ -54,7 +54,7 @@ export default {
         this.$options.staticRenderFns.push(staticRenderFunction);
       }
     };
-    setTimeout(compilePost(), 7000);
+    compilePost();
   }
 };
 </script>
