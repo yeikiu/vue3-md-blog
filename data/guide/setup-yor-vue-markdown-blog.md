@@ -5,7 +5,7 @@ We will post to our final blog by simply editing markdowns directly on GitHub. C
 
 ## Step 1 - Get your own repo ready
 
-Login into your GitHub account and start a new repo using [vue-base-blog](ttps://github.com/yeikiu/vue-base-blog) as a [template](https://github.com/yeikiu/vue-base-blog/generate) or cloning it.
+Login into your GitHub account and start a new repo using [vue-base-blog](https://github.com/yeikiu/vue-base-blog) as a [template](https://github.com/yeikiu/vue-base-blog/generate) or cloning it.
 
 ![Use GitHub Template](https://github.com/yeikiu/vue-base-blog/raw/master/data/assets/step1-github.png)
 
