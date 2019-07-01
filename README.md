@@ -2,7 +2,7 @@
 
 > A fully functional blog made with Vue hosted on GitHub Pages.
 
-> Post by simply adding new markdowns to your repository, they´ll be inmediately accesible, **no re-build needed**.
+> Post by simply adding new markdowns to your repository, they´ll be inmediately accesible **no re-build needed**.
 
 ## Features:
 
