@@ -26,7 +26,7 @@ yarn serve
 
 > Read the full guide to deploy your own blog: [https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog)
 
-> If you want to use your own custom domain but still use GitHub pages to host your blog read [this help articles bu GitHub](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
+> If you want to use your own custom domain but still use GitHub pages to host your blog read [this help articles by GitHub](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
 
 
 ### Creating new posts the easy way
