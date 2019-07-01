@@ -47,7 +47,7 @@
   }
 
   .post img {
-    max-width: 95%;
+    max-width: 45%;
     vertical-align: middle;
     border: 0;
   }
