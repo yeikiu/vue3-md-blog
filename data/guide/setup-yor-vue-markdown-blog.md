@@ -1,11 +1,11 @@
 # Setup your Vue Markdown Blog in less than 5 minutes
 #### June 27, 2019
 
-(Less than 10 with custom domain). We will post to our final blog by simply editing markdowns directly on GitHub (or pushing them). Cool huh?
+We will post to our final blog by simply editing markdowns directly on GitHub. Cool huh?
 
 ## Step 1 - Get your own repo ready
 
-Login into your GitHub account and start a new repo [using vue-base-blog as a template](https://github.com/yeikiu/vue-base-blog/generate).
+Login into your GitHub account and start a new repo [using vue-base-blog as a template](https://github.com/yeikiu/vue-base-blog/generate) or cloning it.
 
 ![Use GitHub Template](https://github.com/yeikiu/vue-base-blog/raw/master/data/assets/step1-github.png)
 
@@ -36,7 +36,7 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 - Confirm the branch `gh-pages`was generated on your repo
 - Activate GitHub pages option under your repo's settings menu (make sure to choose the branch `gh-pages`)
 - Your new blog should be available soon under https://<YOUR_GITHUB_USER>.github.io/<YOUR_REPO_NAME>/ if you want to
-use a custom domain there are 2 little additional steps to do. You can check them [here](https://yeikiu.github.io/vue-base-blog/#/guide/using-custom-domain).
+use a custom domain there are 2 little additional steps to do. You can check them [here](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages).
 
 You will need to repeat *step 5* for any further changes you want to deploy to your site, but posting is another story,
-check [here](https://yeikiu.github.io/vue-base-blog/#/features/markdown-posts) how easy that is after deployment.
+check [here](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-github) how easy that task is after deployment.

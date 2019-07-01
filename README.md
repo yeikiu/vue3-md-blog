@@ -2,14 +2,17 @@
 
 > A fully functional blog made with Vue hosted on GitHub Pages.
 
-> Post by simply adding new markdowns to your repository, they´ll be inmediately accesible.
+> Post by simply adding new markdowns to your repository, they´ll be inmediately accesible, **no re-build needed**.
 
 ## Features:
 
-### * Posts are compiled from Markdown to html in runtime
-### * Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
-### * Host your .md file anywheres (publicly accessible by URL)
-### * Support for GitHub Pages CSS and emojis
+* Posts are compiled from Markdown to html in runtime
+* Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
+* Host your .md file anywhere (publicly accessible by URL)
+* Support for GitHub Pages CSS and emojis
+
+### Demo
+Demo site: [https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
 
 ### Quick start
 ```
@@ -19,12 +22,18 @@ yarn
 yarn serve
 ```
 
-> Read the full guide to deploy your own blog [here](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog)
+### Deploy your own blog
+
+> Read the full guide to deploy your own blog: [https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog)
+
+> If you want to use your own custom domain but still use GitHub pages to host your blog read [this help articles bu GitHub](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
+
+
+### Creating new posts the easy way
+
+> Learn how to post by simply editing markdown on GitHub: [https://yeikiu.github.io/vue-base-blog/#/guide/post-with-github](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-github)
 
 ---
-
-### Demo
-Demo site: [https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
 
 As a cool demonstration of the power of runtime markdown compilation I created a post entry which targets this README file directly: [https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/README.md](https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/README.md)
 

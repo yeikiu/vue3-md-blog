@@ -1,6 +1,13 @@
 {
   "guide": [
     {
+      "id": "README",
+      "date": "June 27, 2019",
+      "title": "README",
+      "description": "Directly loading the raw Markdown from GitHub public repo and displaying it into the Post component",
+      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/README.md"
+    },
+    {
       "id": "setup-yor-vue-markdown-blog",
       "date": "June 27, 2019",
       "title": "Setup your Vue Markdown Blog in less than 5 minutes",
@@ -8,11 +15,11 @@
       "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/guide/setup-yor-vue-markdown-blog.md"
     },
     {
-      "id": "README",
-      "date": "June 27, 2019",
-      "title": "README",
-      "description": "Directly loading the raw Markdown from GitHub public repo and displaying it into the Post component",
-      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/README.md"
+      "id": "post-with-github",
+      "date": "June 30, 2019",
+      "title": "Posting with Markdown like a boss 🕶",
+      "description": "In order to post new content or edit current just open the `data` folder and create a new markdown file: There is a folder per blog section holding the categorized markdowns, feel free to play with their names.",
+      "url": "https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/guide/post-with-github.md"
     }
   ],
   "features": [
