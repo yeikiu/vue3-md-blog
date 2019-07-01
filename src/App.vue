@@ -47,11 +47,19 @@
   }
 
   .post img {
-    max-width: 45%;
+    max-width: 65%;
     vertical-align: middle;
     border: 0;
   }
 
+  @media only screen and (max-width: 576px) {
+    .post img {
+      max-width: 95%;
+      vertical-align: middle;
+      border: 0;
+    }
+  }
+  
   .post iframe {
     max-width: 95%;
     vertical-align: middle;
