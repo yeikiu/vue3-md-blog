@@ -5,15 +5,22 @@
 
 ## Features:
 
-### * Posts are compiled from Markdown to html in runtime
-### * Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
-### * Host your .md file anywheres (publicly accessible by URL)
-### * Support for GitHub Pages CSS and emojis
+* Posts are compiled from Markdown to html in runtime
+* Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
+* Host your .md file anywhere (publicly accessible by URL)
+* Support for GitHub Pages CSS and emojis
 
 ---
 
 ## Headings
-
+```
+# h1 Heading 8-)
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+```
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -21,9 +28,14 @@
 ##### h5 Heading
 ###### h6 Heading
 
-
 ## Horizontal Rules
+```
+___
 
+---
+
+***
+```
 ___
 
 ---
@@ -45,7 +57,17 @@ test.. test... test..... test?..... test!....
 
 
 ## Emphasis
+```
+**This is bold text**
 
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+```
 **This is bold text**
 
 __This is bold text__
@@ -58,12 +80,14 @@ _This is italic text_
 
 
 ## Blockquotes
-
-
+```
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
-
+```
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
 
 ## Lists
 
@@ -122,7 +146,21 @@ console.log(foo(5));
 ```
 
 ## Tables
+```
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+```
 | Option | Description |
 | ------ | ----------- |
 | data   | path to data files to supply the data that will be passed into templates. |
@@ -139,16 +177,21 @@ Right aligned columns
 
 
 ## Links
+```
+[link text](http://dev.nodeca.com)
 
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+```
 [link text](http://dev.nodeca.com)
 
 [link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
 
 ## Images
-
+```
+![Minion](https://octodex.github.com/images/minion.png)
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+```
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
