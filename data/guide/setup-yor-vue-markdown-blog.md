@@ -1,4 +1,4 @@
-# Setup your Vue Markdown Blog in less than 5 minutes
+# Setup your Vue Markdown Blog in under 5 minutes
 #### June 27, 2019
 
 This is not a guide for Vue developers, but an article helping anyone who still wants a truly free hosted blog in a time when just 
@@ -10,7 +10,7 @@ getting my hands dirty with this project:
 
 ---
 
-## What can you expect from following this steps:
+## What can you expect from following this steps?
 A blog hosted freely on GitHub where you can post by simply adding Markdown files like this 
 
 ![Post Sample](https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/assets/post-sample.png)
