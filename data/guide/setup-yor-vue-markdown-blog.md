@@ -1,7 +1,19 @@
 # Setup your Vue Markdown Blog in less than 5 minutes
 #### June 27, 2019
 
-We will post to our final blog by simply editing markdowns directly on GitHub. Cool huh?
+This is not a guide for Vue developers, but an article helping anyone who still wants a truly free hosted blog in a time when just 
+the word blog sounds like dinosaur. Still if you want a good Vue guide to get started here are the only 2 Vue sources I read before 
+getting my hands dirty with this project:
+
+- [The only VueJS series you need to read before you feel the Vue power](https://css-tricks.com/intro-to-vue-1-rendering-directives-events/)
+- [The article which GitHub repo I forked as a base for this blog](https://medium.com/@yhev/creating-a-simple-blog-using-vue-with-markdown-487979e1b62d) - Thanks again to [@josephharveyangeles](https://github.com/josephharveyangeles)
+
+---
+
+## What can you expect from following this steps:
+A blog hosted freely on GitHub where you can post by simply adding Markdown files like this 
+
+![Post Sample](https://raw.githubusercontent.com/yeikiu/vue-base-blog/master/data/assets/post-sample.png)
 
 ## Step 1 - Get your own repo ready
 
