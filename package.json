@@ -1,7 +1,7 @@
 {
   "name": "vue-base-blog",
   "version": "0.1.1",
-  "private": false,
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -14,6 +14,7 @@
     "dotenv": "^8.0.0",
     "fork-me-on-github-vue": "^1.0.7",
     "github-markdown-css": "^3.0.1",
+    "lodash": "^4.17.14",
     "markdown-it": "^8.4.2",
     "markdown-it-emoji": "^1.4.0",
     "vue": "^2.6.10",
@@ -21,14 +22,14 @@
     "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.21"
   },
