@@ -31,7 +31,7 @@ export default {
     return {
       sections: Object.keys(this.$store.state.postsIndex),
       ribbonOptions: {
-        text: "Fork me on GitHub",
+        text: "Fork me on GitHub!",
         linkUrl: "https://github.com/yeikiu/vue-base-blog",
         border: false
       }
