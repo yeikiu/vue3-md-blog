@@ -22,34 +22,21 @@
     "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.5",
-    "@vue/cli-plugin-eslint": "^4.0.5",
-    "@vue/cli-service": "^4.0.5",
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-eslint": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-plugin-vue": "^5.2.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "sass-loader": "^8.0.0",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.21"
   },
   "resolutions": {
     "lodash": "^4.17.14",
-    "lodash.defaultsdeep": "^4.6.1"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
+    "lodash.defaultsdeep": "^4.6.1",
+    "serialize-javascript": ">=2.1.1"
   },
   "postcss": {
     "plugins": {
