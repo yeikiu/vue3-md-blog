@@ -4,10 +4,14 @@
 eval "$(grep ^DIST_TARGET_REPO= .env)";
 eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
-git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .tmp
-cp -r public/data .tmp
-cd .tmp
-git add -A
+yarn build:index
+
+if [ ! -d .postscache ]; then
+    git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .postscache
+fi;
+cp -r public/data .postscache
+cd .postscache
+git add .
 git commit -m 'deploy:posts'
 
 # if you are deploying to https://<USERNAME>.github.io
@@ -15,8 +19,5 @@ git commit -m 'deploy:posts'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push origin "$DIST_TARGET_BRANCH"
-
-cd ..
-rm -rf .tmp
 
 read -p "Press any key to continue..." x

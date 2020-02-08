@@ -52,6 +52,6 @@
     "lint": "vue-cli-service lint",
     "build:index": "node ./scripts/generate_index",
     "deploy:site": "./scripts/deploy.sh",
-    "deploy:posts": "./scripts/deploy_posts.sh"
+    "deploy:posts": "./scripts/deploy_changed_posts.sh"
   }
 }
