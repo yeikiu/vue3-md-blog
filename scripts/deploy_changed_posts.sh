@@ -6,11 +6,11 @@ eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
 yarn build:index
 
-if [ ! -d .postscache ]; then
-    git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .postscache
+if [ ! -d .distcache ]; then
+    git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .distcache
 fi;
-cp -r public/data .postscache
-cd .postscache
+cp -r public/data .distcache
+cd .distcache
 git add .
 git commit -m 'deploy:posts'
 

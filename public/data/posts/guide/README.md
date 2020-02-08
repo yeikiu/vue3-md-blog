@@ -1,3 +1,6 @@
+# 📄 README
+#### June 30, 2019
+
 # vue-base-blog
 
 > A fully functional blog made with Vue hosted on GitHub Pages.
