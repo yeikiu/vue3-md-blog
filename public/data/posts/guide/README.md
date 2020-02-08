@@ -22,7 +22,7 @@ yarn
 yarn serve
 ```
 
-### Deploy your own blog
+### Deploy your own blog!
 
 > Read the full guide to deploy your own blog: [https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-vue-markdown-blog](/#/guide/setup-yor-vue-markdown-blog)
 

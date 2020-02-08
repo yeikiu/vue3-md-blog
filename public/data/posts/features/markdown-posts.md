@@ -6,7 +6,7 @@
 ## Features:
 
 * Posts are compiled from Markdown to html in runtime
-* Use [inline html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes ready to go within your markdowns
+* Use [inline html with bootstrap](#/features/inline-bootstrap-html) classes ready to go within your markdowns
 * Host your .md file anywhere (publicly accessible by URL)
 * Support for GitHub Pages CSS and emojis
 

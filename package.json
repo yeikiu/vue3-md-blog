@@ -51,6 +51,7 @@
     "build": "yarn build:index && vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:index": "node ./scripts/generate_index",
-    "deploy": "./scripts/deploy.sh"
+    "deploy:site": "./scripts/deploy.sh",
+    "deploy:posts": "./scripts/deploy_posts.sh"
   }
 }

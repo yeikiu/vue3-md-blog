@@ -4,23 +4,19 @@
 eval "$(grep ^DIST_TARGET_REPO= .env)";
 eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
-# build
-yarn build
-
-# navigate into the build output directory
-cd dist
-
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git init
+git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .tmp
+cp -r public/data .tmp
+cd .tmp
 git add -A
-git commit -m 'deploy:site'
+git commit -m 'deploy:posts'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f "$DIST_TARGET_REPO" master:"$DIST_TARGET_BRANCH"
+git push origin "$DIST_TARGET_BRANCH"
+
+cd ..
+rm -rf .tmp
 
 read -p "Press any key to continue..." x
