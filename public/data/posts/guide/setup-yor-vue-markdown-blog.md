@@ -19,7 +19,7 @@ A blog hosted freely on GitHub where you can post by simply adding Markdown file
 
 Login into your GitHub account and start a new repo using [vue-base-blog](https://github.com/yeikiu/vue-base-blog) as a [template](https://github.com/yeikiu/vue-base-blog/generate) or cloning it.
 
-![Use GitHub Template](https://github.com/yeikiu/vue-base-blog/raw/master/data/assets/step1-github.png)
+![Use GitHub Template](data/assets/step1-github.png)
 
 ## Step 2 - Configure your .env file
 

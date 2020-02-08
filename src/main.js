@@ -1,6 +1,5 @@
 require('dotenv').config()
-const { 
-  VUE_APP_POSTS_INDEX_URL,
+const {
   VUE_APP_POSTS_PER_PAGE
 } = process.env;
 
@@ -19,7 +18,7 @@ import ForkeMeOnGithub from 'fork-me-on-github-vue';
 
 // Fetch index file
 const fetchPostsIndex = async() => {
-  return (await axios.get(VUE_APP_POSTS_INDEX_URL)).data
+  return (await axios.get('data/posts_index.json')).data
 }
 
 const loadApp = async() => {

@@ -1,12 +1,18 @@
 {
   "name": "vue-base-blog",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "./deploy.sh"
+  "description": "Minimal VueJS + Markdown blog engine",
+  "keywords": [
+    "vuejs",
+    "markdown",
+    "github",
+    "gh-pages"
+  ],
+  "author": "JQ (https://github.com/yeikiu)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeikiu/vue-base-blog.git"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -29,6 +35,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-plugin-vue": "^5.2.3",
+    "jsonfile": "^5.0.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.0",
     "vue-markdown-loader": "^2.4.1",
@@ -39,14 +46,11 @@
     "lodash.defaultsdeep": "^4.6.1",
     "serialize-javascript": ">=2.1.1"
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "yarn build:index && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:index": "node ./scripts/generate_index",
+    "deploy": "./scripts/deploy.sh"
+  }
 }

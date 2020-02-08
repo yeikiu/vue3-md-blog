@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Export the vars in .env into your shell:
-export $(egrep -v '^#' .env | xargs)
+eval "$(grep ^DIST_TARGET_REPO= .env)";
+eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
 # build
 yarn build
@@ -20,6 +21,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f $DIST_TARGET_REPO master:$DIST_TARGET_BRANCH
+git push -f "$DIST_TARGET_REPO" master:"$DIST_TARGET_BRANCH"
 
-cd -
+read -p "Press any key to continue..." x
