@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 dist
-.postscache
 
 # Log files
 npm-debug.log*
