@@ -45,7 +45,8 @@ export default {
       const html = markDownIt.render(md);
 
       const compiled = VueWithCompiler.compile(`
-        <div class="post my-5 py-5">
+        <div class="post my-2 py-2">
+          <back-button  class="my-2"></back-button>
           <div class="markdown-body">
             ${html}
           </div>

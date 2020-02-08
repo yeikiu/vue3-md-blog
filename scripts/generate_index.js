@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const removeMd = require('remove-markdown');
 const jsonfile = require('jsonfile');
 
 const dataPath = path.resolve('public/data');
@@ -20,8 +21,9 @@ for (const categoryFolder of categoryFolders) {
     for (const postFile of postFiles) {
         const postPath = path.join(categoryPath, postFile);
         const postContent = fs.readFileSync(postPath).toString();
+        const postLines = removeMd(postContent)
+            .split('\n').map(l => l.trim()).filter(l => Boolean(l));
 
-        const postLines = postContent.split('\n').map(l => l.trim()).filter(l => Boolean(l));
         const [ title, date, description ] = postLines;
         const [postFileId,] = postFile.split('.');
         postsIndex[categoryFolder].push({

@@ -18,6 +18,6 @@ git commit -m 'deploy:posts'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push origin "$DIST_TARGET_BRANCH"
+git push -u origin "$DIST_TARGET_BRANCH"
 
 read -p "Press any key to continue..." x

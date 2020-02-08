@@ -1,7 +1,8 @@
 # Posts are compiled with markdown-it
 #### June 26, 2019
 
-> You can simply edit your markdownns online and your blog will reflect the changes shortly after.
+> You can simply edit your markdown files online and your blog will reflect the changes shortly after.
+
 
 ## Features:
 
