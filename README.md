@@ -1,3 +1,5 @@
+<img src=".ci/npm-version-badge.svg" /> <img src=".ci/npm-dependencies-badge.svg" /> <img src=".ci/npm-devdependencies-badge.svg" />
+
 # vue-base-blog
 
 > A fully functional blog made with Vue hosted on GitHub Pages.
