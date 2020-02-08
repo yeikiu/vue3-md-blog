@@ -1,0 +1,48 @@
+{
+  "guide": [
+    {
+      "id": "README",
+      "date": "June 27, 2019",
+      "title": "README 📖",
+      "description": "Directly loading the raw Markdown from GitHub public repo and displaying it into the Post component",
+      "url": "README.md"
+    },
+    {
+      "id": "setup-yor-vue-markdown-blog",
+      "date": "June 27, 2019",
+      "title": "Setup your Vue Markdown Blog in under 5 minutes",
+      "description": "We will post to our final blog by simply editing markdowns directly on GitHub. Cool huh?",
+      "url": "data/posts/guide/setup-yor-vue-markdown-blog.md"
+    },
+    {
+      "id": "post-with-github",
+      "date": "June 30, 2019",
+      "title": "Posting with Markdown like a boss 🕶",
+      "description": "In order to post new content or edit current just open the `data` folder and create a new markdown file: There is a folder per blog section holding the categorized markdowns, feel free to play with their names.",
+      "url": "data/posts/guide/post-with-github.md"
+    }
+  ],
+  "features": [
+    {
+      "id": "markdown-posts",
+      "date": "June 26, 2019",
+      "title": "Posts are compiled with markdown-it",
+      "description": "You can simply edit your markdownns online and your blog will reflect the changes shortly after.",
+      "url": "data/posts/features/markdown-posts.md"
+    },
+    {
+      "id": "inline-bootstrap-html",
+      "date": "June 27, 2019",
+      "title": "Use inline bootstrap-ready html",
+      "description": "Another advantage of runtime template compilation is that we can make good use of bootstrap predefined classes since our app has already loaded all its css.",
+      "url": "data/posts/features/inline-bootstrap-html.md"
+    },
+    {
+      "id": "embed-youtube-video",
+      "date": "June 24, 2019",
+      "title": "Testing embeded YouTube with Markdown",
+      "description": "Lorem ipsum dolor sit amet...",
+      "url": "data/posts/features/embed-youtube-video.md"
+    }
+  ]
+}
