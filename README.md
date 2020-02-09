@@ -1,4 +1,4 @@
-<img src=".ci/npm-version-badge.svg" /> <img src=".ci/npm-dependencies-badge.svg" /> <img src=".ci/npm-devdependencies-badge.svg" />
+<img src=".ci/npm-version-badge.svg" /> <img src=".ci/npm-dependencies-badge.svg" /> <img src=".ci/npm-devdependencies-badge.svg" /> <img src=".ci/npm-outdated-dependencies-badge.svg" />
 
 # vue-base-blog
 
