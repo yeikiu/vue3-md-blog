@@ -51,4 +51,4 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 use a custom domain there are 2 little additional steps to do. You can check them [here](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages).
 
 You will need to repeat *step 5* for any further changes you want to deploy to your site, but posting is another story,
-check [here](/#/guide/post-with-github) how easy that task is after deployment.
+check [here](/#/guide/post-like-a-boss) how easy that task is after deployment.

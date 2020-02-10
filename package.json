@@ -36,6 +36,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
     "jsonfile": "^5.0.0",
+    "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "setup-gh-badges": "^1.0.0",
