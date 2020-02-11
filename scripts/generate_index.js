@@ -11,13 +11,12 @@ const postsPath = path.join(dataPath, 'posts');
 const categoryFolders = fs.readdirSync(postsPath);
 
 // Create posts_index object
-let postsIndex = {};
+const postsIndex = [];
 
 for (const categoryFolder of categoryFolders) {
     const categoryPath = path.join(postsPath, categoryFolder);
     const postFiles = fs.readdirSync(categoryPath);
 
-    postsIndex[categoryFolder] = [];
     for (const postFile of postFiles) {
         const postPath = path.join(categoryPath, postFile);
         const postContent = fs.readFileSync(postPath).toString();
@@ -27,8 +26,9 @@ for (const categoryFolder of categoryFolders) {
         const [ title, date, description ] = postLines;
         const [postFileId,] = postFile.split('.');
 
-        postsIndex[categoryFolder].push({
+        postsIndex.push({
             id: postFileId,
+            section: categoryFolder,
             date,
             title,
             description,
@@ -37,11 +37,9 @@ for (const categoryFolder of categoryFolders) {
     }
 }
 
-for (const categoryFolder of categoryFolders) {
-    // Sort each category Post by date
-    postsIndex[categoryFolder] = postsIndex[categoryFolder]
-        .sort((a,b) => moment(b.date, 'MMMM D, YYYY').format('YYYYMMDD') - moment(a.date, 'MMMM D, YYYY').format('YYYYMMDD'));
-}
+// Sort Posts by date
+postsIndex
+    .sort((a,b) => moment(b.date, 'MMMM D, YYYY').format('YYYYMMDD') - moment(a.date, 'MMMM D, YYYY').format('YYYYMMDD'));
 
 const indexPath = path.join(dataPath, 'posts_index.json');
 jsonfile.writeFileSync(indexPath, postsIndex);

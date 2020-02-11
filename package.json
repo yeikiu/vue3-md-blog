@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "private": true,
   "description": "Minimal VueJS + Markdown blog engine",
   "keywords": [

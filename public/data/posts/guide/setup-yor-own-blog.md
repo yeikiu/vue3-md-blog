@@ -1,5 +1,5 @@
 # Setup your own Blog in under 5 minutes
-#### June 21, 2019
+#### February 11, 2020
 
 
 > This tutorial assumes you have the following stuff already:

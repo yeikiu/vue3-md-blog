@@ -1,5 +1,5 @@
 # Posts are compiled with markdown-it
-#### June 26, 2019
+#### January 7, 2020
 
 > You can simply edit your markdown files online and your blog will reflect the changes shortly after.
 

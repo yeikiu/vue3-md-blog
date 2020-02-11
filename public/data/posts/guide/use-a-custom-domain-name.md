@@ -1,4 +1,4 @@
-# Use a custmo domain name
-#### February 10, 2020
+# Use a custom domain name
+#### February 9, 2019
 
 TODO

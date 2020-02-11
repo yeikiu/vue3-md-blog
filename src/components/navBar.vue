@@ -29,7 +29,8 @@ export default {
   name: "nav-bar",
   data() {
     return {
-      sections: Object.keys(this.$store.state.postsIndex),
+      sections: Array.from(new Set(this.$store.state.postsIndex
+        .map(post => post.section))),
       ribbonOptions: {
         text: "Fork me on GitHub!",
         linkUrl: "https://github.com/yeikiu/vue-base-blog",
