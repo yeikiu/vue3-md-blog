@@ -8194,10 +8194,10 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
-setup-gh-badges@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/setup-gh-badges/-/setup-gh-badges-1.0.0.tgz#734910e5abecbd4e7c6119c0f56096e7f6e4f60c"
-  integrity sha512-NR0As0KAVMU7woJLI2x0PzMum5k+5E/+XxUEh0fbnb9IjIJcUCNhaf2OmYN1iSR5OBEqJpDJDLYbiKC90Rqlgg==
+setup-gh-badges@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/setup-gh-badges/-/setup-gh-badges-1.0.1.tgz#063ad6e25482aac239f7c326b5d29eaee2f1540b"
+  integrity sha512-HDYGYo5RkgLH2XpaIGgtk//5MrR6XtNqm15t5WsLlqG1RbNnePez7ZUYEqH+F4EIgOscWS/UsAM48INtQCO5qA==
   dependencies:
     gh-badges "^2.2.1"
     jsonfile "^5.0.0"
