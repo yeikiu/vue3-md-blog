@@ -36,7 +36,7 @@ export default {
   created() {
     const compilePost = async () => {
       // Fetch current post md
-      const url = this.$store.state.postsIndex[this.section].filter(
+      const url = this.$store.state.postsIndex.filter(
         p => p.id === this.id
       )[0].url;
       const md = (await axios.get(url)).data;
