@@ -6,9 +6,7 @@ eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
 yarn build:index
 
-if [ ! -d .distcache ]; then
-    git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .distcache
-fi;
+git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .distcache
 cp -r public/data .distcache
 cd .distcache
 git add .
