@@ -15,7 +15,7 @@ Login into your GitHub account and start a new repo.
 
 - Use `vue-base-blog` [as a template](https://github.com/yeikiu/vue-base-blog/generate)
 
-![Public Dir Structure](../../assets/step1-github.png)
+![Public Dir Structure](data/assets/step1-github.png)
 
 
 ## 2.- Configure your `.env` file
@@ -51,7 +51,7 @@ Your new blog should be available soon under https://<YOUR_GITHUB_USER>.github.i
 
 ## 5.- Next Steps
 
-- [Write and post from within your favourite IDE 🕶](/#/guide/post-with-your-favourite-ide)
+- [Write and post with your favourite IDE 🕶](/#/guide/post-with-your-favourite-ide)
 
 - Check the [features](/#/features) list to see all the cool stuff you can do in your posts!
 

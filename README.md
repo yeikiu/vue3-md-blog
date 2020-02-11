@@ -38,7 +38,7 @@ Read the [full guide](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-o
 
 ### Next Steps
 
-- [Write and post from within your favourite IDE 🕶](/#/guide/post-with-your-favourite-ide)
+- [Write and post with your favourite IDE 🕶](/#/guide/post-with-your-favourite-ide)
 
 - Check the [features](/#/features) list to see all the cool stuff you can do in your posts!
 

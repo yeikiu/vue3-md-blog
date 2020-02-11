@@ -1,4 +1,4 @@
-# Write and post from within your favourite IDE 🕶
+# Write and post with your favourite IDE 🕶
 #### June 30, 2019
 
 
@@ -7,7 +7,7 @@
 
 This is me, writing this very line right now
 
-![Public Dir Structure](../../assets/public-structure.png)
+![Public Dir Structure](data/assets/public-structure.png)
 
 There is a few interesting things to notice in the image, take a second look. Basically every time you want to create a new post
 you will need to create a `new-post-file.md` file following a few simple rules:
