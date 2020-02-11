@@ -3,15 +3,15 @@
 
 > You can simply edit your markdown files online and your blog will reflect the changes shortly after.
 
-
-## Features:
-
 * Posts are compiled from Markdown to html in runtime
+
 * Use [inline html with bootstrap](#/features/inline-bootstrap-html) classes ready to go within your markdowns
-* Host your .md file anywhere (publicly accessible by URL)
+
 * Support for GitHub Pages CSS and emojis
 
 ---
+
+## Features
 
 ## Headings
 ```

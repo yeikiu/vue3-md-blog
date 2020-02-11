@@ -10,7 +10,7 @@ Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub P
 
 * Posts are compiled from Markdown to html in runtime
 
-* Use [inlined html with bootstrap](/#/features/inline-bootstrap-html) classes within your markdown files
+* Use [inlined html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes within your markdown files
 
 * Support for GitHub Pages CSS and emojis
 
@@ -22,18 +22,29 @@ Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub P
 
 ## 🎬 Quick start
 
-    git clone https://yeikiu.github.io/vue-base-blog
+    git clone https://github.com/yeikiu/vue-base-blog
     cd vue-base-blog
     yarn
     yarn serve
+
+---
 
 
 ### Deploy your own blog
 
 Like what you see?
-Read the [full guide](/#/guide/setup-yor-vue-markdown-blog) to deploy your own blog
+Read the [full guide](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-own-blog) and deploy your own blog in under 5 minutes!
 
-If you want to use a custom domain but still use GitHub Pages as hosting, read [this help article](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
+
+### Next Steps
+
+- [Write and post from within your favourite IDE 🕶](/#/guide/post-with-your-favourite-ide)
+
+- Check the [features](/#/features) list to see all the cool stuff you can do in your posts!
+
+- [Customise your blog](/#/guide/customise-your-blog) (TODO)
+
+- [Use a custom domain name](/#/guide/use-a-custom-domain-name) (TODO)
 
 
 ### Credits

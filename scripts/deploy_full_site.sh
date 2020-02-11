@@ -5,6 +5,7 @@ eval "$(grep ^DIST_TARGET_REPO= .env)";
 eval "$(grep ^DIST_TARGET_BRANCH= .env)";
 
 # build
+yarn build:index
 yarn build
 
 # navigate into the build output directory
