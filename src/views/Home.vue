@@ -14,7 +14,7 @@
       <router-link
         tag="h3"
         class="text-left m-0 p-0 link"
-        :to="{ path:`${section}/${entry.id}` }"
+        :to="{ path:`${entry.section}/${entry.id}` }"
       >{{entry.title}}</router-link>
 
       <p class="text-muted m-0 p-0">{{entry.date}}</p>
