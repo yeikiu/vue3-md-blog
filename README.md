@@ -5,8 +5,14 @@
 
 Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub Pages](https://guides.github.com/features/pages/)
 
+## 👀 Demo
 
-## ⚙️ Features:
+[https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
+
+![vbb_screenshot](public/data/assets/vbb_screenshot.png)
+
+
+## ⚙️ Main Features:
 
 * Posts are compiled from Markdown to html in runtime
 
@@ -15,19 +21,12 @@ Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub P
 * Support for GitHub Pages CSS and emojis
 
 
-## 👀 Demo
-
-[https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
-
-
 ## 🎬 Quick start
 
     git clone https://github.com/yeikiu/vue-base-blog
     cd vue-base-blog
     yarn
     yarn serve
-
----
 
 
 ### Deploy your own blog
@@ -40,7 +39,7 @@ Read the [full guide](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-o
 
 - [Write and post with your favourite IDE 🕶](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-your-favourite-ide)
 
-- Check the [features](https://yeikiu.github.io/vue-base-blog/#/features) list to see all the cool stuff you can do in your posts!
+- Check the [features section](https://yeikiu.github.io/vue-base-blog/#/features) to see demos of all the cool stuff you can do in your posts!
 
 
 ### Credits
