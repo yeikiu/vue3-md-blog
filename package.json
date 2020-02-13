@@ -1,20 +1,20 @@
 {
   "name": "vue-base-blog",
   "version": "1.1.0",
-  "private": true,
   "description": "Minimal VueJS + Markdown blog engine",
+  "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
     "vuejs",
     "markdown",
     "github",
     "gh-pages"
   ],
-  "author": "JQ (https://github.com/yeikiu)",
+  "license": "CC0-1.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/yeikiu/vue-base-blog.git"
   },
-  "license": "CC0-1.0",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
@@ -37,6 +37,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
     "jsonfile": "^5.0.0",
+    "lint-package": "^1.0.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
@@ -45,12 +46,13 @@
     "vue-template-compiler": "^2.6.11"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "yarn build:index && vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build:index": "node scripts/generate_index.js",
-    "deploy:site": "scripts/deploy_full_site.sh",
+    "serve": "                           vue-cli-service serve",
+    "build": "       yarn build:index && vue-cli-service build",
+    "lint": "                            vue-cli-service lint",
+    "build:index": " node scripts/generate_index.js",
+    "deploy:site": " scripts/deploy_full_site.sh",
     "deploy:posts": "scripts/deploy_changed_posts.sh",
-    "badges:win": "scripts/generate_badges_win.sh"
+    "badges:win": "  scripts/generate_badges_win.sh",
+    "lint:package": "node node_modules/lint-package"
   }
 }
