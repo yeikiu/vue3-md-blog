@@ -5672,11 +5672,6 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-lint-package@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/lint-package/-/lint-package-1.0.0.tgz#fe7732db5e198909dcb8f1aec588901dfed0376e"
-  integrity sha512-54cBE+zdsh3wL78y+TN2KzNaVDlbVW3u74fDLb9AshRtMJ+2vkKhwHTyVR/UHxl+iPK196FI7KOe1I7abMbL6g==
-
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
