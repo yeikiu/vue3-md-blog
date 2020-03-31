@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script>
+<script language="ts">
 import navBar from "@/components/navBar.vue";
 
 export default {

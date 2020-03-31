@@ -10,7 +10,7 @@
 
   <g clip-path="url(#round)">
     <rect width="51" height="20" fill="#555"/>
-    <rect x="51" width="39" height="20" fill="#4c1"/>
+    <rect x="51" width="39" height="20" fill="#97ca00"/>
     <rect width="90" height="20" fill="url(#smooth)"/>
   </g>
 
@@ -27,4 +27,3 @@
   
   
 </svg>
-

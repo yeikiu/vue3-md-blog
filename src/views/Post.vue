@@ -1,4 +1,4 @@
-<script>
+<script language="ts">
 import VueWithCompiler from "vue/dist/vue.esm";
 import axios from "axios";
 import MarkdownIt from "markdown-it";

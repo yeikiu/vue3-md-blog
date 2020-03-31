@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script>
+<script language="ts">
 export default {
   name: "nav-bar",
   data() {

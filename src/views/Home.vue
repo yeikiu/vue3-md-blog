@@ -39,7 +39,7 @@
   </div>
 </template>
 
-<script>
+<script language="ts">
   import blogHeader from "@/components/blogHeader.md";
   import blogHeaderSection from "@/components/blogHeaderSection.md";
 
