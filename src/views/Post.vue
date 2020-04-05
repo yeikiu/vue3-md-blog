@@ -1,4 +1,4 @@
-<script language="ts">
+<script>
 import VueWithCompiler from "vue/dist/vue.esm";
 import axios from "axios";
 import MarkdownIt from "markdown-it";
@@ -63,8 +63,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-/* Custom SCSS here */
-
-</style>

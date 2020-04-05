@@ -16,6 +16,9 @@ import 'github-markdown-css/github-markdown.css'
 
 import ForkeMeOnGithub from 'fork-me-on-github-vue';
 
+import Home from '@/views/Home'
+import Post from '@/views/Post'
+
 // Fetch index file
 const fetchPostsIndex = async() => {
   return (await axios.get('data/posts_index.json')).data
@@ -40,17 +43,16 @@ const loadApp = async() => {
 
   const router = new Router({
     mode: 'hash',
-    //base: '/',
     routes: [
       {
         path: '/:section?',
         name: 'home',
-        component: () => import('./views/Home.vue'),
+        component: Home,
         props: true,
       }, {
         path: '/:section/:id',
         name: 'post',
-        component: () => import('./views/Post.vue'),
+        component: Post,
         props: true,
       }
     ]

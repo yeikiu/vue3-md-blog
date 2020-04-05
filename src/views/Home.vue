@@ -39,7 +39,7 @@
   </div>
 </template>
 
-<script language="ts">
+<script>
   import blogHeader from "@/components/blogHeader.md";
   import blogHeaderSection from "@/components/blogHeaderSection.md";
 
@@ -72,8 +72,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-/* Custom SCSS here */
-
-</style>
