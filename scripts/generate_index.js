@@ -24,7 +24,7 @@ for (const categoryFolder of categoryFolders) {
             .split('\n').map(l => l.trim()).filter(l => Boolean(l));
 
         const [ title, date, description ] = postLines;
-        const [postFileId,] = postFile.split('.');
+        const [postFileId,] = postFile.split('.md');
 
         postsIndex.push({
             id: postFileId,
