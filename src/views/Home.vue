@@ -46,6 +46,11 @@
   export default {
     name: "home",
     props: ["section"],
+    metaInfo ({ section }) {
+      return {
+        title: section || 'Welcome'
+      }
+    },
     components: {
       blogHeader,
       blogHeaderSection
@@ -56,7 +61,6 @@
         currentPage: 1,
       }
     },
-
     computed: {
         allPosts() {
           return this.section ? this.$store.state.postsIndex.filter(post => post.section === this.section) : this.$store.state.postsIndex;

@@ -11,6 +11,11 @@ const markDownIt = new MarkdownIt({ html: true }).use(emoji);
 export default {
   name: "post",
   props: ["section", "id"],
+  metaInfo ({ section, id }) {
+    return {
+      title: `${section} | ${id.replace(/-/g,' ')}`
+    }
+  },
   components: {
     backButton
   },
