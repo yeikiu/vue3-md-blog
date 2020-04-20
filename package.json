@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Minimal VueJS + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -25,6 +25,7 @@
     "markdown-it": "^10.0.0",
     "markdown-it-emoji": "^1.4.0",
     "remove-markdown": "^0.3.0",
+    "rimraf": "^3.0.2",
     "vue": "^2.6.11",
     "vue-meta": "^2.3.3",
     "vue-router": "^3.1.5",
@@ -55,7 +56,7 @@
     "lint": "                            vue-cli-service lint",
     "build:index": " node scripts/generate_index.js",
     "deploy:site": " scripts/deploy_full_site.sh",
-    "deploy:posts": "scripts/deploy_changed_posts.sh",
+    "deploy:posts": "rimraf .distcache && scripts/deploy_changed_posts.sh",
     "sync-badges": " node node_modules/setup-gh-badges"
   }
 }
