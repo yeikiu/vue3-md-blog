@@ -19,6 +19,7 @@
 
       <p class="text-muted m-0 p-0">{{entry.date}}</p>
       <router-link
+        v-if="!section"
         tag="h6"
         class="m-0 p-0 link"
         :to="{ path:`${entry.section}` }"

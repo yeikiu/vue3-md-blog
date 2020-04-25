@@ -4,7 +4,6 @@ import axios from "axios";
 import MarkdownIt from "markdown-it";
 import emoji from "markdown-it-emoji";
 import spinner from "@/components/spinner.md"
-import backButton from "@/components/backButton.md"
 
 const markDownIt = new MarkdownIt({ html: true }).use(emoji);
 
@@ -15,9 +14,6 @@ export default {
     return {
       title: `${section} | ${id.replace(/-/g,' ')}`
     }
-  },
-  components: {
-    backButton
   },
 
   data() {
@@ -38,6 +34,10 @@ export default {
     document.location.reload()
   },
 
+  methods: {
+    hasHistory () { return window.history?.length > 2 }
+  },
+
   created() {
     const compilePost = async () => {
       // Fetch current post md
@@ -51,11 +51,11 @@ export default {
 
       const compiled = VueWithCompiler.compile(`
         <div class="post my-2 py-2">
-          <back-button  class="my-2"></back-button>
+          <button type="button" @click="hasHistory() ? $router.go(-1) : $router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
           <div class="markdown-body">
             ${html}
           </div>
-          <back-button></back-button>
+          <button type="button" @click="hasHistory() ? $router.go(-1) : $router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
         </div>
       `);
       this.templateRender = compiled.render;
