@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "1.1.52",
+  "version": "1.1.53",
   "description": "Minimal VueJS + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -38,6 +38,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
+    "husky": "^4.2.5",
     "jsonfile": "^5.0.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
@@ -58,5 +59,10 @@
     "deploy:site": " scripts/deploy_full_site.sh",
     "deploy:posts": "rimraf .distcache && scripts/deploy_changed_posts.sh && rimraf .distcache",
     "sync-badges": " node node_modules/setup-gh-badges"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "yarn sync-badges"
+    }
   }
 }
