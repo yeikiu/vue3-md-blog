@@ -1,0 +1,21 @@
+name: badges
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  badges:
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: |
+          npm install setup-gh-badges
+          npx sync-badges
+          git add .ci_badges
+          git commit -m '[CI:deploy] .ci_badges'
+          git push -u origin master
