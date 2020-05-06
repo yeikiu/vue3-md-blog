@@ -19,6 +19,8 @@ jobs:
       - run: |
           npm install setup-gh-badges
           npx sync-badges
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add .ci_badges
           git commit -m '[CI:deploy] .ci_badges'
           git push -u origin master
