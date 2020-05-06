@@ -1,4 +1,4 @@
-name: badges
+name: badges_and_deploy
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  badges:
+  badges_and_deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -24,3 +24,4 @@ jobs:
           git add .ci_badges
           git commit -m '[CI:deploy] .ci_badges'
           git push -u origin master
+          npm run deploy:site

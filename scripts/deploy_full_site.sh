@@ -16,7 +16,7 @@ cd dist
 
 git init
 git add -A
-git commit -m 'deploy:site'
+git commit -m '[CI:deploy] full-site'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
@@ -24,4 +24,4 @@ git commit -m 'deploy:site'
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f "$DIST_TARGET_REPO" master:"$DIST_TARGET_BRANCH"
 
-read -p "Press any key to continue..." x
+echo "✔️ Deployed to $DIST_TARGET_BRANCH branch"
