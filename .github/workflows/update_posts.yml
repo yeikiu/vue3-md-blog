@@ -1,0 +1,45 @@
+name: update_posts
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'public/data'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'public/data'
+
+jobs:
+  sync_badges:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+      
+      - run: |
+          yarn build:index
+          git clone ${{ env.DIST_TARGET_REPO }} -b ${{ env.DIST_TARGET_BRANCH }} .distcache
+          cp -r public/data .distcache
+          cd .distcache
+          git config --local user.email "posts_hook@github.com"
+          git config --local user.name "Posts Hook"
+          git add .
+          git commit -m 'deploy:posts'
+          git push -u origin ${{ env.DIST_TARGET_REPO }}
+        env:
+          DIST_TARGET_REPO: "https://github.com/yeikiu/vue-base-blog.git"
+          DIST_TARGET_BRANCH: "gh-pages"
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: deploy .ci_badges
+          path: .ci_badges
+
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .ci_badges
+          git commit -m "[CI:deploy] updated badges"
+          git push -u origin master
