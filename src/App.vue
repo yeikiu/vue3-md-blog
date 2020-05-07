@@ -19,7 +19,7 @@ export default {
     meta: [
       { name: 'description', content: 'Minimal config fully functional blog made with VueJS + GitHub Pages' },
       { name: 'og:title', content: '✍️ vue-base-blog ✍️' },
-      { name: 'keywords', content: 'vuejs, blog-engine, markdown-article, github-pages' }
+      { name: 'keywords', content: 'VueJS, blog-engine, markdown-article, github-pages' }
     ]
   },
   components: {

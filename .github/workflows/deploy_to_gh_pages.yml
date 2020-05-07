@@ -1,8 +1,9 @@
 name: deploy_to_gh_pages
 on:
-
   push:
     branches: [ master ]
+    paths:
+      - src/**/*
 
 jobs:
 

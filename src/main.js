@@ -20,7 +20,6 @@ import ForkeMeOnGithub from 'fork-me-on-github-vue';
 import Home from '@/views/Home'
 import Post from '@/views/Post'
 
-// Fetch index file
 const fetchPostsIndex = async() => {
   return (await axios.get('data/posts_index.json')).data
 }
