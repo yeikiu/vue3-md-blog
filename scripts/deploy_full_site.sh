@@ -25,3 +25,5 @@ git commit -m '[CI:deploy] full-site'
 git push -f "$DIST_TARGET_REPO" master:"$DIST_TARGET_BRANCH"
 
 echo "✔️ Deployed to $DIST_TARGET_BRANCH branch"
+
+read -p "Press any key to continue..." x
