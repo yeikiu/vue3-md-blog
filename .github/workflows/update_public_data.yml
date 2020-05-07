@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - public/data/**
+      - public/data/**/*
 
 jobs:
 
