@@ -1,16 +1,9 @@
 name: update_public_data
-
 on:
-
   push:
     branches: [ master ]
     paths:
-      - public/data/**/*
-      
-  pull_request:
-    branches: [ master ]
-    paths:
-      - public/data/**/*
+      - public/data/**
 
 jobs:
 

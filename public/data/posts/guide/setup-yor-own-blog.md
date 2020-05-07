@@ -36,15 +36,13 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 
 ### Deploy full Site to gh-pages branch
 
-> Runs any time you push an updated package.json (i.e. add a new library or bump version)
+> Runs any time you push an updated package.json (i.e. add a new library or bump version) to your `master` branch.
 
 ```
-    name: deploy_gh_pages
+    name: deploy_dist_to_gh-pages
     on:
-    push:
+      push:
         branches: [ master ]
-        paths:
-        - package.json
 ```
 
 ### Deploy only updated posts folder
