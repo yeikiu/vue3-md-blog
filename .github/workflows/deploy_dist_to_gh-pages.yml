@@ -1,8 +1,7 @@
 name: deploy_dist_to_gh-pages
 on:
   push:
-    branches:
-      - release/**
+    branches: [ master ]
 
 jobs:
 
@@ -19,11 +18,10 @@ jobs:
           yarn 
           yarn build:index
           yarn build
-
       - uses: actions/upload-artifact@v2
         with:
           name: dist_artifact
-          path: dist/**
+          path: dist/**/*
   
   deploy_dist:
     runs-on: ubuntu-18.04
@@ -38,6 +36,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist_artifact
+          path: ./
 
       - run: |
           git config --local user.email "posts_hook@github.com"
