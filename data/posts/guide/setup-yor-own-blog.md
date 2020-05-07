@@ -41,21 +41,23 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 ```
     name: deploy_dist_to_gh-pages
     on:
-      push:
-        branches: [ master ]
+    push:
+      branches: [ master ]
+      paths-ignore:
+      - public/data/**/*
 ```
 
 ### Deploy only updated posts folder
 
-> Runs any time you push updated post files/assets
+> Runs any time you push updated post files/assets to `master` branch
 
 ```
     name: update_public_data
     on:
-    push:
+      push:
         branches: [ master ]
         paths:
-        - public/data/**/*
+          - public/data/**
 ```
 
 - Verify branch `gh-pages` is generated on your repo after you push some changes and `deploy_gh_pages` workflow is executed.
