@@ -1,0 +1,23 @@
+name: sync_badges
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'package.json'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'package.json'
+
+jobs:
+  sync_badges:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+      
+      - run: |
+          yarn add setup-gh-badges
+          npx sync-badges
