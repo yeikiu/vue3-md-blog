@@ -15,10 +15,10 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 git init
-git config --local user.email "deploy_hook@github.com"
-git config --local user.name "Deploy Hook"
+git config --local user.email "deploy_script@github.com"
+git config --local user.name "Deploy Script"
 git add -A
-git commit -m '[CI:deploy] full-site'
+git commit -m '[script:deploy] full-site'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
