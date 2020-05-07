@@ -22,11 +22,7 @@ Login into your GitHub account and start a new repo.
 
     DIST_PUBLIC_PATH=<YOUR-REPO-NAME>
 
-    DIST_TARGET_REPO=<YOUR-REPO-URL>
-
-    DIST_TARGET_BRANCH=gh-pages
-
-    VUE_APP_POSTS_PER_PAGE=10
+    VUE_APP_POSTS_PER_PAGE=5
 
 
 ## 3.- Test locally
@@ -36,11 +32,35 @@ Make sure your terminal is within your repos root folder and run `yarn install` 
 Run `yarn serve` and you should be able to access the site under [http://localhost:8080](http://localhost:8080)
 
 
-## 4.- Deploy to GitHub Pages
+## 4.- Deploy with GitHub Actions
 
-- Run `yarn deploy:site`
+### Deploy full Site to gh-pages branch
 
-- Verify branch `gh-pages` is generated on your repo
+> Runs any time you push an updated package.json (i.e. add a new library or bump version)
+
+```
+    name: deploy_gh_pages
+    on:
+    push:
+        branches: [ master ]
+        paths:
+        - package.json
+```
+
+### Deploy only updated posts folder
+
+> Runs any time you push updated post files/assets
+
+```
+    name: update_public_data
+    on:
+    push:
+        branches: [ master ]
+        paths:
+        - public/data/**/*
+```
+
+- Verify branch `gh-pages` is generated on your repo after you push some changes and `deploy_gh_pages` workflow is executed.
 
 - Activate GitHub pages option under your repo's settings menu. Make sure to choose `gh-pages` branch.
 
