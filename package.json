@@ -54,10 +54,5 @@
     "build:index": " node scripts/generate_index.js",
     "deploy:site": " scripts/deploy_full_site.sh",
     "deploy:posts": "rimraf .distcache && scripts/deploy_changed_posts.sh && rimraf .distcache"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx sync-badges"
-    }
   }
 }

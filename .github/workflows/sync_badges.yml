@@ -21,3 +21,8 @@ jobs:
       - run: |
           yarn add setup-gh-badges
           npx sync-badges
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: deploy .ci_badges
+          path: .ci_badges
