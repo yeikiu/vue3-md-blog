@@ -1,20 +1,19 @@
-name: update_public_data
-
+name: deploy_gh_pages
 on:
 
   push:
     branches: [ master ]
     paths:
-      - public/data/**/*
+      - 'package.json'
       
   pull_request:
     branches: [ master ]
     paths:
-      - public/data/**/*
+      - 'package.json'
 
 jobs:
 
-  update_posts:
+  build_dist:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -26,30 +25,31 @@ jobs:
       - run: |
           yarn 
           yarn build:index
+          yarn build
 
       - uses: actions/upload-artifact@v2
         with:
-          name: data_artifact
-          path: public/data
+          name: dist_artifact
+          path: dist/**/*
   
-  deploy_data:
+  deploy_dist:
     runs-on: ubuntu-18.04
-    needs: update_posts
+    needs: build_dist
     steps:
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
 
-      - run: rm -r data
+      - run: rm -r *
 
       - uses: actions/download-artifact@v2
         with:
-          name: data_artifact
-          path: data
+          name: dist_artifact
+          path: ./
 
       - run: |
           git config --local user.email "posts_hook@github.com"
           git config --local user.name "Posts Hook"
           git add data
-          git commit -m "[CI:deploy] deploy_data job"
+          git commit -m "[CI:deploy] deploy_dist job"
           git push -u origin gh-pages
