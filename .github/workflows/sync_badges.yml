@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths:
       - 'package.json'
+      
   pull_request:
     branches: [ master ]
     paths:
@@ -22,14 +23,9 @@ jobs:
           yarn add setup-gh-badges
           npx sync-badges
 
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: deploy .ci_badges
-      #     path: .ci_badges
-
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .ci_badges
-          git commit -m "[CI:deploy] updated badges"
+          git commit -m "[CI:deploy] sync_badges job"
           git push -u origin master

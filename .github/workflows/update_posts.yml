@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths:
       - public/data/**/*
+      
   pull_request:
     branches: [ master ]
     paths:
@@ -51,6 +52,6 @@ jobs:
       - run: |
           git config --local user.email "posts_hook@github.com"
           git config --local user.name "Posts Hook"
-          git add .
-          git commit -m "deploy:posts"
+          git add data
+          git commit -m "[CI:deploy] updated_posts job"
           git push -u origin gh-pages
