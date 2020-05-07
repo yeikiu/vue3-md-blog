@@ -11,7 +11,7 @@ on:
       - 'public/data/**/*'
 
 jobs:
-  sync_badges:
+  update_posts:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -31,15 +31,3 @@ jobs:
         env:
           DIST_TARGET_REPO: "https://github.com/yeikiu/vue-base-blog.git"
           DIST_TARGET_BRANCH: "gh-pages"
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: deploy .ci_badges
-          path: .ci_badges
-
-      - run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .ci_badges
-          git commit -m "[CI:deploy] updated badges"
-          git push -u origin master
