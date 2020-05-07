@@ -9,6 +9,8 @@ yarn build:index
 git clone "$DIST_TARGET_REPO" -b "$DIST_TARGET_BRANCH" .distcache
 cp -r public/data .distcache
 cd .distcache
+git config --local user.email "posts_hook@github.com"
+git config --local user.name "Posts Hook"
 git add .
 git commit -m 'deploy:posts'
 
