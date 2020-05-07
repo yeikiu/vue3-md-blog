@@ -38,7 +38,6 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: dist_artifact
-          path: ./
 
       - run: |
           git config --local user.email "posts_hook@github.com"
