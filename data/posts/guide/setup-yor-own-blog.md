@@ -44,7 +44,7 @@ Run `yarn serve` and you should be able to access the site under [http://localho
     push:
       branches: [ master ]
       paths-ignore:
-      - public/data/**/*
+      - public/data/**
 ```
 
 ### Deploy only updated posts folder
