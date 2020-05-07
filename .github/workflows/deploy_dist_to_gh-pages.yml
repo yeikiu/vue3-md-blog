@@ -1,9 +1,8 @@
 name: deploy_dist_to_gh-pages
 on:
   push:
-    branches: [ master ]
-    paths-ignore:
-      - public/data/**
+    branches:
+      - release/**
 
 jobs:
 
