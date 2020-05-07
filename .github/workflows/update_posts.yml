@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - run: |
-        mkdir master_dir
-        cd master_dir
+          mkdir master_dir
+          cd master_dir
 
       - uses: actions/checkout@v2
         with:
