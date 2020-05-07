@@ -43,23 +43,14 @@ Run `yarn serve` and you should be able to access the site under [http://localho
     on:
     push:
       branches:
-        - release/**
+        - release
 ```
 
 ### Deploy only updated posts folder
 
-> Runs any time you push updated post files/assets to `master` branch
+> Check the `.github\workflows`files to understand how the site gets deployed automagically with GitHub Actions
 
-```
-    name: update_public_data
-    on:
-      push:
-        branches: [ master ]
-        paths:
-          - public/data/**
-```
-
-- Verify branch `gh-pages` is generated on your repo after you push some changes and `deploy_gh_pages` workflow is executed.
+- Verify branch `gh-pages` is generated on your repo after you push some changes and workflows run.
 
 - Activate GitHub pages option under your repo's settings menu. Make sure to choose `gh-pages` branch.
 
