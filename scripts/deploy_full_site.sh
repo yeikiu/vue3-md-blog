@@ -15,6 +15,8 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 git init
+git config --local user.email "deploy_hook@github.com"
+git config --local user.name "Deploy Hook"
 git add -A
 git commit -m '[CI:deploy] full-site'
 
