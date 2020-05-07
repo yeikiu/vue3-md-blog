@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  update_posts:
+  build_index:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
   
   deploy_data:
     runs-on: ubuntu-18.04
-    needs: update_posts
+    needs: build_index
     steps:
       - uses: actions/checkout@v2
         with:

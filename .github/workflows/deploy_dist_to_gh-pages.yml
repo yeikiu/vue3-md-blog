@@ -1,4 +1,4 @@
-name: deploy_gh_pages
+name: deploy_dist_to_gh-pages
 on:
 
   push:
