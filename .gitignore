@@ -2,6 +2,7 @@
 node_modules
 dist
 .distcache
+.ci_badges
 
 # Log files
 npm-debug.log*

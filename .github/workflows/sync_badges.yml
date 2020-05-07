@@ -26,3 +26,10 @@ jobs:
         with:
           name: deploy .ci_badges
           path: .ci_badges
+
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .ci_badges
+          git commit -m "[CI:deploy] updated badges" -a -f
+          git push -u origin master
