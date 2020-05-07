@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v1
       
       - run: |
+          yarn 
           yarn build:index
           git clone ${{ env.DIST_TARGET_REPO }} -b ${{ env.DIST_TARGET_BRANCH }} .distcache
           cp -r public/data .distcache
