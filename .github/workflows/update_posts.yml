@@ -4,11 +4,11 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'public/data'
+      - 'public/data/*'
   pull_request:
     branches: [ master ]
     paths:
-      - 'public/data'
+      - 'public/data/*'
 
 jobs:
   sync_badges:
