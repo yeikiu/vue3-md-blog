@@ -5,12 +5,12 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'package.json'
+      - package.json
       
   pull_request:
     branches: [ master ]
     paths:
-      - 'package.json'
+      - package.json
 
 jobs:
   sync_badges:
