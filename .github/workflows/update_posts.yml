@@ -4,31 +4,53 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'public/data/**/*'
+      - public/data/**/*
   pull_request:
     branches: [ master ]
     paths:
-      - 'public/data/**/*'
+      - public/data/**/*
 
 jobs:
   update_posts:
     runs-on: ubuntu-18.04
     steps:
+      - run: |
+        mkdir master_dir
+        cd master_dir
+
       - uses: actions/checkout@v2
+        with:
+          ref: master
 
       - uses: actions/setup-node@v1
       
       - run: |
           yarn 
           yarn build:index
-          git clone ${{ env.DIST_TARGET_REPO }} -b ${{ env.DIST_TARGET_BRANCH }} .distcache
-          cp -r public/data .distcache
-          cd .distcache
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: data_artifact
+          path: public/data
+  
+  deploy_data:
+    runs-on: ubuntu-18.04
+    needs: update_posts
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - run: rm -r data
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: my-data_artifact
+          path: data
+
+      - run: |
           git config --local user.email "posts_hook@github.com"
           git config --local user.name "Posts Hook"
           git add .
-          git commit -m 'deploy:posts'
-          git push -u origin ${{ env.DIST_TARGET_BRANCH }}
-        env:
-          DIST_TARGET_REPO: https://github.com/yeikiu/vue-base-blog.git
-          DIST_TARGET_BRANCH: gh-pages
+          git commit -m "deploy:posts"
+          git push -u origin gh-pages
