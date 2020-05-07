@@ -28,7 +28,7 @@ jobs:
           git config --local user.name "Posts Hook"
           git add .
           git commit -m 'deploy:posts'
-          git push -u origin "${{ env.DIST_TARGET_REPO }}"
+          git push -u origin ${{ env.DIST_TARGET_BRANCH }}
         env:
           DIST_TARGET_REPO: https://github.com/yeikiu/vue-base-blog.git
           DIST_TARGET_BRANCH: gh-pages
