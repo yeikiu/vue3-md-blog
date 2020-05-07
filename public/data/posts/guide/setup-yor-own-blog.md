@@ -40,7 +40,7 @@ Run `yarn serve` and you should be able to access the site under [http://localho
 
 - Run `yarn deploy:site`
 
-- Verify branch `gh-pages` is generated on your repo!
+- Verify branch `gh-pages` is generated on your repo
 
 - Activate GitHub pages option under your repo's settings menu. Make sure to choose `gh-pages` branch.
 

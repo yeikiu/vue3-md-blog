@@ -45,7 +45,7 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: my-data_artifact
+          name: data_artifact
           path: data
 
       - run: |
