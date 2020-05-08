@@ -2,7 +2,7 @@
 #### February 11, 2020
 
 
-> This tutorial assumes you have the following stuff already:
+> This tutorial assumes you have the following setup ready:
 >
 > - An active GitHub account
 >
