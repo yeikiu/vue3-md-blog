@@ -6,11 +6,13 @@
         <router-view></router-view>
       </transition>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script language="ts">
 import navBar from "@/components/navBar.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   metaInfo: {
@@ -23,7 +25,8 @@ export default {
     ]
   },
   components: {
-    navBar
+    navBar,
+    Footer
   }
 };
 </script>
