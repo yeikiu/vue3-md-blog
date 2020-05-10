@@ -33,7 +33,7 @@ jobs:
         with:
           ref: gh-pages
 
-      - run: rm -r data
+      - run: rm -rf data
 
       - uses: actions/download-artifact@v2
         with:
