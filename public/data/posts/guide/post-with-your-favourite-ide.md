@@ -27,4 +27,4 @@ Beginning of your new awesome blog post...
 
 Once your post is ready to be seen by the 🌎, simply push your changes to your repo and let `GitHub Actions` do its thing.
 
-_Note:_ It might take a while for the changes to propagate through GitHub and your browser´s cache, use incognito for a fresh check!
+_Note:_ It might take a while for the changes to propagate through GitHub and your browser´s cache, use incognito for a fresh check.
