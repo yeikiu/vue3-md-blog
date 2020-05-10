@@ -45,7 +45,7 @@ jobs:
           git config --local user.name "Posts Hook"
           git add data
           git commit -m "[CI:deploy] deploy_data job"
-
+          
       - uses: ad-m/github-push-action@master
         with:
           branch: gh-pages
