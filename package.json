@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "Minimal VueJS + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -46,12 +46,14 @@
   },
   "resolutions": {
     "minimist": "^1.2.3",
-    "acorn": "^7.1.1"
+    "acorn": "^7.1.1",
+    "yargs-parser": "^13.1.2",
+    "http-proxy": "^1.18.1"
   },
   "scripts": {
-    "serve": "                           vue-cli-service serve",
-    "build": "       yarn build:index && vue-cli-service build",
-    "lint": "                            vue-cli-service lint",
-    "build:index": " node scripts/generate_index.js"
+    "serve": "vue-cli-service serve",
+    "build": "yarn build:index && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:index": "node scripts/generate_index.js"
   }
 }
