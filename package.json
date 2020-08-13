@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Minimal VueJS + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -50,7 +50,8 @@
     "yargs-parser": "^13.1.2",
     "http-proxy": "^1.18.1",
     "lodash": "^4.17.19",
-    "elliptic": "^6.5.3"
+    "elliptic": "^6.5.3",
+    "serialize-javascript": "^3.1.0"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
