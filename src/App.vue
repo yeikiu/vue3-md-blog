@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <div class="container pt-5 mx-lg-5 px-lg-5">
+    <div class="container pt-5 mx-auto px-lg-5">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
