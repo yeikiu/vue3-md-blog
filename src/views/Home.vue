@@ -1,6 +1,4 @@
 <template>
-    <NavBar></NavBar>
-
     <BlogHeader class="markddown-body mb-5"></BlogHeader>
 
     <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
@@ -39,7 +37,6 @@
 import { defineComponent, reactive, toRefs, computed } from 'vue'
 import router from '@/router'
 import axios from 'redaxios'
-import NavBar from '@/components/NavBar.vue'
 import BlogHeader from '@/components/BlogHeader.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
@@ -49,7 +46,6 @@ const PAGE_SIZE = 2
 export default defineComponent({
   name: 'Home',
   components: {
-    NavBar,
     BlogHeader
   },
   props: {

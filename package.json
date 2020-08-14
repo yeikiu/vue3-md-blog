@@ -1,11 +1,18 @@
 {
-  "name": "vbb3",
-  "version": "0.1.0",
+  "name": "vue-base-blog",
+  "version": "2.0.0",
+  "description": "Minimal VueJS + Markdown blog engine",
+  "author": "JQ (https://github.com/yeikiu)",
+  "keywords": [
+    "vuejs",
+    "markdown",
+    "github"
+  ],
+  "license": "CC0-1.0",
   "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeikiu/vue-base-blog.git"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
@@ -56,5 +63,10 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  }
 }
