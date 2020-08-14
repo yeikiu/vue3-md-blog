@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - public/data/**/*
+      - blog_store/data/**/*
 
 jobs:
 
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: data_artifact
-          path: public/data
+          path: blog_store/data
   
   deploy_data:
     runs-on: ubuntu-18.04
