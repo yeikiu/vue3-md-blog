@@ -1,7 +1,7 @@
 <template>
   <div class="post my-2 py-2">
     <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
-    <span v-html="postHtml" />
+    <span class="markdown-body" v-html="postHtml" />
     <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
   </div>
 </template>

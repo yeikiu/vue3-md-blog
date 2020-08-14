@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container text-center">
+  <div id="app" class="container">
     <Suspense>
       <router-view />
     </Suspense>
@@ -10,6 +10,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Footer from '@/components/Footer.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'github-markdown-css/github-markdown.css'
 
 export default defineComponent({
   name: 'App',
@@ -18,7 +20,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style>
-
-</style>
