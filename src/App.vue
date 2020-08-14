@@ -1,22 +1,28 @@
 <template>
   <div id="app" class="container">
     <Suspense>
-      <router-view />
+      <template #default>
+        <router-view />
+        <Footer></Footer>
+      </template>
+      <template #fallback>
+        <Spinner />
+      </template>
     </Suspense>
-    <Footer></Footer>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import Spinner from '@/components/Spinner.vue'
 import Footer from '@/components/Footer.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'github-markdown-css/github-markdown.css'
 
-export default defineComponent({
+export default {
   name: 'App',
   components: {
+    Spinner,
     Footer
   }
-})
+}
 </script>
