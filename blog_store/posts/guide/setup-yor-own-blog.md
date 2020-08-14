@@ -15,7 +15,7 @@ Login into your GitHub account and start a new repo.
 
 - Use `vue-base-blog` [as a template](https://github.com/yeikiu/vue-base-blog/generate)
 
-![Public Dir Structure](data/assets/step1-github.png)
+![Public Dir Structure](blog_store/assets/step1-github.png)
 
 
 ## 2.- Configure your `.env` file
