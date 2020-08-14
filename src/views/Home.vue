@@ -1,4 +1,6 @@
 <template>
+
+    <!-- HEADER -->
     <BlogHeader class="markddown-body mb-5"></BlogHeader>
 
     <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
@@ -41,7 +43,7 @@ import BlogHeader from '@/components/BlogHeader.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 
-const PAGE_SIZE = 2
+const PAGE_SIZE = 4
 
 export default defineComponent({
   name: 'Home',

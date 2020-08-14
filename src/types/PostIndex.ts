@@ -6,4 +6,3 @@ export type PostIndex = {
     title: string;
     url: string;
   }
-  
