@@ -1,13 +1,11 @@
 <template>
     <NavBar></NavBar>
+
     <BlogHeader class="markddown-body mb-5"></BlogHeader>
+
     <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-    <div
-      class="text-right mb-5 mx-lg-4 px-lg-4"
-      v-for="entry in activePosts"
-      :key="entry.id"
-    >
+    <div class="text-right mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
       <!-- TITLE -->
       <h3 class="text-left m-0 p-0 link" @click="router.push(`/${entry.section}/${entry.id}`)">
         {{entry.title}}
@@ -15,11 +13,7 @@
 
       <!-- POST DETAIL -->
       <p class="text-muted m-0 p-0">{{entry.date}}</p>
-      <h6
-        v-if="!section"
-        class="m-0 p-0 link"
-        @click="router.push(`/${entry.section}`)"
-      >
+      <h6 v-if="!section" class="m-0 p-0 link" @click="router.push(`/${entry.section}`)">
         #{{entry.section}}
       </h6>
 
