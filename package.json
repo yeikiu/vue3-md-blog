@@ -1,7 +1,7 @@
 {
   "name": "vue-base-blog",
-  "version": "1.4.7",
-  "description": "Minimal VueJS + Markdown blog engine",
+  "version": "2.0.0",
+  "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
     "vuejs",
@@ -15,48 +15,60 @@
     "url": "https://github.com/yeikiu/vue-base-blog.git"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "bootstrap-vue": "^2.4.0",
-    "dotenv": "^8.2.0",
-    "fork-me-on-github-vue": "^1.0.7",
-    "github-markdown-css": "^3.0.1",
-    "markdown-it": "^10.0.0",
+    "bootstrap": "^4.5.2",
+    "core-js": "^3.6.5",
+    "github-markdown-css": "^4.0.0",
+    "markdown-it": "^11.0.0",
     "markdown-it-emoji": "^1.4.0",
-    "remove-markdown": "^0.3.0",
-    "setup-gh-badges": "^1.3.31",
-    "vue": "^2.6.11",
-    "vue-meta": "^2.3.3",
-    "vue-router": "^3.1.5",
-    "vuex": "^3.1.2"
+    "moment": "^2.27.0",
+    "redaxios": "^0.3.0",
+    "vue": "^3.0.0-0",
+    "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.2.2",
-    "@vue/cli-plugin-eslint": "^4.2.2",
-    "@vue/cli-service": "^4.2.2",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.1.2",
-    "jsonfile": "^5.0.0",
-    "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.2",
-    "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.6.11"
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0-0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "remove-markdown": "^0.3.0",
+    "typescript": "~3.9.3"
   },
-  "resolutions": {
-    "minimist": "^1.2.3",
-    "acorn": "^7.1.1",
-    "yargs-parser": "^13.1.2",
-    "http-proxy": "^1.18.1",
-    "lodash": "^4.17.19",
-    "elliptic": "^6.5.3",
-    "serialize-javascript": "^3.1.0"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "@vue/standard",
+      "@vue/typescript/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {}
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "yarn build:index && vue-cli-service build",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:index": "node scripts/generate_index.js"
+    "build:index": "node ./scripts/generate_index.js"
   }
 }

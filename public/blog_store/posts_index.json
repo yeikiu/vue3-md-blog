@@ -1,0 +1,58 @@
+[
+    {
+        "id": "setup-yor-own-blog",
+        "section": "guide",
+        "date": "February 11, 2020",
+        "title": "Setup your own Blog in under 5 minutes",
+        "description": "> This tutorial assumes you have the following setup ready:",
+        "url": "blog_store/posts/guide/setup-yor-own-blog.md"
+    },
+    {
+        "id": "post-with-your-favourite-ide",
+        "section": "guide",
+        "date": "February 10, 2020",
+        "title": "Write and post with your favourite IDE 🕶",
+        "description": "> This tutorial is based on VSCode but any IDE with an integrated shell will do the job.",
+        "url": "blog_store/posts/guide/post-with-your-favourite-ide.md"
+    },
+    {
+        "id": "embed-youtube-video",
+        "section": "features",
+        "date": "January 24, 2020",
+        "title": "Testing embeded YouTube with Markdown",
+        "description": "This would be a first paragraph with some video introduction. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "url": "blog_store/posts/features/embed-youtube-video.md"
+    },
+    {
+        "id": "inline-bootstrap-html",
+        "section": "features",
+        "date": "January 20, 2020",
+        "title": "Use inline bootstrap-ready html",
+        "description": "Another advantage of runtime template compilation is that we can make good use of bootstrap predefined",
+        "url": "blog_store/posts/features/inline-bootstrap-html.md"
+    },
+    {
+        "id": "markdown-posts",
+        "section": "features",
+        "date": "January 7, 2020",
+        "title": "Posts are compiled with markdown-it",
+        "description": "> You can simply edit your markdown files online and your blog will reflect the changes shortly after.",
+        "url": "blog_store/posts/features/markdown-posts.md"
+    },
+    {
+        "id": "customise-your-blog",
+        "section": "guide",
+        "date": "February 9, 2019",
+        "title": "Customise your blog",
+        "description": "TODO WIP",
+        "url": "blog_store/posts/guide/customise-your-blog.md"
+    },
+    {
+        "id": "use-a-custom-domain-name",
+        "section": "guide",
+        "date": "February 9, 2019",
+        "title": "Use a custom domain name",
+        "description": "TODO WIP",
+        "url": "blog_store/posts/guide/use-a-custom-domain-name.md"
+    }
+]
