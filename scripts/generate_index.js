@@ -4,7 +4,7 @@ const removeMd = require('remove-markdown');
 const jsonfile = require('jsonfile');
 const moment = require('moment');
 
-const dataPath = path.resolve('public/data');
+const dataPath = path.resolve('public/blog_store');
 const postsPath = path.join(dataPath, 'posts');
 
 // Get categories
@@ -32,7 +32,7 @@ for (const categoryFolder of categoryFolders) {
             date,
             title,
             description,
-            url: `data/posts/${categoryFolder}/${postFile}`,
+            url: `blog_store/posts/${categoryFolder}/${postFile}`,
         });
     }
 }

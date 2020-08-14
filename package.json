@@ -1,7 +1,7 @@
 {
   "name": "vue-base-blog",
   "version": "2.0.0",
-  "description": "Minimal VueJS + Markdown blog engine",
+  "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
     "vuejs",
@@ -42,6 +42,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0-0",
+    "remove-markdown": "^0.3.0",
     "typescript": "~3.9.3"
   },
   "eslintConfig": {
@@ -67,6 +68,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:index": "node ./scripts/generate_index.js"
   }
 }

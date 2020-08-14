@@ -22,7 +22,7 @@
     </div>
 
     <!-- PAGINATION -->
-    <ul v-if="endPage > startPage" class="pagination justify-content-center">
+    <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5">
       <li class="page-item" v-bind:class="currentPage == startPage ? 'active':''" @click="currentPage = startPage">
         <a class="page-link"> {{startPage}}</a>
       </li>

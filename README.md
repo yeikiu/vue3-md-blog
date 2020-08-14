@@ -8,7 +8,7 @@ Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub P
 
 [https://yeikiu.github.io/vue-base-blog](https://yeikiu.github.io/vue-base-blog)
 
-![vbb_screenshot](public/data/assets/vbb_screenshot.png)
+![vbb_screenshot](public/blog_store/assets/vbb_screenshot.png)
 
 
 ## ⚙️ Main Features:
