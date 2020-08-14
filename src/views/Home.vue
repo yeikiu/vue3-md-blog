@@ -7,13 +7,13 @@
 
     <div class="text-right mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
       <!-- TITLE -->
-      <h3 class="text-left m-0 p-0 link" @click="router.push(`/${entry.section}/${entry.id}`)">
+      <h3 class="text-left m-0 p-0 link" @click="router.push(`/${entry.section}/${entry.id}`)" style="cursor: pointer;">
         {{entry.title}}
       </h3>
 
-      <!-- POST DETAIL -->
+      <!-- POST DETAILS -->
       <p class="text-muted m-0 p-0">{{entry.date}}</p>
-      <h6 v-if="!section" class="m-0 p-0 link" @click="router.push(`/${entry.section}`)">
+      <h6 v-if="!section" class="m-0 p-0 link" @click="router.push(`/${entry.section}`)" style="cursor: pointer;">
         #{{entry.section}}
       </h6>
 
@@ -22,7 +22,7 @@
     </div>
 
     <!-- PAGINATION -->
-    <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5">
+    <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
       <li class="page-item" v-bind:class="currentPage == startPage ? 'active':''" @click="currentPage = startPage">
         <a class="page-link"> {{startPage}}</a>
       </li>
