@@ -6,14 +6,14 @@
         <Footer></Footer>
       </template>
       <template #fallback>
-        <Spinner />
+        <Loader />
       </template>
     </Suspense>
   </div>
 </template>
 
 <script lang="ts">
-import Spinner from '@/components/Spinner.vue'
+import Loader from '@/components/Loader.vue'
 import Footer from '@/components/Footer.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'github-markdown-css/github-markdown.css'
@@ -21,7 +21,7 @@ import 'github-markdown-css/github-markdown.css'
 export default {
   name: 'App',
   components: {
-    Spinner,
+    Loader,
     Footer
   }
 }
