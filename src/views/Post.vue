@@ -1,70 +1,39 @@
-<script>
-import VueWithCompiler from "vue/dist/vue.esm";
-import axios from "axios";
-import MarkdownIt from "markdown-it";
-import emoji from "markdown-it-emoji";
-import spinner from "@/components/spinner.md"
+<template>
+  <div class="post my-2 py-2">
+    <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
+    <span v-html="postHtml" />
+    <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
+  </div>
+</template>
+<script lang='ts'>
+import { defineComponent } from 'vue'
+import router from '@/router'
+import axios from 'redaxios'
+import MarkdownIt from 'markdown-it'
+import emoji from 'markdown-it-emoji'
+import { PostIndex } from '@/types/PostIndex'
 
-const markDownIt = new MarkdownIt({ html: true }).use(emoji);
+const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
-export default {
-  name: "post",
-  props: ["section", "id"],
-  metaInfo ({ section, id }) {
+export default defineComponent({
+  name: 'post',
+  props: {
+    section: String,
+    id: String
+  },
+  async setup (props) {
+    const hasHistory = () => window.history?.length > 2
+    const { data } = await axios.get('blog_store/posts_index.json')
+    const postsCollection: PostIndex[] = data
+    const { url } = postsCollection.find(({ id }) => id === props.id) || { url: '' }
+    const { data: markDownSource } = await axios.get(url)
+    const postHtml = markDownIt.render(markDownSource)
+
     return {
-      title: `${section} | ${id.replace(/-/g,' ')}`
+      hasHistory,
+      postHtml,
+      router
     }
-  },
-
-  data() {
-    return {
-      templateRender: null
-    };
-  },
-
-  render(createElement) {
-    if (this.templateRender) {
-      return this.templateRender();
-    } else {
-      return createElement(spinner);
-    }
-  },
-
-  beforeRouteUpdate() {
-    document.location.reload()
-  },
-
-  methods: {
-    hasHistory () { return window.history?.length > 2 }
-  },
-
-  created() {
-    const compilePost = async () => {
-      // Fetch current post md
-      const url = this.$store.state.postsIndex.filter(
-        p => p.id === this.id
-      )[0].url;
-      const md = (await axios.get(url)).data;
-
-      // MarkDown to HTML
-      const html = markDownIt.render(md);
-
-      const compiled = VueWithCompiler.compile(`
-        <div class="post my-2 py-2">
-          <button type="button" @click="hasHistory() ? $router.go(-1) : $router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
-          <div class="markdown-body">
-            ${html}
-          </div>
-          <button type="button" @click="hasHistory() ? $router.go(-1) : $router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
-        </div>
-      `);
-      this.templateRender = compiled.render;
-      this.$options.staticRenderFns = [];
-      for (const staticRenderFunction of compiled.staticRenderFns) {
-        this.$options.staticRenderFns.push(staticRenderFunction);
-      }
-    };
-    compilePost();
   }
-};
+})
 </script>

@@ -1,50 +1,52 @@
-  <template>
-  <div>
-    <b-navbar type="dark" toggleable="sm" variant class="nav-bar pr-sm-5" fixed="top">
-      <b-navbar-brand href="#" @click="$router.push({name: 'home'})">vue-base-blog</b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto mr-sm-5 pr-sm-5">
-          <b-nav-item-dropdown text="Section" right>
-            <b-dropdown-item @click="$router.push({path: `/`})" href="#">All</b-dropdown-item>
-            <b-dropdown-item
-              class="text-capitalize"
-              v-for="(section, index) in sections"
-              :key="index"
-              @click="$router.push({path: `/${section}`})"
-              href="#"
-            >{{section}}</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-navbar-nav>
-      </b-collapse>
-
-      <Ribbon class="d-none d-sm-block" v-bind="ribbonOptions"></Ribbon>
-    </b-navbar>
-  </div>
+<template>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script language="ts">
-export default {
-  name: "nav-bar",
-  data() {
+import { defineComponent } from 'vue'
+import router from '@/router'
+
+export default defineComponent({
+  name: 'NavBar',
+  props: {
+    section: String
+  },
+  setup () {
     return {
-      sections: Array.from(new Set(this.$store.state.postsIndex
-        .map(post => post.section))),
-      ribbonOptions: {
-        text: "Fork me on GitHub!",
-        linkUrl: "https://github.com/yeikiu/vue-base-blog",
-        border: false
-      }
-    };
+      router
+    }
   }
-};
+})
 </script>
 
 <style>
-/* Custom SCSS here */
 
-.github-ribbon a {
-  background-color: #404d61 !important;
-}
 </style>
