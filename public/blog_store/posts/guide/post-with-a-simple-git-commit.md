@@ -1,4 +1,4 @@
-# Write and post with your favourite IDE 🕶
+# Post with a simple GIT commit 🕶
 #### February 10, 2020
 
 
