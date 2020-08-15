@@ -1,18 +1,8 @@
 <template>
     <div class="text-center my-5">
-        <p class="text-uppercase display-3" @click="router.push('/')">vue-base-blog</p>
-        <img alt="Vue logo" src="@/assets/logo.png" @click="router.push('/')" />
+      <router-link :to="{ path:'/'}" class="text-reset">
+        <p class="text-uppercase display-3">vue-base-blog</p>
+        <img alt="Vue logo" src="@/assets/logo.png" />
+      </router-link>
     </div>
 </template>
-
-<script lang="ts">
-import router from '@/router'
-
-export default {
-  setup () {
-    return {
-      router
-    }
-  }
-}
-</script>

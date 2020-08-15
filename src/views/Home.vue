@@ -5,21 +5,24 @@
 
     <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-    <div class="text-right mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
+    <div class="mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
+
       <!-- TITLE -->
-      <a :href="`#/${entry.section}/${entry.id}`" class="text-reset">
+      <router-link :to="{ path:`${entry.section}/${entry.id}` }" class="text-reset">
         <h3 class="text-left m-0 p-0">
           {{entry.title}}
         </h3>
-      </a>
+      </router-link>
 
       <!-- POST DETAILS -->
-      <p class="text-muted m-0 p-0">{{entry.date}}</p>
-      <a :href="`#/${entry.section}`" class="text-reset">
-        <h6 v-if="!section" class="m-0 p-0 link">
-          #{{entry.section}}
-        </h6>
-      </a>
+      <p class="text-right text-muted m-0 p-0">{{entry.date}}</p>
+      <router-link
+        v-if="!section"
+        class="m-0 p-0 text-right text-reset"
+        :to="{ path:`${entry.section}` }"
+      >
+        <h6>#{{entry.section}}</h6>
+      </router-link>
 
       <!-- POST INTRO -->
       <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
