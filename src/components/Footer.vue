@@ -7,11 +7,13 @@
 
 <script language="ts">
 import { version } from '@/../package.json'
+import router from '@/router'
 
 export default {
-  data () {
+  setup () {
     return {
-      version
+      version,
+      router
     }
   }
 }
