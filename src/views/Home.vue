@@ -19,7 +19,7 @@
       <router-link
         v-if="!section"
         class="m-0 p-0 text-right text-reset"
-        :to="{ path:`${entry.section}` }"
+        :to="{ path:`/${entry.section}` }"
       >
         <h6>#{{entry.section}}</h6>
       </router-link>
