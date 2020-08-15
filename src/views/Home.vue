@@ -7,15 +7,19 @@
 
     <div class="text-right mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
       <!-- TITLE -->
-      <h3 class="text-left m-0 p-0 link" @click="router.push(`/${entry.section}/${entry.id}`)" style="cursor: pointer;">
-        {{entry.title}}
-      </h3>
+      <a :href="`#/${entry.section}/${entry.id}`" class="text-reset">
+        <h3 class="text-left m-0 p-0">
+          {{entry.title}}
+        </h3>
+      </a>
 
       <!-- POST DETAILS -->
       <p class="text-muted m-0 p-0">{{entry.date}}</p>
-      <h6 v-if="!section" class="m-0 p-0 link" @click="router.push(`/${entry.section}`)" style="cursor: pointer;">
-        #{{entry.section}}
-      </h6>
+      <a :href="`#/${entry.section}`" class="text-reset">
+        <h6 v-if="!section" class="m-0 p-0 link">
+          #{{entry.section}}
+        </h6>
+      </a>
 
       <!-- POST INTRO -->
       <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
@@ -37,7 +41,6 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed } from 'vue'
-import router from '@/router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import paginate from '@/utils/paginate'
@@ -53,7 +56,7 @@ export default defineComponent({
   props: {
     section: String
   },
-  async setup () {
+  async setup (props) {
     const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
 
@@ -71,13 +74,13 @@ export default defineComponent({
       const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
       state.midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
       state.endPage = endPage
-      return postsCollection.slice(startIndex, endIndex + 1)
+      const postsSlice = postsCollection.slice(startIndex, endIndex + 1)
+      return props.section ? postsSlice.filter(({ section }) => section === props.section) : postsSlice
     })
 
     return {
       ...toRefs(state),
-      activePosts,
-      router
+      activePosts
     }
   }
 })
