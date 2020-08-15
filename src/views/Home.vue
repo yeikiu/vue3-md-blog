@@ -15,14 +15,10 @@
       </router-link>
 
       <!-- POST DETAILS -->
-      <p class="text-right text-muted m-0 p-0">{{entry.date}}</p>
-      <router-link
-        v-if="!section"
-        class="m-0 p-0 text-right text-reset"
-        :to="{ path:`/${entry.section}/` }"
-      >
-        <h6>#{{entry.section}}</h6>
-      </router-link>
+      <p class="text-muted text-right m-0 p-0">{{entry.date}}</p>
+      <h6 v-if="!section" class="m-0 p-0 text-right" @click="router.push(`/${entry.section}`)" style="cursor: pointer;">
+        #{{entry.section}}
+      </h6>
 
       <!-- POST INTRO -->
       <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
@@ -48,6 +44,7 @@ import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
+import router from '@/router'
 
 const PAGE_SIZE = 4
 
@@ -83,7 +80,8 @@ export default defineComponent({
 
     return {
       ...toRefs(state),
-      activePosts
+      activePosts,
+      router
     }
   }
 })
