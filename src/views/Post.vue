@@ -23,7 +23,7 @@ export default defineComponent({
   },
   async setup (props) {
     const hasHistory = () => window.history?.length > 2
-    const { data } = await axios.get('blog_store/posts_index.json')
+    const { data } = await axios.get('/blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
     const { url } = postsCollection.find(({ id }) => id === props.id) || { url: '' }
     const { data: markDownSource } = await axios.get(url)
