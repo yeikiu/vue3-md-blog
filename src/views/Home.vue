@@ -16,7 +16,7 @@
 
       <!-- POST DETAILS -->
       <p class="text-muted m-0 p-0 text-right">{{entry.date}}</p>
-      <h6 v-if="!section" class="m-0 p-0 text-right" @click="() => { router.push(`/${entry.section}`); location.reload(); }" style="cursor: pointer;">
+      <h6 v-if="!section" class="m-0 p-0 text-right" @click="toSection(entry.section)" style="cursor: pointer;">
         #{{entry.section}}
       </h6>
 
@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, computed } from 'vue'
+import { defineComponent, reactive, toRefs, computed, onMounted, ref } from 'vue'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import paginate from '@/utils/paginate'
@@ -57,9 +57,16 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
+    const toSection = ref()
+    onMounted(() => {
+      toSection.value = async (section: string) => {
+        await router.push(`/${section}`)
+        location.reload()
+      }
+    })
+
     const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
-
     const state = reactive({
       currentPage: 1,
       startPage: 1,
@@ -81,7 +88,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       activePosts,
-      router
+      toSection
     }
   }
 })

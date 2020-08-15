@@ -7,14 +7,19 @@
 
 <script language="ts">
 import router from '@/router'
+import { onMounted, ref } from 'vue'
 
 export default {
   setup () {
-    return {
-      toHome: async () => {
+    const toHome = ref()
+    onMounted(() => {
+      toHome.value = async () => {
         await router.push('/')
-        window.location.reload()
+        location.reload()
       }
+    })
+    return {
+      toHome
     }
   }
 }

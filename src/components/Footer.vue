@@ -8,15 +8,20 @@
 <script language="ts">
 import { version } from '@/../package.json'
 import router from '@/router'
+import { onMounted, ref } from 'vue'
 
 export default {
   setup () {
+    const toHome = ref()
+    onMounted(() => {
+      toHome.value = async () => {
+        await router.push('/')
+        location.reload()
+      }
+    })
     return {
       version,
-      toHome: async () => {
-        await router.push('/')
-        window.location.reload()
-      }
+      toHome
     }
   }
 }
