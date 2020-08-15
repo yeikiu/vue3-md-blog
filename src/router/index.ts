@@ -4,12 +4,7 @@ import Post from '../views/Post.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'home',
-    component: Home,
-    props: false
-  }, {
-    path: '/:section',
+    path: '/:section?',
     name: 'section',
     component: Home,
     props: true

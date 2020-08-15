@@ -16,7 +16,7 @@
 
       <!-- POST DETAILS -->
       <p class="text-muted text-right m-0 p-0">{{entry.date}}</p>
-      <h6 v-if="!section" class="m-0 p-0 text-right" @click="router.push(`/${entry.section}`)" style="cursor: pointer;">
+      <h6 v-if="!section" class="m-0 p-0 text-right" @click="router.replace(`/${entry.section}`)" style="cursor: pointer;">
         #{{entry.section}}
       </h6>
 
