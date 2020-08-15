@@ -8,7 +8,7 @@
     <div class="mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
 
       <!-- TITLE -->
-      <router-link :to="{ path:`${entry.section}/${entry.id}` }" class="text-reset">
+      <router-link :to="{ path:`/${entry.section}/${entry.id}` }" class="text-reset">
         <h3 class="text-left m-0 p-0">
           {{entry.title}}
         </h3>
