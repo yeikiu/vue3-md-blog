@@ -13,7 +13,7 @@ export default {
     return {
       toHome: async () => {
         await router.push('/')
-        location.reload()
+        window.location.reload()
       }
     }
   }
