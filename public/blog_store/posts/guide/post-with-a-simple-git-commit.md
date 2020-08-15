@@ -1,5 +1,5 @@
 # Post with a simple GIT commit 🕶
-#### February 10, 2020
+#### February 09, 2020
 
 
 > This tutorial is based on [VSCode](https://code.visualstudio.com/) but any IDE with an integrated shell will do the job.
