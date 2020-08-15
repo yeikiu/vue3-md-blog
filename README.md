@@ -2,7 +2,7 @@
 
 # vue-base-blog | Minimal config blog engine
 
-Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub Pages](https://guides.github.com/features/pages/)
+Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pages](https://guides.github.com/features/pages/)
 
 ## 👀 Demo
 
@@ -12,6 +12,8 @@ Deploy a fully functional blog made with [VueJS](https://vuejs.org/) + [GitHub P
 
 
 ## ⚙️ Main Features:
+
+* Sync posts with [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions)
 
 * Posts are compiled from Markdown to html in runtime
 
@@ -36,7 +38,7 @@ Read the [full guide](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-o
 
 ### Next Steps
 
-- [Write and post with your favourite IDE 🕶](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-your-favourite-ide)
+- [Post and update posts with a simple GIT commit 🕶](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-a-simple-git-commit)
 
 - Check the [features section](https://yeikiu.github.io/vue-base-blog/#/features) to see demos of all the cool stuff you can do in your posts!
 
