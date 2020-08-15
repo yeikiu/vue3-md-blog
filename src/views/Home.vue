@@ -60,7 +60,7 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
-    const { data } = await axios.get('/blog_store/posts_index.json')
+    const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
 
     const state = reactive({
