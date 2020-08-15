@@ -4,8 +4,13 @@ import Post from '../views/Post.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/:section?',
+    path: '/',
     name: 'home',
+    component: Home,
+    props: false
+  }, {
+    path: '/:section',
+    name: 'section',
     component: Home,
     props: true
   }, {
@@ -17,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(process.env.NODE_ENV === 'production' && process.env.DIST_PUBLIC_PATH ? `/${process.env.DIST_PUBLIC_PATH}/` : '/'),
   routes
 })
 
