@@ -12,7 +12,7 @@ This is me, writing this very line right now
 There is a few interesting things to notice in the image, take a second look. Basically every time you want to create a new post
 you will need to create a `new-post-file.md` file following a few simple rules:
 
-- File must be located under `public/data/posts/<category-name>/` folder
+- File must be located under `public/blog_store/posts/<category-name>/` folder
 
 - You can create new folders in order to create new categories
 
