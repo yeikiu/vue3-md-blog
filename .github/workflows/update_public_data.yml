@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - blog_store/data/**/*
+      - public/blog_store/**/*
 
 jobs:
 
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: data_artifact
-          path: blog_store/data
+          path: public/blog_store
   
   deploy_data:
     runs-on: ubuntu-18.04
@@ -38,12 +38,12 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: data_artifact
-          path: data
+          path: blog_store
 
       - run: |
           git config --local user.email "posts_hook@github.com"
           git config --local user.name "Posts Hook"
-          git add data
+          git add blog_store
           git commit -m "[CI:deploy] deploy_data job"
           
       - uses: ad-m/github-push-action@master
