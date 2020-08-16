@@ -1,4 +1,5 @@
 <template>
+   <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
 
     <!-- HEADER -->
     <BlogHeader class="markddown-body mb-5"></BlogHeader>
@@ -42,6 +43,7 @@
 import { defineComponent, reactive, toRefs, computed, onMounted, ref } from 'vue'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
+import PatchMeta from '@/components/PatchMeta.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 import router from '@/router'
@@ -49,8 +51,8 @@ import router from '@/router'
 const PAGE_SIZE = 4
 
 export default defineComponent({
-  name: 'Home',
   components: {
+    PatchMeta,
     BlogHeader
   },
   props: {

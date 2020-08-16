@@ -13,11 +13,11 @@ import axios from 'redaxios'
 import MarkdownIt from 'markdown-it'
 import emoji from 'markdown-it-emoji'
 import { PostIndex } from '@/types/PostIndex'
+import patchMeta from '@/utils/patch_meta'
 
 const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
 export default defineComponent({
-  name: 'post',
   props: {
     section: String,
     id: String
@@ -32,6 +32,8 @@ export default defineComponent({
     const { url } = postsCollection.find(({ id }) => id === props.id) || { url: '' }
     const { data: markDownSource } = await axios.get(url)
     const postHtml = markDownIt.render(markDownSource)
+    const titleEl = markDownSource.split('#')
+    if (titleEl[1]) patchMeta({ title: titleEl[1].trim() })
 
     return {
       hasHistory,

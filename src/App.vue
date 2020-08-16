@@ -1,4 +1,5 @@
 <template>
+  <PatchMeta />
   <div id="app" class="container">
     <Suspense>
       <template #default>
@@ -15,14 +16,15 @@
 <script lang="ts">
 import Loader from '@/components/Loader.vue'
 import Footer from '@/components/Footer.vue'
+import PatchMeta from '@/components/PatchMeta.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'github-markdown-css/github-markdown.css'
 
 export default {
-  name: 'App',
   components: {
     Loader,
-    Footer
+    Footer,
+    PatchMeta
   }
 }
 </script>

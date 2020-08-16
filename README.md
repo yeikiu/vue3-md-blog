@@ -21,6 +21,8 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 
 * Support for GitHub Pages CSS and emojis
 
+* Dynamic META tags
+
 
 ## 🎬 Quick start
 
