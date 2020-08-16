@@ -1,26 +1,21 @@
 <template>
     <div class="text-center my-5">
-      <p class="text-uppercase display-3" @click="toHome" style="cursor: pointer;">vue-base-blog</p>
-      <img alt="Vue logo" src="@/assets/logo.png" @click="toHome" style="cursor: pointer;" />
+      <a href="/" class="text-reset">
+        <p class="text-uppercase display-3" style="cursor: pointer;">vue-base-blog</p>
+        <img alt="Vue logo" src="@/assets/logo.png" style="cursor: pointer;" />
+       </a>
     </div>
 </template>
 
 <script language="ts">
-import router from '@/router'
-import { onMounted, ref } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 
 export default {
   setup () {
-    const toHome = ref()
-    onMounted(() => {
-      toHome.value = async () => {
-        await router.push('/')
-        location.reload()
-      }
+    onBeforeRouteUpdate(async (from, to, next) => {
+      await next()
+      location.reload()
     })
-    return {
-      toHome
-    }
   }
 }
 </script>
