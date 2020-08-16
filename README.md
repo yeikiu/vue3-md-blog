@@ -17,7 +17,7 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 
 * Posts are compiled from Markdown to html in runtime
 
-* Use [inlined html with bootstrap](https://yeikiu.github.io/vue-base-blog/#/features/inline-bootstrap-html) classes within your markdown files
+* Use [inlined html with bootstrap](#/features/inline-bootstrap-html) classes within your markdown files
 
 * Support for GitHub Pages CSS and emojis
 
@@ -33,14 +33,14 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 ### Deploy your own blog
 
 Like what you see?
-Read the [full guide](https://yeikiu.github.io/vue-base-blog/#/guide/setup-yor-own-blog) and deploy your own blog in under 5 minutes!
+Read the [full guide](#/guide/setup-yor-own-blog) and deploy your own blog in under 5 minutes!
 
 
 ### Next Steps
 
-- [Post and update posts with a simple GIT commit 🕶](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-a-simple-git-commit)
+- [Post and update posts with a simple GIT commit 🕶](#/guide/post-with-a-simple-git-commit)
 
-- Check the [features section](https://yeikiu.github.io/vue-base-blog/#/features) to see demos of all the cool stuff you can do in your posts!
+- Check the [features section](#/features) to see demos of all the cool stuff you can do in your posts!
 
 
 ### Credits

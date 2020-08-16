@@ -61,10 +61,10 @@ Your new blog should be available soon under https://<YOUR_GITHUB_USER>.github.i
 
 ## 5.- Next Steps
 
-- [Write and post with your favourite IDE 🕶](https://yeikiu.github.io/vue-base-blog/#/guide/post-with-a-simple-git-commit)
+- [Write and post with your favourite IDE 🕶](#/guide/post-with-a-simple-git-commit)
 
-- Check the [features](https://yeikiu.github.io/vue-base-blog/#/features) list to see all the cool stuff you can do in your posts!
+- Check the [features](#/features) list to see all the cool stuff you can do in your posts!
 
-- [🖌️ Customise your blog](https://yeikiu.github.io/vue-base-blog/#/guide/customise-your-blog) (TODO)
+- [🖌️ Customise your blog](#/guide/customise-your-blog) (TODO)
 
-- [Use a custom domain name](https://yeikiu.github.io/vue-base-blog/#/guide/use-a-custom-domain-name) (TODO)
+- [Use a custom domain name](#/guide/use-a-custom-domain-name) (TODO)
