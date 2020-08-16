@@ -61,7 +61,7 @@ Your new blog should be available soon under https://<YOUR_GITHUB_USER>.github.i
 
 ## 5.- Next Steps
 
-- [Write and post with your favourite IDE 🕶](#/guide/post-with-a-simple-git-commit)
+- [Post with a simple commit from your favourite IDE 🕶](#/guide/post-with-a-simple-git-commit)
 
 - Check the [features](#/features) list to see all the cool stuff you can do in your posts!
 
