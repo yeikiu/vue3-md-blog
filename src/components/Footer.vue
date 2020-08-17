@@ -6,15 +6,10 @@
 </template>
 
 <script language="ts">
-import { onBeforeRouteUpdate } from 'vue-router'
 import { version } from '@/../package.json'
 
 export default {
-  setup () {
-    onBeforeRouteUpdate(async (from, to, next) => {
-      await next()
-      location.reload()
-    })
+  data () {
     return {
       version
     }

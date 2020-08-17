@@ -7,15 +7,3 @@
     </div>
 </template>
 
-<script language="ts">
-import { onBeforeRouteUpdate } from 'vue-router'
-
-export default {
-  setup () {
-    onBeforeRouteUpdate(async (from, to, next) => {
-      await next()
-      location.reload()
-    })
-  }
-}
-</script>

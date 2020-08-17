@@ -23,7 +23,8 @@ export default defineComponent({
     id: String
   },
   async setup (props) {
-    onBeforeRouteUpdate(() => {
+    onBeforeRouteUpdate(async (from, to, next) => {
+      await next()
       location.reload()
     })
     const hasHistory = () => window.history?.length > 2
