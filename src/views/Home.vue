@@ -48,7 +48,7 @@ import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 import router from '@/router'
 
-const PAGE_SIZE = 4
+const { VUE_APP_POSTS_PER_PAGE = 5 } = process.env
 
 export default defineComponent({
   components: {
@@ -77,7 +77,7 @@ export default defineComponent({
     })
 
     const activePosts = computed(() => {
-      const { startPage, endPage, startIndex, endIndex } = paginate(postsCollection.length, state.currentPage, PAGE_SIZE)
+      const { startPage, endPage, startIndex, endIndex } = paginate(postsCollection.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
       state.startPage = startPage
       const prev = state.currentPage - 1 >= startPage ? state.currentPage - 1 : 0
       const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
