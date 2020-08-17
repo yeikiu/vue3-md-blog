@@ -17,9 +17,11 @@
 
       <!-- POST DETAILS -->
       <p class="text-muted m-0 p-0 text-right">{{entry.date}}</p>
-      <h6 v-if="!section" class="m-0 p-0 text-right" @click="toSection(entry.section)" style="cursor: pointer;">
-        #{{entry.section}}
-      </h6>
+      <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
+        <h6 class="m-0 p-0 text-right" style="cursor: pointer;">
+          #{{entry.section}}
+        </h6>
+      </a>
 
       <!-- POST INTRO -->
       <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
@@ -40,13 +42,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, computed, onMounted, ref } from 'vue'
+import { defineComponent, reactive, toRefs, computed } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import PatchMeta from '@/components/PatchMeta.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
-import router from '@/router'
 
 const { VUE_APP_POSTS_PER_PAGE = 5 } = process.env
 
@@ -59,12 +61,9 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
-    const toSection = ref()
-    onMounted(() => {
-      toSection.value = async (section: string) => {
-        await router.push(`/${section}`)
-        location.reload()
-      }
+    onBeforeRouteUpdate(async (from, to, next) => {
+      await next()
+      location.reload()
     })
 
     const { data } = await axios.get('blog_store/posts_index.json')
@@ -89,8 +88,7 @@ export default defineComponent({
 
     return {
       ...toRefs(state),
-      activePosts,
-      toSection
+      activePosts
     }
   }
 })
