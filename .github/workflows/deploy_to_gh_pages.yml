@@ -14,8 +14,7 @@ jobs:
       
       - run: |
           rm -rf .ci_badges
-          yarn add setup-gh-badges
-          npx sync-badges
+          npx setup-gh-badges
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .ci_badges
@@ -36,9 +35,9 @@ jobs:
       - uses: actions/setup-node@v1
       
       - run: |
-          yarn 
-          yarn build:index
-          yarn build
+          npm i 
+          npm run build:index
+          npm run build
       - uses: actions/upload-artifact@v2
         with:
           name: dist_artifact

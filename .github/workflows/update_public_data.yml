@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
       
       - run: |
-          yarn 
-          yarn build:index
+          npm i 
+          npm run build:index
 
       - uses: actions/upload-artifact@v2
         with:
