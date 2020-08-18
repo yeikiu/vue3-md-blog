@@ -27,9 +27,9 @@ Login into your GitHub account and start a new repo.
 
 ## 3.- Test locally
 
-Make sure your terminal is within your repos root folder and run `yarn install` or simply `yarn`.
+Make sure your terminal is within your repos root folder and run `npm i`.
 
-Run `yarn serve` and you should be able to access the site under [http://localhost:8080](http://localhost:8080)
+Then do `npm run serve` and you should be able to access the site under [http://localhost:8080](http://localhost:8080)
 
 
 ## 4.- Deploy with GitHub Actions
