@@ -28,8 +28,8 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 
     git clone https://github.com/yeikiu/vue-base-blog
     cd vue-base-blog
-    yarn
-    yarn serve
+    npm i
+    npm run serve
 
 
 ### Deploy your own blog
