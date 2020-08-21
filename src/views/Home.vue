@@ -1,12 +1,14 @@
 <template>
-   <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
+    <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
+    <NavBar :sections="allSections" />
 
     <!-- HEADER -->
     <BlogHeader class="markddown-body mb-5"></BlogHeader>
 
+    <hr v-if="section" />
     <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-    <div class="mb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
+    <div class="mb-5 pb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
 
       <!-- TITLE -->
       <router-link :to="{ path:`/${entry.section}/${entry.id}` }" class="text-reset">
@@ -47,6 +49,7 @@ import { onBeforeRouteUpdate } from 'vue-router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import PatchMeta from '@/components/PatchMeta.vue'
+import NavBar from '@/components/NavBar.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 
@@ -55,7 +58,8 @@ const { VUE_APP_POSTS_PER_PAGE = 5 } = process.env
 export default defineComponent({
   components: {
     PatchMeta,
-    BlogHeader
+    BlogHeader,
+    NavBar
   },
   props: {
     section: String
@@ -76,19 +80,20 @@ export default defineComponent({
     })
 
     const activePosts = computed(() => {
-      const { startPage, endPage, startIndex, endIndex } = paginate(postsCollection.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
+      const postsFiltered = props.section ? postsCollection.filter(({ section }) => section === props.section) : postsCollection
+      const { startPage, endPage, startIndex, endIndex } = paginate(postsFiltered.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
       state.startPage = startPage
       const prev = state.currentPage - 1 >= startPage ? state.currentPage - 1 : 0
       const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
       state.midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
       state.endPage = endPage
-      const postsSlice = postsCollection.slice(startIndex, endIndex + 1)
-      return props.section ? postsSlice.filter(({ section }) => section === props.section) : postsSlice
+      return postsFiltered.slice(startIndex, endIndex + 1)
     })
 
     return {
       ...toRefs(state),
-      activePosts
+      activePosts,
+      allSections: Array.from(new Set(postsCollection.map(({ section }) => section)))
     }
   }
 })

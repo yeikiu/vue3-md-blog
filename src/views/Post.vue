@@ -1,6 +1,6 @@
 <template>
+  <NavBar :sections="allSections" />
   <div class="post my-2 py-5">
-    <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
     <span class="markdown-body" v-html="postHtml" />
     <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
   </div>
@@ -14,10 +14,14 @@ import MarkdownIt from 'markdown-it'
 import emoji from 'markdown-it-emoji'
 import { PostIndex } from '@/types/PostIndex'
 import patchMeta from '@/utils/patch_meta'
+import NavBar from '@/components/NavBar.vue'
 
 const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
 export default defineComponent({
+  components: {
+    NavBar
+  },
   props: {
     section: String,
     id: String
@@ -39,7 +43,8 @@ export default defineComponent({
     return {
       hasHistory,
       postHtml,
-      router
+      router,
+      allSections: Array.from(new Set(postsCollection.map(({ section }) => section)))
     }
   }
 })
