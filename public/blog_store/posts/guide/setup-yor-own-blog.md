@@ -2,11 +2,11 @@
 #### February 11, 2020
 
 
-> This tutorial assumes you have the following setup ready:
+> This tutorial assumes you have the following installed on your system:
 >
-> - An active GitHub account
->
-> - [GIT](), [NodeJS]() and [yarn]() installed on your system
+> - An active [GitHub](https://github.com/) account
+> - [GIT](https://git-scm.com/)
+> - [NodeJS](https://nodejs.org/)
 
 
 ## 1.- Get your own repo
