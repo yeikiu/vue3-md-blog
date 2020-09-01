@@ -2,45 +2,47 @@
     <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
     <NavBar :sections="allSections" />
 
-    <!-- HEADER -->
-    <BlogHeader class="markddown-body mb-5"></BlogHeader>
+    <div v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`">
+      <!-- HEADER -->
+      <BlogHeader class="markddown-body mb-5"></BlogHeader>
 
-    <hr v-if="section" />
-    <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
+      <hr v-if="section" />
+      <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-    <div class="mb-5 pb-5 mx-lg-4 px-lg-4" v-for="entry in activePosts" :key="entry.id">
+      <div class="container p-3 p-md-4" v-for="entry in activePosts" :key="entry.id">
 
-      <!-- TITLE -->
-      <router-link :to="{ path:`/${entry.section}/${entry.id}` }" class="text-reset">
-        <h3 class="text-left m-0 p-0">
-          {{entry.title}}
-        </h3>
-      </router-link>
+        <!-- TITLE -->
+        <router-link :to="{ path:`/${entry.section}/${entry.id}` }" class="text-reset">
+          <h3 class="text-left m-0 p-0">
+            {{entry.title}}
+          </h3>
+        </router-link>
 
-      <!-- POST DETAILS -->
-      <p class="text-muted m-0 p-0 text-right">{{entry.date}}</p>
-      <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
-        <h6 class="m-0 p-0 text-right" style="cursor: pointer;">
-          #{{entry.section}}
-        </h6>
-      </a>
+        <!-- POST DETAILS -->
+        <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
+        <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
+          <h6 class="m-0 p-0 text-right" style="cursor: pointer;">
+            #{{entry.section}}
+          </h6>
+        </a>
 
-      <!-- POST INTRO -->
-      <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
+        <!-- POST INTRO -->
+        <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
+      </div>
+
+      <!-- PAGINATION -->
+      <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
+        <li class="page-item" v-bind:class="currentPage == startPage ? 'active':''" @click="currentPage = startPage">
+          <a class="page-link"> {{startPage}}</a>
+        </li>
+        <li class="page-item" v-bind:class="currentPage == page ? 'active':''" v-for="(page, index) in midPages" :key="index" @click="currentPage = page">
+          <a class="page-link">{{page}}</a>
+        </li>
+        <li class="page-item" v-bind:class="currentPage == endPage ? 'active':''" @click="currentPage = endPage">
+          <a class="page-link">{{endPage}}</a>
+        </li>
+      </ul>
     </div>
-
-    <!-- PAGINATION -->
-    <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
-      <li class="page-item" v-bind:class="currentPage == startPage ? 'active':''" @click="currentPage = startPage">
-        <a class="page-link"> {{startPage}}</a>
-      </li>
-      <li class="page-item" v-bind:class="currentPage == page ? 'active':''" v-for="(page, index) in midPages" :key="index" @click="currentPage = page">
-        <a class="page-link">{{page}}</a>
-      </li>
-      <li class="page-item" v-bind:class="currentPage == endPage ? 'active':''" @click="currentPage = endPage">
-        <a class="page-link">{{endPage}}</a>
-      </li>
-    </ul>
 </template>
 
 <script lang="ts">
@@ -53,7 +55,8 @@ import NavBar from '@/components/NavBar.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 
-const { VUE_APP_POSTS_PER_PAGE = 5 } = process.env
+const { VUE_APP_POSTS_PER_PAGE = 5, VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
+console.log({ VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR })
 
 export default defineComponent({
   components: {
@@ -93,7 +96,9 @@ export default defineComponent({
     return {
       ...toRefs(state),
       activePosts,
-      allSections: Array.from(new Set(postsCollection.map(({ section }) => section)))
+      allSections: Array.from(new Set(postsCollection.map(({ section }) => section))),
+      VUE_APP_MAIN_BG_CSS_COLOR,
+      VUE_APP_MAIN_TEXT_CSS_COLOR
     }
   }
 })

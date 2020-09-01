@@ -1,6 +1,6 @@
 <template>
   <PatchMeta />
-  <div id="app" class="container">
+  <div id="app">
     <Suspense>
       <template #default>
         <router-view />

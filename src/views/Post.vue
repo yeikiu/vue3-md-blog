@@ -1,8 +1,8 @@
 <template>
   <NavBar :sections="allSections" />
-  <div class="post my-2 py-5">
-    <span class="markdown-body" v-html="postHtml" />
-    <button type="button" @click="hasHistory() ? router.go(-1) : router.push('/')" class="my-5 btn btn-outline-success">&laquo; Back</button>
+  <div class="container my-4 my-md-5">
+    <span class="markdown-body" v-html="postHtml" v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" />
+    <button type="button" v-bind:style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" @click="hasHistory() ? router.go(-1) : router.push('/')" class="border btn mt-4">&laquo; Back</button>
   </div>
 </template>
 <script lang='ts'>
@@ -15,6 +15,8 @@ import emoji from 'markdown-it-emoji'
 import { PostIndex } from '@/types/PostIndex'
 import patchMeta from '@/utils/patch_meta'
 import NavBar from '@/components/NavBar.vue'
+
+const { VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
 
 const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
@@ -44,7 +46,9 @@ export default defineComponent({
       hasHistory,
       postHtml,
       router,
-      allSections: Array.from(new Set(postsCollection.map(({ section }) => section)))
+      allSections: Array.from(new Set(postsCollection.map(({ section }) => section))),
+      VUE_APP_MAIN_BG_CSS_COLOR,
+      VUE_APP_MAIN_TEXT_CSS_COLOR
     }
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed-bottom text-center bg-secondary text-white mt-5 py-2">
+  <div class="text-center mt-5 py-2" v-bind:style="`background-color: ${VUE_APP_FOOTER_BG_CSS_COLOR}; color: ${VUE_APP_FOOTER_TEXT_CSS_COLOR};`">
     <a href="#/" class="text-reset"><p class="m-0 p-0">vue-base-blog v{{version}}</p></a>
     <p class="m-0 p-0">Created with ❤️ by <a href="https://github.com/yeikiu/" target="_blank" class="text-reset">JQ</a> © {{ new Date().toDateString().slice(-4) }}</p>
   </div>
@@ -8,10 +8,14 @@
 <script language="ts">
 import { version } from '@/../package.json'
 
+const { VUE_APP_FOOTER_BG_CSS_COLOR = 'darkgray', VUE_APP_FOOTER_TEXT_CSS_COLOR = 'white' } = process.env
+
 export default {
   data () {
     return {
-      version
+      version,
+      VUE_APP_FOOTER_BG_CSS_COLOR,
+      VUE_APP_FOOTER_TEXT_CSS_COLOR
     }
   }
 }
