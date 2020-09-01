@@ -1,45 +1,45 @@
-const path = require('path');
-const fs = require('fs');
-const removeMd = require('remove-markdown');
-const jsonfile = require('jsonfile');
-const moment = require('moment');
+/* eslint-disable @typescript-eslint/no-var-requires */
 
-const dataPath = path.resolve('public/blog_store');
-const postsPath = path.join(dataPath, 'posts');
+const { join, resolve } = require('path')
+const removeMd = require('remove-markdown')
+const moment = require('moment')
+const { writeFileSync, readdirSync, readFileSync } = require('fs')
+const dataPath = resolve('public/blog_store')
+const postsPath = join(dataPath, 'posts')
 
 // Get categories
-const categoryFolders = fs.readdirSync(postsPath);
+const categoryFolders = readdirSync(postsPath)
 
 // Create posts_index object
-const postsIndex = [];
+const postsIndex = []
 
 for (const categoryFolder of categoryFolders) {
-    const categoryPath = path.join(postsPath, categoryFolder);
-    const postFiles = fs.readdirSync(categoryPath);
+  const categoryPath = join(postsPath, categoryFolder)
+  const postFiles = readdirSync(categoryPath)
 
-    for (const postFile of postFiles) {
-        const postPath = path.join(categoryPath, postFile);
-        const postContent = fs.readFileSync(postPath).toString();
-        const postLines = removeMd(postContent)
-            .split('\n').map(l => l.trim()).filter(l => Boolean(l));
+  for (const postFile of postFiles) {
+    const postPath = join(categoryPath, postFile)
+    const postContent = readFileSync(postPath).toString()
+    const postLines = removeMd(postContent)
+      .split('\n').map(l => l.trim()).filter(l => Boolean(l))
 
-        const [ title, date, description ] = postLines;
-        const [postFileId,] = postFile.split('.md');
+    const [title, date, ...fullPost] = postLines
+    const description = `${fullPost.join(' ').split(' ').slice(0, 64).join(' ')}...`
+    const [postFileId,] = postFile.split('.md')
 
-        postsIndex.push({
-            id: postFileId,
-            section: categoryFolder,
-            date,
-            title,
-            description,
-            url: `blog_store/posts/${categoryFolder}/${postFile}`,
-        });
-    }
+    postsIndex.push({
+      id: postFileId,
+      section: categoryFolder,
+      date,
+      title,
+      description,
+      url: `blog_store/posts/${categoryFolder}/${postFile}`,
+    })
+  }
 }
 
 // Sort Posts by date
-postsIndex
-    .sort((a,b) => moment(b.date, 'MMMM D, YYYY').format('YYYYMMDD') - moment(a.date, 'MMMM D, YYYY').format('YYYYMMDD'));
+postsIndex.sort((a, b) => moment(b.date, 'MMMM D, YYYY').format('YYYYMMDD') - moment(a.date, 'MMMM D, YYYY').format('YYYYMMDD'))
 
-const indexPath = path.join(dataPath, 'posts_index.json');
-jsonfile.writeFileSync(indexPath, postsIndex);
+const indexPath = join(dataPath, 'posts_index.json')
+writeFileSync(indexPath, JSON.stringify(postsIndex, null, 4))

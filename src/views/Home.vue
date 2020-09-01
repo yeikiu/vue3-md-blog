@@ -27,7 +27,7 @@
         </a>
 
         <!-- POST INTRO -->
-        <p class="font-weight-light text-left text-justify mt-1">{{entry.description}}</p>
+        <p class="font-weight-light text-justify mt-1">{{entry.description}}</p>
       </div>
 
       <!-- PAGINATION -->
