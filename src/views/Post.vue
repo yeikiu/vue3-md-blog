@@ -46,7 +46,7 @@ export default defineComponent({
       hasHistory,
       postHtml,
       router,
-      allSections: Array.from(new Set(postsCollection.map(({ section }) => section))),
+      allSections: postsCollection.reduce((prev, { section }) => prev[section] ? { ...prev, [section]: prev[section] + 1 } : { ...prev, [section]: 1 }, { all: postsCollection.length } as Record<string, number>),
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }

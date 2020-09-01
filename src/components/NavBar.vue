@@ -12,7 +12,7 @@
             Blog Sections
           </a>
           <div :class="`dropdown-menu ${showDropdown ? 'show' : ''}`" aria-labelledby="navbarDropdownMenuLink">
-            <a v-for="section of sections" :key="section" class="dropdown-item text-capitalize" :href="`#/${section}`">{{section}}</a>
+            <a v-for="(numPosts, section) in sections" :key="section" class="dropdown-item text-capitalize" :href="`#/${section === 'all' ? '' : section}`">{{section}} ({{numPosts}})</a>
           </div>
         </li>
       </ul>
