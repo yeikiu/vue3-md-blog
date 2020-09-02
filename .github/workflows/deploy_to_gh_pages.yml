@@ -59,8 +59,8 @@ jobs:
           path: ./
 
       - run: |
-          ## Uncomment if deploying with no custom domain enabled in your repo's GitHub pages settings. Must match your repo name.
-          # echo "blog.instab.io" > CNAME
+          ## Uncomment if deploying with custom domain enabled in your repo's GitHub pages settings. Must match your repo name.
+          # echo "vue-base-blog" > CNAME
           git config --local user.email "posts_hook@github.com"
           git config --local user.name "Posts Hook"
           git add .
