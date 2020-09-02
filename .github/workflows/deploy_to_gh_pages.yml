@@ -51,7 +51,7 @@ jobs:
         with:
           ref: gh-pages
 
-      - run: rm -rf ./**/*
+      - run: rm -rf ./*
 
       - uses: actions/download-artifact@v2
         with:
