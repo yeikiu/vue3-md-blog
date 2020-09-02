@@ -3,7 +3,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - public/blog_store/**/*
+      - public/blog_store/posts/**/*
+      - public/blog_store/assets/**/*
 
 jobs:
 
