@@ -4,12 +4,12 @@
 
     <div v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`">
       <!-- HEADER -->
-      <BlogHeader class="markddown-body mb-5"></BlogHeader>
+      <BlogHeader class="mb-5"></BlogHeader>
 
       <hr v-if="section" />
       <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-      <div class="container p-3 p-md-4" v-for="entry in activePosts" :key="entry.id">
+      <div class="container markdown-body p-3 p-md-4" v-for="entry in activePosts" :key="entry.id">
 
         <!-- TITLE -->
         <router-link :to="{ path:`/${entry.section}/${entry.id}` }" class="text-reset">
@@ -21,7 +21,7 @@
         <!-- POST DETAILS -->
         <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
         <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
-          <h6 class="m-0 p-0 text-right" style="cursor: pointer;">
+          <h6 class="m-0 p-0 text-right font-weight-bold">
             #{{entry.section}}
           </h6>
         </a>
