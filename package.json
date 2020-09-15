@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [

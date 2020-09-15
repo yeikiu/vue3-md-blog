@@ -24,9 +24,7 @@ for (const categoryFolder of categoryFolders) {
       .split('\n').map(l => l.trim()).filter(l => Boolean(l))
 
     const [title, date, ...fullPost] = postLines
-    const fullPostLines = fullPost.join(' ')
-    const descriptionLines = fullPostLines.split(' ').slice(0, 64).join(' ')
-    const description = `${descriptionLines}${fullPostLines.trim().length > descriptionLines.trim().length ? '...' : ''}`
+    const description = `${fullPost.join(' ').split(' ').slice(0, 64).join(' ')}...`
     const [postFileId,] = postFile.split('.md')
 
     postsIndex.push({
