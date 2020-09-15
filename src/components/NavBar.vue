@@ -27,7 +27,7 @@ const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = '
 
 export default {
   props: {
-    sections: Array
+    sections: Object
   },
   setup () {
     const showDropdown = ref(false)
