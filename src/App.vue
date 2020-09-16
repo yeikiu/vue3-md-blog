@@ -1,16 +1,14 @@
 <template>
   <PatchMeta />
-  <div id="app">
-    <Suspense>
-      <template #default>
-        <router-view />
-        <Footer></Footer>
-      </template>
-      <template #fallback>
-        <Loader />
-      </template>
-    </Suspense>
-  </div>
+  <Suspense>
+    <template #default>
+      <router-view />
+      <Footer></Footer>
+    </template>
+    <template #fallback>
+      <Loader />
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">

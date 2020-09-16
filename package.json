@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "2.1.14",
+  "version": "2.1.15",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -16,14 +16,14 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "core-js": "^3.6.5",
+    "core-js": "~3.6.5",
     "github-markdown-css": "^4.0.0",
     "markdown-it": "^11.0.0",
     "markdown-it-emoji": "^1.4.0",
     "moment": "^2.27.0",
     "redaxios": "^0.3.0",
-    "vue": "^3.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "vue": "~3.0.0-0",
+    "vue-router": "~4.0.0-0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
@@ -34,14 +34,14 @@
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0-0",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/eslint-config-standard": "~5.1.2",
+    "@vue/eslint-config-typescript": "~5.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0-0",
+    "eslint-plugin-vue": "~7.0.0-0",
     "remove-markdown": "^0.3.0",
     "typescript": "~3.9.3"
   },
