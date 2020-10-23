@@ -47,6 +47,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import PatchMeta from '@/components/PatchMeta.vue'
@@ -67,6 +68,11 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
+    onBeforeRouteUpdate(async (from, to, next) => {
+      await next()
+      location.reload()
+    })
+    
     const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
     const state = reactive({
