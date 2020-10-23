@@ -7,7 +7,6 @@
 </template>
 <script lang='ts'>
 import { defineComponent } from 'vue'
-import { onBeforeRouteUpdate } from 'vue-router'
 import router from '@/router'
 import axios from 'redaxios'
 import MarkdownIt from 'markdown-it'
@@ -29,10 +28,6 @@ export default defineComponent({
     id: String
   },
   async setup (props) {
-    onBeforeRouteUpdate(async (from, to, next) => {
-      await next()
-      location.reload()
-    })
     const hasHistory = () => window.history?.length > 2
     const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data

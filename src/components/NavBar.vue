@@ -19,7 +19,7 @@
     </div>
   </nav>
 </template>
-s
+
 <script language="ts">
 import { ref } from 'vue'
 
