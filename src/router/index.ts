@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Post from '../views/Post.vue'
 
+const { NODE_ENV = 'development', DIST_PUBLIC_PATH } = process.env
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:section?',
@@ -17,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: NODE_ENV === 'production' ? createWebHashHistory(`/${DIST_PUBLIC_PATH}/`) : createWebHashHistory(),
   routes
 })
 
