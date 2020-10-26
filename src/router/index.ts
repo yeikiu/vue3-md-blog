@@ -18,8 +18,8 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHashHistory(process.env.NODE_ENV === 'production' && process.env.DIST_PUBLIC_PATH
-  ? `/${process.env.DIST_PUBLIC_PATH}/`
-  : '/'),
+    ? `/${process.env.DIST_PUBLIC_PATH}/`
+    : '/'),
   routes
 })
 
