@@ -16,8 +16,10 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
+const { DIST_PUBLIC_PATH = '' } = process.env
+
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(DIST_PUBLIC_PATH),
   routes
 })
 

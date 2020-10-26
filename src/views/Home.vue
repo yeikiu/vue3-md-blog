@@ -20,11 +20,11 @@
 
         <!-- POST DETAILS -->
         <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
-        <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
+        <router-link v-if="!section" :to="{ path: `/${entry.section}` }" class="text-reset">
           <h6 class="m-0 p-0 text-right font-weight-bold">
             #{{entry.section}}
           </h6>
-        </a>
+        </router-link>
 
         <!-- POST INTRO -->
         <p class="font-weight-light mt-1">{{entry.description}}</p>
@@ -47,7 +47,6 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed } from 'vue'
-import { onBeforeRouteUpdate } from 'vue-router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import PatchMeta from '@/components/PatchMeta.vue'
@@ -68,11 +67,6 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
-    onBeforeRouteUpdate(async (from, to, next) => {
-      await next()
-      location.reload()
-    })
-
     const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
     const state = reactive({
