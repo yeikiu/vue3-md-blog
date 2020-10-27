@@ -16,10 +16,10 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
+export const routerBase = process.env.NODE_ENV === 'production' && process.env.DIST_PUBLIC_PATH ? `/${process.env.DIST_PUBLIC_PATH}/` : '/'
+
 const router = createRouter({
-  history: createWebHashHistory(process.env.NODE_ENV === 'production' && process.env.DIST_PUBLIC_PATH
-    ? `/${process.env.DIST_PUBLIC_PATH}/`
-    : '/'),
+  history: createWebHashHistory(routerBase),
   routes
 })
 
