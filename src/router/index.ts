@@ -16,10 +16,8 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
-export const routerBase = process.env.BASE_URL
-
 const router = createRouter({
-  history: createWebHashHistory(routerBase),
+  history: createWebHashHistory(),
   routes
 })
 

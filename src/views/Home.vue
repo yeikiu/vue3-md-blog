@@ -20,11 +20,11 @@
 
         <!-- POST DETAILS -->
         <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
-        <router-link v-if="!section" :to="{ path: `/${entry.section}` }" class="text-reset">
+        <a v-if="!section" :href="`#/${entry.section}`" class="text-reset">
           <h6 class="m-0 p-0 text-right font-weight-bold">
             #{{entry.section}}
           </h6>
-        </router-link>
+        </a>
 
         <!-- POST INTRO -->
         <p class="font-weight-light mt-1">{{entry.description}}</p>
@@ -47,14 +47,13 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed } from 'vue'
-// import { onBeforeRouteUpdate } from 'vue-router'
+import { onBeforeRouteUpdate } from 'vue-router'
 import axios from 'redaxios'
 import BlogHeader from '@/components/BlogHeader.vue'
 import PatchMeta from '@/components/PatchMeta.vue'
 import NavBar from '@/components/NavBar.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
-import { routerBase } from '@/router'
 
 const { VUE_APP_POSTS_PER_PAGE = 5, VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
 console.log({ VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR })
@@ -69,11 +68,11 @@ export default defineComponent({
     section: String
   },
   async setup (props) {
-    // onBeforeRouteUpdate(async (from, to, next) => {
-    //   await next()
-    //   location.reload()
-    // })
-    const { data } = await axios.get(`${routerBase}blog_store/posts_index.json`)
+    onBeforeRouteUpdate(async (from, to, next) => {
+      await next()
+      location.reload()
+    })
+    const { data } = await axios.get('blog_store/posts_index.json')
     const postsCollection: PostIndex[] = data
     const state = reactive({
       currentPage: 1,
