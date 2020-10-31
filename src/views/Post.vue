@@ -32,7 +32,7 @@ export default defineComponent({
 
     // Fetch Post markdown and compile it to html
     const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
-    const { url } = postsIndex.find(({ id }) => id === props.id) || { url: '' }
+    const { url = '' } = postsIndex.find(({ id }) => id === props.id) || {}
     const { data: markDownSource } = await axios.get(url)
     const postHtml = markDownIt.render(markDownSource)
 
@@ -47,7 +47,6 @@ export default defineComponent({
       hasHistory,
       postHtml,
       router,
-      allSections: postsIndex.reduce((prev, { section }) => prev[section] ? { ...prev, [section]: prev[section] + 1 } : { ...prev, [section]: 1 }, { all: postsIndex.length } as Record<string, number>),
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }
