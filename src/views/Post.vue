@@ -24,23 +24,30 @@ export default defineComponent({
     id: String
   },
   async setup (props) {
+    /* Hacky navigation when a href link is clicked within the compiled html Post */
     onBeforeRouteUpdate(async (from, to, next) => {
       await next()
       location.reload()
     })
-    const hasHistory = () => window.history?.length > 2
-    const postsCollection: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
-    const { url } = postsCollection.find(({ id }) => id === props.id) || { url: '' }
+
+    // Fetch Post markdown and compile it to html
+    const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
+    const { url } = postsIndex.find(({ id }) => id === props.id) || { url: '' }
     const { data: markDownSource } = await axios.get(url)
     const postHtml = markDownIt.render(markDownSource)
+
+    // Patch page title
     const titleEl = markDownSource.split('#')
     if (titleEl[1]) patchMeta({ title: titleEl[1].trim() })
+
+    // Back button helper
+    const hasHistory = () => window.history?.length > 2
 
     return {
       hasHistory,
       postHtml,
       router,
-      allSections: postsCollection.reduce((prev, { section }) => prev[section] ? { ...prev, [section]: prev[section] + 1 } : { ...prev, [section]: 1 }, { all: postsCollection.length } as Record<string, number>),
+      allSections: postsIndex.reduce((prev, { section }) => prev[section] ? { ...prev, [section]: prev[section] + 1 } : { ...prev, [section]: 1 }, { all: postsIndex.length } as Record<string, number>),
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }

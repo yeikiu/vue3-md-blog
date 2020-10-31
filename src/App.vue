@@ -1,7 +1,6 @@
 <template>
   <PatchMeta :title="'Minimal Vue3 + Markdown blog engine'" />
-  <NavBar :title="'vue-base-blog'" :sections="blogSections" />
-
+  <NavBar :title="'📝 vue-base-blog'" :sections="blogSections" />
   <Suspense>
     <template #default>
       <router-view />

@@ -1,6 +1,6 @@
 {
   "name": "vue-base-blog",
-  "version": "2.2.3",
+  "version": "3.0.0",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -66,6 +66,7 @@
     "not dead"
   ],
   "scripts": {
+    "setup": "npm i --frozen-lock-file",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",

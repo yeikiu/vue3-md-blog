@@ -8,7 +8,7 @@
       <hr v-if="section" />
       <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-      <div class="container markdown-body p-3 p-md-4" v-for="entry in activePosts" :key="entry.id">
+      <div class="container markdown-body p-3 p-md-4" v-for="entry in visiblePosts" :key="entry.id">
 
         <!-- TITLE -->
         <router-link :to="`/${entry.section}/${entry.id}`" class="text-reset">
@@ -51,8 +51,7 @@ import PatchMeta from '@/components/PatchMeta.vue'
 import paginate from '@/utils/paginate'
 import { PostIndex } from '@/types/PostIndex'
 
-const { BASE_URL, VUE_APP_POSTS_PER_PAGE = 5, VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
-console.log({ BASE_URL, VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR })
+const { VUE_APP_POSTS_PER_PAGE = 5, VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
 
 export default defineComponent({
   components: {
@@ -63,7 +62,7 @@ export default defineComponent({
     section: String
   },
   setup (props) {
-    const postsCollection: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
+    const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
     const state = reactive({
       currentPage: 1,
       startPage: 1,
@@ -71,20 +70,20 @@ export default defineComponent({
       midPages: [1]
     })
 
-    const activePosts = computed(() => {
-      const visiblePosts = props.section ? postsCollection.filter(({ section }) => section === props.section) : postsCollection
-      const { startPage, endPage, startIndex, endIndex } = paginate(visiblePosts.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
+    const visiblePosts = computed(() => {
+      const computedVisiblePosts = props.section ? postsIndex.filter(({ section }) => section === props.section) : postsIndex
+      const { startPage, endPage, startIndex, endIndex } = paginate(computedVisiblePosts.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
       state.startPage = startPage
       const prev = state.currentPage - 1 >= startPage ? state.currentPage - 1 : 0
       const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
       state.midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
       state.endPage = endPage
-      return visiblePosts.slice(startIndex, endIndex + 1)
+      return computedVisiblePosts.slice(startIndex, endIndex + 1)
     })
 
     return {
       ...toRefs(state),
-      activePosts,
+      visiblePosts,
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }

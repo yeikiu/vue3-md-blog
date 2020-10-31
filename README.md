@@ -28,7 +28,7 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 
     git clone https://github.com/yeikiu/vue-base-blog
     cd vue-base-blog
-    npm i
+    npm run setup
     npm run serve
 
 

@@ -8,7 +8,6 @@ const dataPath = 'blog_store/posts_index.json'
 
 const loadApp = async () => {
   const { data: postsIndex } = await axios.get<PostIndex[]>(dataPath)
-  console.log({ postsIndex })
   const blogSections: Record<string, number> = postsIndex.reduce((prev, { section }) => prev[section] ? { ...prev, [section]: prev[section] + 1 } : { ...prev, [section]: 1 }, { all: postsIndex.length } as Record<string, number>)
 
   createApp(App)

@@ -12,7 +12,7 @@
             Sections
           </a>
           <div :class="`dropdown-menu ${showDropdown ? 'show' : ''}`" style="max-height: 200px; overflow: scroll;">
-            <router-link v-for="(count, section) of sections" :key="section" class="dropdown-item text-capitalize" :to="`${section === 'all' ? '/' : section}`" @click="showDropdown=false">{{section}} ({{count}})</router-link>
+            <router-link v-for="(count, section) of sections" :key="section" class="dropdown-item text-capitalize" :to="section === 'all' ? '/' : `/${section}`" @click="showDropdown=false">{{section}} ({{count}})</router-link>
           </div>
         </li>
       </ul>
