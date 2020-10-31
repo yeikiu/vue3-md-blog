@@ -1,13 +1,17 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import Home from '../views/Home.vue'
+import Post from '../views/Post.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:section?',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
+    name: 'home',
+    component: Home,
     props: true
   }, {
     path: '/:section/:id',
-    component: () => import(/* webpackChunkName: "post" */ '../views/Post.vue'),
+    name: 'post',
+    component: Post,
     props: true
   }
 ]
