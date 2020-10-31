@@ -16,8 +16,11 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
+const { BASE_URL } = process.env
+console.log({ BASE_URL })
+
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(BASE_URL),
   routes
 })
 
