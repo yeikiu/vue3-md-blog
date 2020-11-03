@@ -1,6 +1,6 @@
 <template>
   <PatchMeta />
-  <NavBar :title="'📝 vue-base-blog'" :sections="blogSections" />
+  <NavBar :title="'📝 vue3-md-blog'" :sections="blogSections" />
   <Suspense>
     <template #default>
       <router-view />

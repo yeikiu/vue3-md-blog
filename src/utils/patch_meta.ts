@@ -9,9 +9,9 @@ type PatchMetaT = {
 export const defaultValues = {
   title: 'Minimal Vue3 + Markdown blog engine',
   description: 'Simply fork and deploy!',
-  previewUrl: 'https://github.com/yeikiu/vue-base-blog/blob/master/src/assets/logo.png?raw=true',
-  shareUrl: 'https://yeikiu.github.io/vue-base-blog/#/',
-  siteName: 'vue-base-blog'
+  previewUrl: 'https://github.com/yeikiu/vue3-md-blog/blob/master/src/assets/logo.png?raw=true',
+  shareUrl: 'https://yeikiu.github.io/vue3-md-blog/#/',
+  siteName: 'vue3-md-blog'
 }
 
 const patchMeta = ({

@@ -1,6 +1,6 @@
 {
-  "name": "vue-base-blog",
-  "version": "3.0.1",
+  "name": "vue3-md-blog",
+  "version": "3.0.2",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -12,7 +12,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/yeikiu/vue-base-blog.git"
+    "url": "https://github.com/yeikiu/vue3-md-blog.git"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
