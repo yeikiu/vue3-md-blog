@@ -19,7 +19,7 @@
 
         <!-- POST DETAILS -->
         <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
-        <router-link v-if="!section" :to="entry.section" class="text-reset">
+        <router-link v-if="!section" :to="`/${entry.section}`" class="text-reset">
           <h6 class="m-0 p-0 text-right font-weight-bold">
             #{{entry.section}}
           </h6>

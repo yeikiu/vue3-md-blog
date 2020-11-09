@@ -1,4 +1,5 @@
 <template>
+  <PatchMeta :title="title" />
   <div class="container my-4 my-md-5">
     <span class="markdown-body" v-html="postHtml" v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" />
     <button type="button" v-bind:style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" @click="hasHistory() ? router.go(-1) : router.push('/')" class="border btn mt-4">&laquo; Back</button>
@@ -12,7 +13,7 @@ import axios from 'redaxios'
 import MarkdownIt from 'markdown-it'
 import emoji from 'markdown-it-emoji'
 import { PostIndex } from '@/types/PostIndex'
-import patchMeta from '@/utils/patch_meta'
+import PatchMeta from '@/components/PatchMeta.vue'
 
 const { VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
 
@@ -22,6 +23,9 @@ export default defineComponent({
   props: {
     section: String,
     id: String
+  },
+  components: {
+    PatchMeta
   },
   async setup (props) {
     /* Hacky navigation when a href link is clicked within the compiled html Post */
@@ -37,8 +41,7 @@ export default defineComponent({
     const postHtml = markDownIt.render(markDownSource)
 
     // Patch page title
-    const titleEl = markDownSource.split('#')
-    if (titleEl[1]) patchMeta({ title: titleEl[1].trim() })
+    const [, title] = markDownSource.split('#')
 
     // Back button helper
     const hasHistory = () => window.history?.length > 2
@@ -47,6 +50,7 @@ export default defineComponent({
       hasHistory,
       postHtml,
       router,
+      title,
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }
