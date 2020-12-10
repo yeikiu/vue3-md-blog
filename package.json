@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.0.4",
+  "version": "3.0.6",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -16,13 +16,13 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "core-js": "~3.6.5",
+    "core-js": "^3.6.5",
     "github-markdown-css": "^4.0.0",
     "markdown-it": "^11.0.0",
     "markdown-it-emoji": "^1.4.0",
     "moment": "^2.27.0",
     "redaxios": "^0.3.0",
-    "vue": "3.0.0-rc.5",
+    "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

@@ -4,12 +4,12 @@
   <Suspense>
     <template #default>
       <router-view />
-      <Footer />
     </template>
     <template #fallback>
       <Loader />
     </template>
   </Suspense>
+  <Footer />
 </template>
 
 <script lang="ts">
