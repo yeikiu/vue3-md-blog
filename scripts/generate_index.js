@@ -2,7 +2,6 @@
 
 const { join, resolve } = require('path')
 const removeMd = require('remove-markdown')
-const moment = require('moment')
 const { writeFileSync, readdirSync, readFileSync } = require('fs')
 const dataPath = resolve('public/blog_store')
 const postsPath = join(dataPath, 'posts')
@@ -41,7 +40,7 @@ for (const categoryFolder of categoryFolders) {
 }
 
 // Sort Posts by date
-postsIndex.sort((a, b) => moment(b.date, 'MMMM D, YYYY').format('YYYYMMDD') - moment(a.date, 'MMMM D, YYYY').format('YYYYMMDD'))
+postsIndex.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 
 const indexPath = join(dataPath, 'posts_index.json')
 writeFileSync(indexPath, JSON.stringify(postsIndex, null, 4))

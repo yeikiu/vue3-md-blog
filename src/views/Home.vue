@@ -8,7 +8,7 @@
       <hr v-if="section" />
       <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
 
-      <div class="container markdown-body p-3 p-md-4" v-for="entry in visiblePosts" :key="entry.id">
+      <div class="container markdown-body p-3 p-md-4" v-for="entry in pageStatus.visiblePosts" :key="entry.id">
 
         <!-- TITLE -->
         <router-link :to="`/${entry.section}/${entry.id}`" class="text-reset">
@@ -30,15 +30,15 @@
       </div>
 
       <!-- PAGINATION -->
-      <ul v-if="endPage > startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
-        <li class="page-item" v-bind:class="currentPage == startPage ? 'active':''" @click="currentPage = startPage">
-          <a class="page-link"> {{startPage}}</a>
+      <ul v-if="pageStatus.endPage > pageStatus.startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
+        <li class="page-item" v-bind:class="currentPage == pageStatus.startPage ? 'active':''" @click="currentPage = pageStatus.startPage">
+          <a class="page-link"> {{pageStatus.startPage}}</a>
         </li>
-        <li class="page-item" v-bind:class="currentPage == page ? 'active':''" v-for="(page, index) in midPages" :key="index" @click="currentPage = page">
+        <li class="page-item" v-bind:class="currentPage == page ? 'active':''" v-for="(page, index) in pageStatus.midPages" :key="index" @click="currentPage = page">
           <a class="page-link">{{page}}</a>
         </li>
-        <li class="page-item" v-bind:class="currentPage == endPage ? 'active':''" @click="currentPage = endPage">
-          <a class="page-link">{{endPage}}</a>
+        <li class="page-item" v-bind:class="currentPage == pageStatus.endPage ? 'active':''" @click="currentPage = pageStatus.endPage">
+          <a class="page-link">{{pageStatus.endPage}}</a>
         </li>
       </ul>
     </div>
@@ -64,26 +64,29 @@ export default defineComponent({
   setup (props) {
     const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
     const state = reactive({
-      currentPage: 1,
-      startPage: 1,
-      endPage: 1,
-      midPages: [1]
+      currentPage: 1
     })
 
-    const visiblePosts = computed(() => {
-      const computedVisiblePosts = props.section ? postsIndex.filter(({ section }) => section === props.section) : postsIndex
-      const { startPage, endPage, startIndex, endIndex } = paginate(computedVisiblePosts.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
-      state.startPage = startPage
+    const pageStatus = computed(() => {
+      const categoryPosts = props.section ? postsIndex.filter(({ section }) => section === props.section) : postsIndex
+      const { startPage, endPage, startIndex, endIndex } = paginate(categoryPosts.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
       const prev = state.currentPage - 1 >= startPage ? state.currentPage - 1 : 0
       const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
-      state.midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
-      state.endPage = endPage
-      return computedVisiblePosts.slice(startIndex, endIndex + 1)
+      const midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
+
+      const visiblePosts = categoryPosts.slice(startIndex, endIndex + 1)
+
+      return {
+        startPage,
+        midPages,
+        endPage,
+        visiblePosts
+      }
     })
 
     return {
       ...toRefs(state),
-      visiblePosts,
+      pageStatus,
       VUE_APP_MAIN_BG_CSS_COLOR,
       VUE_APP_MAIN_TEXT_CSS_COLOR
     }

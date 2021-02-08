@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-node@v1
       
       - run: |
-          npm i run setup
+          npm i
           npm run build:index
           npm run build
       - uses: actions/upload-artifact@v2
