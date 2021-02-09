@@ -4,7 +4,7 @@
         "section": "guide",
         "date": "February 11, 2020",
         "title": "Setup your own Blog in under 5 minutes",
-        "description": "> This tutorial assumes you have the following installed on your system: > > - An active GitHub account > - GIT > - NodeJS 1.- Get your own repo Login into your GitHub account and start a new repo. Use vue3-md-blog as a template Public Dir Structure 2.- Configure your .env file BASE_URL=// VUEAPPPOSTSPERPAGE=5 3.- Test locally Make sure your terminal is within...",
+        "description": "This tutorial assumes you have the following installed on your system: > - An active GitHub account - GIT - NodeJS 1.- Get your own repo Login into your GitHub account and start a new repo. Use vue3-md-blog as a template Public Dir Structure 2.- Configure your .env file BASE_URL=// VUEAPPPOSTSPERPAGE=5 3.- Test locally Make sure your terminal is within your repos root folder...",
         "url": "blog_store/posts/guide/setup-yor-own-blog.md"
     },
     {
@@ -12,7 +12,7 @@
         "section": "guide",
         "date": "February 09, 2020",
         "title": "Post with a simple GIT commit 🕶",
-        "description": "> This tutorial is based on VSCode but any IDE with an integrated shell will do the job. This is me, writing this very line right now Public Dir Structure There is a few interesting things to notice in the image, take a second look. Basically every time you want to create a new post you will need to create a new-post-file.md file following...",
+        "description": "This tutorial is based on VSCode but any IDE with an integrated shell will do the job. This is me, writing this very line right now Public Dir Structure There is a few interesting things to notice in the image, take a second look. Basically every time you want to create a new post you will need to create a new-post-file.md file following a...",
         "url": "blog_store/posts/guide/post-with-a-simple-git-commit.md"
     },
     {
@@ -36,7 +36,7 @@
         "section": "features",
         "date": "January 7, 2020",
         "title": "Posts are compiled with markdown-it",
-        "description": "> You can simply edit your markdown files online and your blog will reflect the changes shortly after. Posts are compiled from Markdown to html in runtime Use inline html with bootstrap classes ready to go within your markdowns Support for GitHub Pages CSS and emojis Features Headings h1 Heading 8-) h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading h1 Heading 8-)...",
+        "description": "You can simply edit your markdown files online and your blog will reflect the changes shortly after. Posts are compiled from Markdown to html in runtime Use inline html with bootstrap classes ready to go within your markdowns Support for GitHub Pages CSS and emojis Features Headings h1 Heading 8-) h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading h1 Heading 8-) h2...",
         "url": "blog_store/posts/features/markdown-posts.md"
     },
     {
