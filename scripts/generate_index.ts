@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import { join, resolve } from 'path'
+import removeMarkdown from 'markdown-to-text'
+import { writeFileSync, readdirSync, readFileSync } from 'fs'
 
-const { join, resolve } = require('path')
-const removeMd = require('remove-markdown')
-const { writeFileSync, readdirSync, readFileSync } = require('fs')
-const dataPath = resolve('public/blog_store')
+const dataPath = resolve('public', 'blog_store')
 const postsPath = join(dataPath, 'posts')
 
 // Get categories
@@ -19,7 +18,7 @@ for (const categoryFolder of categoryFolders) {
   for (const postFile of postFiles) {
     const postPath = join(categoryPath, postFile)
     const postContent = readFileSync(postPath).toString()
-    const postLines = removeMd(postContent)
+    const postLines = removeMarkdown(postContent)
       .split('\n').map(l => l.trim()).filter(l => Boolean(l))
 
     const [title, date, ...fullPost] = postLines

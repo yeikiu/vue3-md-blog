@@ -1,6 +1,6 @@
 <template>
+  <PatchMeta :title="title" />
   <div class="container my-4 my-md-5">
-    <PatchMeta :title="title" />
     <span class="markdown-body" v-html="postHtml" v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" />
     <button type="button" v-bind:style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" @click="hasHistory() ? router.go(-1) : router.push('/')" class="border btn mt-4">&laquo; Back</button>
   </div>
