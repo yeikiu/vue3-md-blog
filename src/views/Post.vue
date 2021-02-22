@@ -1,8 +1,19 @@
 <template>
   <PatchMeta :title="title" />
   <div class="container my-4 my-md-5">
-    <span class="markdown-body" v-html="postHtml" v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" />
-    <button type="button" v-bind:style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" @click="hasHistory() ? router.go(-1) : router.push('/')" class="border btn mt-4">&laquo; Back</button>
+    <span
+      class="markdown-body"
+      :style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`"
+      v-html="postHtml"
+    />
+    <button
+      type="button"
+      :style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`"
+      class="border btn mt-4"
+      @click="hasHistory() ? router.go(-1) : router.push('/')"
+    >
+      &laquo; Back
+    </button>
   </div>
 </template>
 <script lang='ts'>
@@ -20,12 +31,18 @@ const { VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'blac
 const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
 export default defineComponent({
-  props: {
-    section: String,
-    id: String
-  },
   components: {
     PatchMeta
+  },
+  props: {
+    section: {
+      type: String,
+      default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    },
   },
   async setup (props) {
     /* Hacky navigation when a href link is clicked within the compiled html Post */

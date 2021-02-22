@@ -1,47 +1,87 @@
 <template>
-    <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
+  <PatchMeta :title="section ? section : 'Minimal Vue3 + Markdown blog engine'" />
 
-    <div v-bind:style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`">
-      <!-- HEADER -->
-      <BlogHeader class="mb-5"></BlogHeader>
+  <div :style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`">
+    <!-- HEADER -->
+    <BlogHeader class="mb-5" />
 
-      <hr v-if="section" />
-      <p v-if="section" class="text-center display-4 text-capitalize my-5">{{section}}</p>
+    <hr v-if="section">
+    <p
+      v-if="section"
+      class="text-center display-4 text-capitalize my-5"
+    >
+      {{ section }}
+    </p>
 
-      <div class="container markdown-body p-3 p-md-4" v-for="entry in pageStatus.visiblePosts" :key="entry.id">
+    <div
+      v-for="entry in pageStatus.visiblePosts"
+      :key="entry.id"
+      class="container markdown-body p-3 p-md-4"
+    >
+      <!-- TITLE -->
+      <router-link
+        :to="`/${entry.section}/${entry.id}`"
+        class="text-reset"
+      >
+        <h3 class="text-left m-0 p-0">
+          {{ entry.title }}
+        </h3>
+      </router-link>
 
-        <!-- TITLE -->
-        <router-link :to="`/${entry.section}/${entry.id}`" class="text-reset">
-          <h3 class="text-left m-0 p-0">
-            {{entry.title}}
-          </h3>
-        </router-link>
+      <!-- POST DETAILS -->
+      <p
+        class="font-weight-light font-italic m-0 p-0"
+        :class="!section ? 'text-right':'mb-3'"
+      >
+        {{ entry.date }}
+      </p>
+      <router-link
+        v-if="!section"
+        :to="`/${entry.section}`"
+        class="text-reset"
+      >
+        <h6 class="m-0 p-0 text-right font-weight-bold">
+          #{{ entry.section }}
+        </h6>
+      </router-link>
 
-        <!-- POST DETAILS -->
-        <p class="font-weight-light font-italic m-0 p-0" :class="!section ? 'text-right':'mb-3'">{{entry.date}}</p>
-        <router-link v-if="!section" :to="`/${entry.section}`" class="text-reset">
-          <h6 class="m-0 p-0 text-right font-weight-bold">
-            #{{entry.section}}
-          </h6>
-        </router-link>
-
-        <!-- POST INTRO -->
-        <p class="font-weight-light mt-1">{{entry.description}}</p>
-      </div>
-
-      <!-- PAGINATION -->
-      <ul v-if="pageStatus.endPage > pageStatus.startPage" class="pagination justify-content-center mb-5 pb-5" style="cursor: pointer;">
-        <li class="page-item" v-bind:class="currentPage == pageStatus.startPage ? 'active':''" @click="currentPage = pageStatus.startPage">
-          <a class="page-link"> {{pageStatus.startPage}}</a>
-        </li>
-        <li class="page-item" v-bind:class="currentPage == page ? 'active':''" v-for="(page, index) in pageStatus.midPages" :key="index" @click="currentPage = page">
-          <a class="page-link">{{page}}</a>
-        </li>
-        <li class="page-item" v-bind:class="currentPage == pageStatus.endPage ? 'active':''" @click="currentPage = pageStatus.endPage">
-          <a class="page-link">{{pageStatus.endPage}}</a>
-        </li>
-      </ul>
+      <!-- POST INTRO -->
+      <p class="font-weight-light mt-1">
+        {{ entry.description }}
+      </p>
     </div>
+
+    <!-- PAGINATION -->
+    <ul
+      v-if="pageStatus.endPage > pageStatus.startPage"
+      class="pagination justify-content-center mb-5 pb-5"
+      style="cursor: pointer;"
+    >
+      <li
+        class="page-item"
+        :class="currentPage == pageStatus.startPage ? 'active':''"
+        @click="currentPage = pageStatus.startPage"
+      >
+        <a class="page-link"> {{ pageStatus.startPage }}</a>
+      </li>
+      <li
+        v-for="(page, index) in pageStatus.midPages"
+        :key="index"
+        class="page-item"
+        :class="currentPage == page ? 'active':''"
+        @click="currentPage = page"
+      >
+        <a class="page-link">{{ page }}</a>
+      </li>
+      <li
+        class="page-item"
+        :class="currentPage == pageStatus.endPage ? 'active':''"
+        @click="currentPage = pageStatus.endPage"
+      >
+        <a class="page-link">{{ pageStatus.endPage }}</a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
@@ -59,7 +99,10 @@ export default defineComponent({
     BlogHeader
   },
   props: {
-    section: String
+    section: {
+      type: String,
+      default: ''
+    },
   },
   setup (props) {
     const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])

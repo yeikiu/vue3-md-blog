@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -52,14 +52,15 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "@vue/standard",
+      "plugin:vue/vue3-recommended",
       "@vue/typescript/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "vue/no-v-html": 0
+    }
   },
   "browserslist": [
     "> 1%",
