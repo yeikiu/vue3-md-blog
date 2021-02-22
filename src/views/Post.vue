@@ -42,7 +42,7 @@ export default defineComponent({
     id: {
       type: String,
       default: ''
-    },
+    }
   },
   async setup (props) {
     /* Hacky navigation when a href link is clicked within the compiled html Post */

@@ -102,7 +102,7 @@ export default defineComponent({
     section: {
       type: String,
       default: ''
-    },
+    }
   },
   setup (props) {
     const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
