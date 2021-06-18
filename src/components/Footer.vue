@@ -22,11 +22,12 @@
 </template>
 
 <script language="ts">
+import { defineComponent } from 'vue'
 import { version } from '@/../package.json'
 
 const { VUE_APP_FOOTER_BG_CSS_COLOR = 'darkgray', VUE_APP_FOOTER_TEXT_CSS_COLOR = 'white' } = process.env
 
-export default {
+export default defineComponent({
   data () {
     return {
       version,
@@ -34,5 +35,5 @@ export default {
       VUE_APP_FOOTER_TEXT_CSS_COLOR
     }
   }
-}
+})
 </script>

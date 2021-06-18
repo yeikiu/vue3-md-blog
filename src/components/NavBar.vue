@@ -65,11 +65,11 @@
 </template>
 
 <script language="ts">
-import { ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = process.env
 
-export default {
+export default defineComponent({
   props: {
     title: {
       type: String,
@@ -91,5 +91,5 @@ export default {
       VUE_APP_NAVBAR_TEXT_CSS_COLOR
     }
   }
-}
+})
 </script>
