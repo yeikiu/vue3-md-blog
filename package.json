@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.0.15",
+  "version": "3.0.16",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -46,6 +46,11 @@
     "ts-node": "^10.0.0",
     "typescript": "~4.1.5"
   },
+  "resolutions": {
+    "normalize-url": ">=5.3.0",
+    "css-what": ">=5.0.1",
+    "glob-parent": ">=5.1.2"
+  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -69,6 +74,7 @@
     "not dead"
   ],
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
