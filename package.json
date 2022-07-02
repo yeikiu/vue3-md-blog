@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.1",
+  "version": "3.1.0",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -35,6 +35,6 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "build:index": "ts-node-script scripts/generate_index.ts"
+    "generate:index": "cd generate_index && npm run generate:index"
   }
 }

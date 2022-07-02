@@ -1,0 +1,12 @@
+{
+  "name": "generate_index",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "generate:index": "ts-node generate_index.ts"
+  }
+}

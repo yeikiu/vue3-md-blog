@@ -2,7 +2,7 @@ import { join, resolve } from 'path'
 import removeMarkdown from 'markdown-to-text'
 import { writeFileSync, readdirSync, readFileSync } from 'fs'
 
-const dataPath = resolve('public', 'blog_store')
+const dataPath = resolve('..', 'public', 'blog_store')
 const postsPath = join(dataPath, 'posts')
 
 // Get categories

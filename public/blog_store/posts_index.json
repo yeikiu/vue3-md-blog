@@ -4,7 +4,7 @@
         "section": "guide",
         "date": "February 11, 2020",
         "title": "Setup your own Blog in under 5 minutes",
-        "description": "This tutorial assumes you have the following installed on your system: > - An active GitHub account - GIT - NodeJS 1.- Get your own repo Login into your GitHub account and start a new repo. Use vue3-md-blog as a template Public Dir Structure 2.- Configure your .env file BASE_URL=// VUEAPPPOSTSPERPAGE=5 3.- Test locally Make sure your terminal is within your repos root folder...",
+        "description": "This tutorial assumes you have the following installed on your system: > - An active GitHub account - GIT - NodeJS 1.- Get your own repo Login into your GitHub account and start a new repo. Use vue3-md-blog as a template Public Dir Structure 2.- Configure your src/blog_config.ts file, i.e: VUEAPPPOSTSPERPAGE: 5, VUEAPPMAINBGCSS_COLOR: 'white', VUEAPPMAINTEXTCSS_COLOR: 'black', 3.- Test locally Make sure your terminal is...",
         "url": "blog_store/posts/guide/setup-yor-own-blog.md"
     },
     {

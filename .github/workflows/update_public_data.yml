@@ -19,7 +19,7 @@ jobs:
       
       - run: |
           npm i
-          npm run build:index
+          npm run generate:index
 
       - uses: actions/upload-artifact@v2
         with:
