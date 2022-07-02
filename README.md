@@ -29,7 +29,7 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
     git clone https://github.com/yeikiu/vue3-md-blog
     cd vue3-md-blog
     npm i
-    npm run serve
+    npm run dev
 
 
 ### Deploy your own blog

@@ -18,18 +18,18 @@ Login into your GitHub account and start a new repo.
 ![Public Dir Structure](blog_store/assets/step1-github.png)
 
 
-## 2.- Configure your `.env` file
+## 2.- Configure your `src/blog_config.ts` file, i.e:
 
-    BASE_URL=/<YOUR-REPO-NAME>/
-
-    VUE_APP_POSTS_PER_PAGE=5
+    VUE_APP_POSTS_PER_PAGE: 5,
+    VUE_APP_MAIN_BG_CSS_COLOR: 'white',
+    VUE_APP_MAIN_TEXT_CSS_COLOR: 'black',
 
 
 ## 3.- Test locally
 
-Make sure your terminal is within your repos root folder and run `npm run setup`.
+Make sure your terminal is within your repos root folder and run `npm i`.
 
-Then do `npm run serve` and you should be able to access the site under [http://localhost:8080](http://localhost:8080)
+Then do `npm run dev` and you should be able to access the site under [http://localhost:3000](http://localhost:3000)
 
 
 ## 4.- Deploy with GitHub Actions

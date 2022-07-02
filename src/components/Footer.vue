@@ -23,9 +23,9 @@
 
 <script language="ts">
 import { defineComponent } from 'vue'
-import { version } from '@/../package.json'
+import { version } from '../../package.json'
 
-const { VUE_APP_FOOTER_BG_CSS_COLOR = 'darkgray', VUE_APP_FOOTER_TEXT_CSS_COLOR = 'white' } = process.env
+const { VUE_APP_FOOTER_BG_CSS_COLOR = 'darkgray', VUE_APP_FOOTER_TEXT_CSS_COLOR = 'white' } = {}
 
 export default defineComponent({
   data () {

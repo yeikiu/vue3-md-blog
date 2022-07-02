@@ -19,15 +19,15 @@
 <script lang='ts'>
 import { defineComponent, inject } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
-import router from '@/router'
+import router from '../router'
 import axios from 'redaxios'
 import MarkdownIt from 'markdown-it'
 import emoji from 'markdown-it-emoji'
-import { PostIndex } from '@/types/PostIndex'
-import PatchMeta from '@/components/PatchMeta.vue'
+import { PostIndex } from '../types/PostIndex'
+import PatchMeta from '../components/PatchMeta.vue'
+import blogConfig from '../blog_config'
 
-const { VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
-
+const { VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR } = blogConfig
 const markDownIt = new MarkdownIt({ html: true }).use(emoji)
 
 export default defineComponent({

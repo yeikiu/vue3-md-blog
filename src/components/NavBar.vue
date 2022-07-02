@@ -67,7 +67,7 @@
 <script language="ts">
 import { defineComponent, ref } from 'vue'
 
-const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = process.env
+const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = {}
 
 export default defineComponent({
   props: {

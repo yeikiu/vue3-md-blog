@@ -86,12 +86,13 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed, inject } from 'vue'
-import BlogHeader from '@/components/BlogHeader.vue'
-import PatchMeta from '@/components/PatchMeta.vue'
-import paginate from '@/utils/paginate'
-import { PostIndex } from '@/types/PostIndex'
+import BlogHeader from '../components/BlogHeader.vue'
+import PatchMeta from '../components/PatchMeta.vue'
+import paginate from '../utils/paginate'
+import { PostIndex } from '../types/PostIndex'
+import blogConfig from '../blog_config'
 
-const { VUE_APP_POSTS_PER_PAGE = 5, VUE_APP_MAIN_BG_CSS_COLOR = 'white', VUE_APP_MAIN_TEXT_CSS_COLOR = 'black' } = process.env
+const { VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR } = blogConfig
 
 export default defineComponent({
   components: {

@@ -9,7 +9,7 @@
       </p>
       <img
         alt="Vue logo"
-        src="@/assets/logo.png"
+        src="../assets/logo.png"
       >
     </router-link>
   </div>
