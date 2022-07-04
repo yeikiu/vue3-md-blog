@@ -25,6 +25,7 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
+    "@types/node": "^18.0.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "markdown-to-text": "^0.1.1",
     "ts-node": "^10.8.2",
