@@ -47,7 +47,7 @@ jobs:
           git add blog_store
           git commit -m "[CI:deploy] deploy_data job"
           
-      - uses: ad-m/github-push-action@develop
+      - uses: ad-m/github-push-action@master
         with:
           branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
