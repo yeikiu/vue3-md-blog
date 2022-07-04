@@ -27,6 +27,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
     "markdown-to-text": "^0.1.1",
+    "ts-node": "^10.8.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
     "vue-tsc": "^0.34.7"
@@ -35,6 +36,6 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "generate:index": "cd generate_index && npm run generate:index"
+    "generate:index": "npx ts-node-script ./scripts/generate_index.ts"
   }
 }

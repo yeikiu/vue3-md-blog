@@ -1,15 +1,16 @@
-import { join, resolve } from 'path'
+import { join, resolve } from'path'
 import removeMarkdown from 'markdown-to-text'
 import { writeFileSync, readdirSync, readFileSync } from 'fs'
+import { PostIndex } from '../src/types/PostIndex'
 
-const dataPath = resolve('..', 'public', 'blog_store')
+const dataPath = resolve('public', 'blog_store')
 const postsPath = join(dataPath, 'posts')
 
 // Get categories
 const categoryFolders = readdirSync(postsPath)
 
 // Create posts_index object
-const postsIndex = []
+const postsIndex: PostIndex[] = []
 
 for (const categoryFolder of categoryFolders) {
   const categoryPath = join(postsPath, categoryFolder)
@@ -19,7 +20,7 @@ for (const categoryFolder of categoryFolders) {
     const postPath = join(categoryPath, postFile)
     const postContent = readFileSync(postPath).toString()
     const postLines = removeMarkdown(postContent)
-      .split('\n').map(l => l.trim()).filter(l => Boolean(l))
+      .split('\n').map((l: String) => l.trim()).filter((l: String) => Boolean(l))
 
     const [title, date, ...fullPost] = postLines
     const fullPostLines = fullPost.join(' ')
