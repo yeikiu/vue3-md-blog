@@ -1,7 +1,7 @@
 name: update_public_data
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
     paths:
       - public/blog_store/posts/**/*
       - public/blog_store/assets/**/*
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: develop
 
       - uses: actions/setup-node@v1
       
@@ -47,7 +47,7 @@ jobs:
           git add blog_store
           git commit -m "[CI:deploy] deploy_data job"
           
-      - uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@develop
         with:
           branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}

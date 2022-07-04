@@ -20,7 +20,7 @@ jobs:
           git add .ci_badges
           git commit -m "[CI:deploy] sync_badges job"
 
-      - uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: develop
 
       - uses: actions/setup-node@v1
       
@@ -66,7 +66,7 @@ jobs:
           git add .
           git commit -m "[CI:deploy] deploy_dist job"
 
-      - uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@develop
         with:
           branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
