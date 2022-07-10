@@ -19,7 +19,6 @@
     "github-markdown-css": "^4.0.0",
     "markdown-it": "^12.0.4",
     "markdown-it-emoji": "^2.0.0",
-    "moment": "^2.27.0",
     "redaxios": "^0.4.1",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
@@ -28,6 +27,7 @@
     "@types/node": "^18.0.3",
     "@vitejs/plugin-vue": "^2.3.3",
     "markdown-to-text": "^0.1.1",
+    "moment": "^2.29.4",
     "ts-node": "^10.8.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
