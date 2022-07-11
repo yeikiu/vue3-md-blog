@@ -1,7 +1,7 @@
 name: update_public_data
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
     paths:
       - public/blog_store/posts/**/*
       - public/blog_store/assets/**/*
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: develop
+          ref: master
 
       - uses: actions/setup-node@v3
       
