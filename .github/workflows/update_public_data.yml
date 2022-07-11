@@ -11,11 +11,11 @@ jobs:
   build_index:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: develop
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
       
       - run: |
           npm i
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-18.04
     needs: build_index
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: gh-pages
 
