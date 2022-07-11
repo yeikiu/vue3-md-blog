@@ -34,8 +34,8 @@ jobs:
           ref: develop
 
       - uses: actions/setup-node@v3
-      with:
-        node-version: 16
+        with:
+          node-version: 16
 
       - run: |
           npm i
