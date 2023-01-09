@@ -29,7 +29,7 @@ Login into your GitHub account and start a new repo.
 
 Make sure your terminal is within your repos root folder and run `npm i`.
 
-Then do `npm run dev` and you should be able to access the site under [http://localhost:3000](http://localhost:3000)
+Then run `npm run dev` and you should be able to access the site under [http://localhost:3000](http://localhost:3000)
 
 
 ## 4.- Deploy with GitHub Actions
