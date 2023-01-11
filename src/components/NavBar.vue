@@ -11,14 +11,14 @@
       {{ title }}
     </router-link>
     <button
-      :class="`navbar-toggler ${collapseMenu ? 'collapsed' : ''}`"
+      :class="`navbar-toggler collapsed`"
       type="button"
       data-toggle="collapse"
       data-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown"
-      :aria-expanded="!collapseMenu"
+      :aria-expanded="showDropdown"
       aria-label="Toggle navigation"
-      @click="collapseMenu = !collapseMenu"
+      @click="showDropdown = !showDropdown"
     >
       <span
         class="navbar-toggler-icon"
@@ -28,14 +28,16 @@
 
     <div
       id="navbarNavDropdown"
-      :class="`navbar-collapse collapse ${collapseMenu ? '' : 'show'}`"
+      :class="`navbar-collapse ${showDropdown ? 'collapsed' : ''}`"
     >
-      <ul class="ml-auto mr-5 pr-5 navbar-nav">
+      <ul class="ml-auto mr-md-5 pr-md-5 navbar-nav"
+        @focusout="focusOut"
+        tabindex="1">
         <li :class="`nav-item dropleft dropdown ${showDropdown ? 'show' : ''}`">
           <a
             id="navbarDropdownMenuLink"
             :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle d-none d-md-block"
             role="button"
             data-toggle="dropdown"
             aria-haspopup="true"
@@ -66,8 +68,9 @@
 
 <script language="ts">
 import { defineComponent, ref } from 'vue'
+import blogConfig from '../blog_config'
 
-const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = {}
+const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = blogConfig
 
 export default defineComponent({
   props: {
@@ -82,11 +85,16 @@ export default defineComponent({
   },
   setup () {
     const showDropdown = ref(false)
-    const collapseMenu = ref(true)
 
+    const focusOut = ({ relatedTarget }) => {
+      if (!(Array.from(relatedTarget?.classList ?? []).includes('dropdown-item'))) {
+        showDropdown.value = false
+      }
+    }
+  
     return {
+      focusOut,
       showDropdown,
-      collapseMenu,
       VUE_APP_NAVBAR_BG_CSS_COLOR,
       VUE_APP_NAVBAR_TEXT_CSS_COLOR
     }
