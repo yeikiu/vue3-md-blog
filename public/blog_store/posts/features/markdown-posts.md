@@ -136,9 +136,9 @@ Block code "fences"
 Sample text here...
 ```
 
-Syntax highlighting
+Syntax highlighting - Thanks to [MSoup](https://github.com/MSoup) for the [PR](https://github.com/yeikiu/vue3-md-blog/commits?author=MSoup)
 
-``` js
+```js
 var foo = function (bar) {
   return bar++;
 };
