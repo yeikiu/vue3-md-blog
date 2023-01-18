@@ -4,13 +4,13 @@
     <router-link class="navbar-brand" :to="'/'" :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`">
       {{ title }}
     </router-link>
-    <button :class="`navbar-toggler ${collapseMenu ? 'collapsed' : ''}`" type="button" data-toggle="collapse"
-      data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" :aria-expanded="showDropdown"
-      aria-label="Toggle navigation" @click="showDropdown = !showDropdown">
+    <button :class="`navbar-toggler`" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" :aria-expanded="showDropdown" aria-label="Toggle navigation"
+      @click="showDropdown = !showDropdown">
       <span class="navbar-toggler-icon" :style="`background-color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`" />
     </button>
 
-    <div id="navbarNavDropdown" :class="`navbar-collapse collapse ${collapseMenu ? '' : 'show'}`">
+    <div id="navbarNavDropdown" :class="`navbar-collapse collapse ${showDropdown ? 'show' : ''}`">
       <ul class="ml-auto mr-md-5 pr-md-5 navbar-nav" @focusout="focusOut" tabindex="1">
         <li :class="`nav-item dropleft dropdown ${showDropdown ? 'show' : ''}`">
           <a id="navbarDropdownMenuLink" :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
