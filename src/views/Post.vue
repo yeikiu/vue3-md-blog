@@ -1,9 +1,7 @@
 <template>
   <PatchMeta :title="title" />
   <div class="container my-4 my-md-5">
-    <span class="markdown-body"
-      :style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`"
-      v-html="postHtml" />
+    <v-md-editor mode="preview" v-model="markDownSource" :style="`background-color: ${VUE_APP_MAIN_BG_CSS_COLOR}; color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`"></v-md-editor>
     <button type="button" :style="`color: ${VUE_APP_MAIN_TEXT_CSS_COLOR};`" class="border btn mt-4"
       @click="hasHistory() ? router.go(-1) : router.push('/')">
       &laquo; Back
@@ -15,28 +13,11 @@ import { defineComponent, inject } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import router from '../router'
 import axios from 'redaxios'
-import MarkdownIt from 'markdown-it'
-import emoji from 'markdown-it-emoji'
 import { PostIndex } from '../types/PostIndex'
 import PatchMeta from '../components/PatchMeta.vue'
 import blogConfig from '../blog_config'
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 
 const { VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR } = blogConfig
-const markDownIt = new MarkdownIt(
-  {
-    html: true,
-    highlight: function (str: string, lang: string) {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(str, { language: lang }).value;
-        } catch (__) { console.log("syntax highlighting failed: check highlight.js") }
-      }
-
-      return ''; // use external default escaping
-    }
-  }).use(emoji)
 
 export default defineComponent({
   components: {
@@ -62,8 +43,7 @@ export default defineComponent({
     const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
     const { url = '' } = postsIndex.find(({ id }) => id === props.id) || {}
     const { data: markDownSource } = await axios.get(url)
-    const postHtml = markDownIt.render(markDownSource)
-
+    
     // Patch page title
     const [, title] = markDownSource.split('#')
 
@@ -72,7 +52,7 @@ export default defineComponent({
 
     return {
       hasHistory,
-      postHtml,
+      markDownSource,
       router,
       title,
       VUE_APP_MAIN_BG_CSS_COLOR,

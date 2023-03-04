@@ -13,12 +13,8 @@
     <button
       :class="`navbar-toggler collapsed`"
       type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      :aria-expanded="showDropdown"
       aria-label="Toggle navigation"
-      @click="showDropdown = !showDropdown"
+      @click.prevent="showDropdown = !showDropdown"
     >
       <span
         class="navbar-toggler-icon"
@@ -26,22 +22,29 @@
       />
     </button>
 
+    <div v-if="currentRoute.path !== '/editor'" class="container">
+      <router-link
+        class="mx-auto border border-white py-2 px-3 rounded"
+        :to="'/editor'"
+        :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
+      >
+        <div class=""> MarkDown Editor</div>
+      </router-link>
+    </div>
+
     <div
       id="navbarNavDropdown"
-      :class="`navbar-collapse ${showDropdown ? 'collapsed' : ''}`"
+      class="navbar-collapse"
     >
       <ul class="ml-auto mr-md-5 pr-md-5 navbar-nav"
         @focusout="focusOut"
         tabindex="1">
-        <li :class="`nav-item dropleft dropdown ${showDropdown ? 'show' : ''}`">
+        <li :class="`nav-item dropdown ${showDropdown ? 'show' : 'dropup'}`">
           <a
             id="navbarDropdownMenuLink"
             :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
             class="nav-link dropdown-toggle d-none d-md-block"
             role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            :aria-expanded="showDropdown"
             @click.prevent="showDropdown = !showDropdown"
           >
             Sections
@@ -67,8 +70,9 @@
 </template>
 
 <script language="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import blogConfig from '../blog_config'
+import router from '../router';
 
 const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = blogConfig
 
@@ -92,11 +96,16 @@ export default defineComponent({
       }
     }
 
+    onMounted(() => {
+      console.log({ route: router.currentRoute })
+    })
+
     return {
       focusOut,
       showDropdown,
       VUE_APP_NAVBAR_BG_CSS_COLOR,
-      VUE_APP_NAVBAR_TEXT_CSS_COLOR
+      VUE_APP_NAVBAR_TEXT_CSS_COLOR,
+      currentRoute: router.currentRoute
     }
   }
 })

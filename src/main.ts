@@ -4,6 +4,29 @@ import router from './router'
 import axios from 'redaxios'
 import { PostIndex } from './types/PostIndex'
 
+import VueMarkdownEditor from '@kangc/v-md-editor'
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js'
+import enUS from '@kangc/v-md-editor/lib/lang/en-US'
+
+import Prism from 'prismjs'
+import "prismjs/components/prism-typescript"
+
+import '@kangc/v-md-editor/lib/style/base-editor.css'
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
+
+
+VueMarkdownEditor.lang.use('en-US', enUS);
+VueMarkdownEditor.xss.extend({
+  // extend white list
+  whiteList: {
+    source: [],
+    iframe: ['width', 'height', 'src', 'frameborder', 'allow', 'allowfullscreen'],
+  },
+});
+VueMarkdownEditor.use(vuepressTheme, {
+  Prism,
+});
+
 const dataPath = 'blog_store/posts_index.json'
 
 const loadApp = async () => {
@@ -12,6 +35,7 @@ const loadApp = async () => {
 
   createApp(App)
     .use(router)
+    .use(VueMarkdownEditor)
     .provide<PostIndex[]>('postsIndex', postsIndex)
     .provide<Record<string, number>>('blogSections', blogSections)
     .mount('#app')
