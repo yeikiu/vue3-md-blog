@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
-const routes: Array<RouteRecordRaw> = [,
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/editor',
     component: () => import(/* webpackChunkName: "editor" */ '../views/Editor.vue'),
-    props: true
+    props: false
   },
   {
     path: '/:section?',

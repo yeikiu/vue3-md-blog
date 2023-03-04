@@ -9,7 +9,7 @@ on:
 jobs:
 
   build_index:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -27,7 +27,7 @@ jobs:
           path: public/blog_store
   
   deploy_data:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build_index
     steps:
       - uses: actions/checkout@v3

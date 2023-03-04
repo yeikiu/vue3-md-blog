@@ -20,7 +20,7 @@
     >
       <!-- TITLE -->
       <router-link
-        :to="`/${entry.section}/${entry.id}`"
+        :to="`/category/${entry.section}/${entry.id}`"
         class="text-reset"
       >
         <h3 class="text-left m-0 p-0">
@@ -37,7 +37,7 @@
       </p>
       <router-link
         v-if="!section"
-        :to="`/${entry.section}`"
+        :to="`/category/${entry.section}`"
         class="text-reset"
       >
         <h6 class="m-0 p-0 text-right font-weight-bold">

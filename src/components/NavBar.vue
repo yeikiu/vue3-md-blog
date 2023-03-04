@@ -70,7 +70,7 @@
 </template>
 
 <script language="ts">
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref } from 'vue'
 import blogConfig from '../blog_config'
 import router from '../router';
 
@@ -95,10 +95,6 @@ export default defineComponent({
         showDropdown.value = false
       }
     }
-
-    onMounted(() => {
-      console.log({ route: router.currentRoute })
-    })
 
     return {
       focusOut,
