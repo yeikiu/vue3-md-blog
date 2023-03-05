@@ -8,14 +8,6 @@
         "url": "blog_store/posts/guide/setup-yor-own-blog.md"
     },
     {
-        "id": "test-sara",
-        "section": "features",
-        "date": "February 10, 2020",
-        "title": "Titulo de prueba",
-        "description": "noelectronics.com The page of non-connected devices What does AI say about no-electronics: Here are some ideas for goods that do not require electronics: Books: There is a wide variety of books available in different genres and formats, such as paperbacks, hardcovers, audiobooks, and e-books. Board games and puzzle: Board games and puzzles are great for spending time with friends and family, and they can...",
-        "url": "blog_store/posts/features/test-sara"
-    },
-    {
         "id": "post-with-a-simple-git-commit",
         "section": "guide",
         "date": "February 09, 2020",
