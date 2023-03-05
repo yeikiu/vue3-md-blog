@@ -54,13 +54,5 @@
         "title": "Use a custom domain name",
         "description": "TODO WIP",
         "url": "blog_store/posts/guide/use-a-custom-domain-name.md"
-    },
-    {
-        "id": "test-sara",
-        "section": "features",
-        "date": "March 3, 2013",
-        "title": "Test web plantilla",
-        "description": "A ver si Sara se entiende con el html...",
-        "url": "blog_store/posts/features/test-sara.md"
     }
 ]
