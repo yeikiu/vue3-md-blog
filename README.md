@@ -10,8 +10,12 @@ Deploy a fully functional blog made with [Vue3](https://vuejs.org/) + [GitHub Pa
 
 ![blog_screenshot](public/blog_store/assets/blog_screenshot.png)
 
+![md_editor_demo](public/blog_store/assets/md_editor_demo.png)
+
 
 ## ⚙️ Main Features:
+
+* Integrated MarkDown editor
 
 * Sync posts with [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions)
 

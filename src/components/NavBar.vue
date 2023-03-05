@@ -22,24 +22,25 @@
       />
     </button>
 
-    <div v-if="currentRoute.path !== '/editor'" class="container">
-      <router-link
-        class="mx-auto border border-white py-2 px-3 rounded"
-        :to="'/editor'"
-        :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
-      >
-        <div class=""> MarkDown Editor</div>
-      </router-link>
-    </div>
-
     <div
       id="navbarNavDropdown"
       class="navbar-collapse"
     >
-      <ul class="ml-auto mr-md-5 pr-md-5 navbar-nav"
+      <ul class="navbar-nav ml-auto"
         @focusout="focusOut"
         tabindex="1">
-        <li :class="`nav-item dropdown ${showDropdown ? 'show' : 'dropup'}`">
+
+        <li v-if="currentRoute.path !== '/editor'" class="nav-item">
+          <router-link
+            class="nav-link border rounded py-2 px-3"
+            :to="'/editor'"
+            :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
+          >
+            MarkDown Editor
+          </router-link>
+        </li>
+
+        <li :class="`mx-5 nav-item dropleft`">
           <a
             id="navbarDropdownMenuLink"
             :style="`color: ${VUE_APP_NAVBAR_TEXT_CSS_COLOR};`"
@@ -51,7 +52,7 @@
           </a>
           <div
             :class="`dropdown-menu ${showDropdown ? 'show' : ''}`"
-            style="max-height: 200px; overflow: scroll;"
+            style="margin-top: 30px; max-height: 200px; overflow: scroll;"
           >
             <router-link
               v-for="(count, section) of sections"
