@@ -15,24 +15,13 @@
   <Footer />
 </template>
 
-<script lang="ts">
-import { defineComponent, inject } from 'vue'
+<script setup lang="ts">
+import { inject } from 'vue'
 import PatchMeta from './components/PatchMeta.vue'
 import Loader from './components/Loader.vue'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 
-export default defineComponent({
-  components: {
-    PatchMeta,
-    Loader,
-    NavBar,
-    Footer
-  },
-  setup () {
-    const blogSections = inject('blogSections', {})
-    return { blogSections }
-  }
-})
+const blogSections = inject('blogSections', {})
 </script>

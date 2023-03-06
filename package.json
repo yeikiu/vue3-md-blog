@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.1.18",
+  "version": "3.2.0",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -23,6 +23,8 @@
   "dependencies": {
     "@kangc/v-md-editor": "^2.3.15",
     "bootstrap": "^4.5.3",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "prismjs": "^1.29.0",
     "redaxios": "^0.5.0",
     "vue": "^3.2.37",

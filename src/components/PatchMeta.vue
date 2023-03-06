@@ -3,8 +3,6 @@
 </template>
 
 <script lang="ts">
-import { onMounted, defineComponent } from 'vue'
-
 const defaultMetas = {
   siteName: 'vue3-md-blog',
   title: 'Minimal Vue3 + Markdown blog engine',
@@ -12,6 +10,10 @@ const defaultMetas = {
   previewUrl: 'https://github.com/yeikiu/vue3-md-blog/blob/master/src/assets/logo.png?raw=true',
   shareUrl: 'https://yeikiu.github.io/vue3-md-blog/#/'
 }
+</script>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
 
 const patchMeta = ({
   siteName = defaultMetas.siteName,
@@ -37,33 +39,30 @@ const patchMeta = ({
   headEl.innerHTML = `${headEl.innerHTML}${APP_META}`
 }
 
-export default defineComponent({
-  props: {
-    siteName: {
-      type: String,
-      default: defaultMetas.siteName
-    },
-    title: {
-      type: String,
-      default: defaultMetas.title
-    },
-    description: {
-      type: String,
-      default: defaultMetas.description
-    },
-    previewUrl: {
-      type: String,
-      default: defaultMetas.previewUrl
-    },
-    shareUrl: {
-      type: String,
-      default: defaultMetas.shareUrl
-    }
+const props = defineProps({
+  siteName: {
+    type: String,
+    default: {...defaultMetas}.siteName
   },
-  setup (props) {
-    onMounted(() => {
-      patchMeta(props)
-    })
+  title: {
+    type: String,
+    default: defaultMetas.title
+  },
+  description: {
+    type: String,
+    default: defaultMetas.description
+  },
+  previewUrl: {
+    type: String,
+    default: defaultMetas.previewUrl
+  },
+  shareUrl: {
+    type: String,
+    default: defaultMetas.shareUrl
   }
+});
+
+onMounted(() => {
+  patchMeta(props)
 })
 </script>

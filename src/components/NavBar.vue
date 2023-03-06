@@ -30,7 +30,7 @@
         @focusout="focusOut"
         tabindex="1">
 
-        <li v-if="currentRoute.path !== '/editor'" class="nav-item">
+        <li v-if="router.currentRoute.value.path !== '/editor'" class="nav-item">
           <router-link
             class="nav-link border rounded py-2 px-3"
             :to="'/editor'"
@@ -70,40 +70,29 @@
   </nav>
 </template>
 
-<script language="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue';
 import blogConfig from '../blog_config'
 import router from '../router';
 
 const { VUE_APP_NAVBAR_BG_CSS_COLOR = 'black', VUE_APP_NAVBAR_TEXT_CSS_COLOR = 'white' } = blogConfig
 
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    sections: {
-      type: Object,
-      default: () => ({})
-    }
+defineProps({
+  title: {
+    type: String,
+    default: ''
   },
-  setup() {
-    const showDropdown = ref(false)
-
-    const focusOut = ({ relatedTarget }) => {
-      if (!(Array.from(relatedTarget?.classList ?? []).includes('dropdown-item'))) {
-        showDropdown.value = false
-      }
-    }
-
-    return {
-      focusOut,
-      showDropdown,
-      VUE_APP_NAVBAR_BG_CSS_COLOR,
-      VUE_APP_NAVBAR_TEXT_CSS_COLOR,
-      currentRoute: router.currentRoute
-    }
+  sections: {
+    type: Object,
+    default: () => ({})
   }
-})
+});
+
+const showDropdown = ref(false)
+
+const focusOut = ({ relatedTarget }: any) => {
+  if (!(Array.from(relatedTarget?.classList ?? []).includes('dropdown-item'))) {
+    showDropdown.value = false
+  }
+}
 </script>

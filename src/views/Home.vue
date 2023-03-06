@@ -84,8 +84,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, toRefs, computed, inject } from 'vue'
+<script setup lang="ts">
+import { ref, computed, inject } from 'vue'
 import BlogHeader from '../components/BlogHeader.vue'
 import PatchMeta from '../components/PatchMeta.vue'
 import paginate from '../utils/paginate'
@@ -94,46 +94,30 @@ import blogConfig from '../blog_config'
 
 const { VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR } = blogConfig
 
-export default defineComponent({
-  components: {
-    PatchMeta,
-    BlogHeader
-  },
-  props: {
-    section: {
-      type: String,
-      default: ''
-    }
-  },
-  setup (props) {
-    const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
-    const state = reactive({
-      currentPage: 1
-    })
+const props = defineProps({
+  section: {
+    type: String,
+    default: ''
+  }
+})
 
-    const pageStatus = computed(() => {
-      const categoryPosts = props.section ? postsIndex.filter(({ section }) => section === props.section) : postsIndex
-      const { startPage, endPage, startIndex, endIndex } = paginate(categoryPosts.length, state.currentPage, VUE_APP_POSTS_PER_PAGE)
-      const prev = state.currentPage - 1 >= startPage ? state.currentPage - 1 : 0
-      const next = state.currentPage + 1 <= endPage ? state.currentPage + 1 : 0
-      const midPages = [prev, state.currentPage, next].filter(p => p > startPage && p < endPage)
+const postsIndex: PostIndex[] = inject<PostIndex[]>('postsIndex', [])
+const currentPage = ref(1)
 
-      const visiblePosts = categoryPosts.slice(startIndex, endIndex + 1)
+const pageStatus = computed(() => {
+  const categoryPosts = props.section ? postsIndex.filter(({ section }) => section === props.section) : postsIndex
+  const { startPage, endPage, startIndex, endIndex } = paginate(categoryPosts.length, currentPage.value, VUE_APP_POSTS_PER_PAGE)
+  const prev = currentPage.value - 1 >= startPage ? currentPage.value - 1 : 0
+  const next = currentPage.value + 1 <= endPage ? currentPage.value + 1 : 0
+  const midPages = [prev, currentPage.value, next].filter(p => p > startPage && p < endPage)
 
-      return {
-        startPage,
-        midPages,
-        endPage,
-        visiblePosts
-      }
-    })
+  const visiblePosts = categoryPosts.slice(startIndex, endIndex + 1)
 
-    return {
-      ...toRefs(state),
-      pageStatus,
-      VUE_APP_MAIN_BG_CSS_COLOR,
-      VUE_APP_MAIN_TEXT_CSS_COLOR
-    }
+  return {
+    startPage,
+    midPages,
+    endPage,
+    visiblePosts
   }
 })
 </script>

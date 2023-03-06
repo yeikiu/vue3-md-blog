@@ -14,7 +14,6 @@ import "prismjs/components/prism-typescript"
 import '@kangc/v-md-editor/lib/style/base-editor.css'
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
-
 VueMarkdownEditor.lang.use('en-US', enUS);
 VueMarkdownEditor.xss.extend({
   // extend white list
