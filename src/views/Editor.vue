@@ -17,11 +17,11 @@ const text = `# New awesome blog post title 😎
 
 Remember you can mix [MarkDown](https://www.markdownguide.org/getting-started/) syntax with regular <a href="https://www.w3schools.com/html/" target="_blank">HTML</a>.
 
-<p class="p-2 bg-danger text-white">
+<p class="p-2 bg-danger text-white text-center">
 When using HTML you can apply <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" class="text-reset" target="_blank">bootstrap</a> classes to your code-blocks!
 </p>
 
-<div class="bg-info container text-white text-center p-2">
+<div class="bg-info container text-white text-center">
   <div class="row">
     <div class="col-sm">
       One of three columns
@@ -41,7 +41,18 @@ const onSave = (text: string, html: string) => {
     const postTitle = `post_${todayStr.replace(/,/mg,'').replace(/\s/mg,'_')}`;
     const zip = new JSZip();
     zip.file(`${postTitle}_source.md`, text);
-    zip.file(`${postTitle}_content.html`, html);
+    zip.file(`${postTitle}_content.html`, `<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+      </head>
+      <body>
+        <div class="container p-5 mx-auto">
+          ${html}
+        </div>
+      </body>
+    </html>`);
     zip.generateAsync({type:"blob"})
     .then(function(content) {
         // see FileSaver.js
