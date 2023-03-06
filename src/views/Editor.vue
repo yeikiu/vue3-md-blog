@@ -3,13 +3,18 @@
 </template>
   
 <script>
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const today  = new Date();
+
 export default {
     data() {
         return {
             text: `# New awesome blog post title
-#### February 10, 2020
+#### ${today.toLocaleDateString("en-US", options)}
 
-Beginning of your new awesome blog post...`,
+> Subtitle of your awesome new blog post 😎
+
+Remember you can mix [MarkDown](https://www.markdownguide.org/getting-started/) syntax with regular <a href="https://www.w3schools.com/html/" target="_blank">HTML</a>.`,
         };
     },
 };

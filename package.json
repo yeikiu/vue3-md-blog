@@ -1,6 +1,6 @@
 {
   "name": "vue3-md-blog",
-  "version": "3.1.17",
+  "version": "3.1.18",
   "description": "Minimal Vue3 + Markdown blog engine",
   "author": "JQ (https://github.com/yeikiu)",
   "keywords": [
@@ -32,7 +32,6 @@
     "@types/node": "^18.0.3",
     "@vitejs/plugin-vue": "^2.3.3",
     "markdown-to-text": "^0.1.1",
-    "moment": "^2.29.4",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
     "vite": "^2.9.14",
