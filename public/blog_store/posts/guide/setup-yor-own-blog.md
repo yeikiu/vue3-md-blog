@@ -15,7 +15,7 @@ Login into your GitHub account and start a new repo.
 
 - Use `vue3-md-blog` [as a template](https://github.com/yeikiu/vue3-md-blog/generate)
 
-![Public Dir Structure](blog_store/assets/step1-github.png)
+![Public Dir Structure](https://github.com/yeikiu/vue3-md-blog/raw/master/public/blog_store/assets/step1-github.png)
 
 
 ## 2.- Configure your `src/blog_config.ts` file, i.e:
