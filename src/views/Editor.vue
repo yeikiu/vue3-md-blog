@@ -1,5 +1,5 @@
 <template>
-    <v-md-editor v-model="text" @save="onSave" height="76vh" :right-toolbar="'preview sync-scroll fullscreen'"></v-md-editor>
+    <v-md-editor v-model="text" @save="onSave" height="84vh" :right-toolbar="'preview sync-scroll fullscreen'"></v-md-editor>
 </template>
   
 <script setup lang="ts">

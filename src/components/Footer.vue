@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-center mt-5 py-2"
+    class="text-center py-2"
     :style="`background-color: ${VUE_APP_FOOTER_BG_CSS_COLOR}; color: ${VUE_APP_FOOTER_TEXT_CSS_COLOR};`"
   >
     <router-link
