@@ -1,4 +1,4 @@
-import{c as dt,a as wt,d as Ot,r as Bt,o as Rt,b as Tt}from"./index.8dd4cfde.js";var zt={exports:{}};/*!
+import{c as dt,a as wt,d as Ot,r as Bt,o as Rt,b as Tt}from"./index.9917fdc7.js";var zt={exports:{}};/*!
 
 JSZip v3.10.1 - A JavaScript class for generating and reading zip files
 <http://stuartk.com/jszip>
@@ -45,4 +45,4 @@ When using HTML you can apply <a href="https://getbootstrap.com/docs/4.0/getting
           ${s}
         </div>
       </body>
-    </html>`),h.generateAsync({type:"blob"}).then(function(c){Et.exports.saveAs(c,`${r}.zip`)})};return(l,s)=>{const r=Bt("v-md-editor");return Rt(),Tt(r,{modelValue:F,"onUpdate:modelValue":s[0]||(s[0]=h=>F=h),onSave:y,height:"84vh","right-toolbar":"preview sync-scroll fullscreen"})}}});export{Ut as default};
+    </html>`),h.generateAsync({type:"blob"}).then(function(c){Et.exports.saveAs(c,`${r}.zip`)})};return(l,s)=>{const r=Bt("v-md-editor");return Rt(),Tt(r,{modelValue:F,"onUpdate:modelValue":s[0]||(s[0]=h=>F=h),onSave:y,height:"85vh","right-toolbar":"preview sync-scroll fullscreen"})}}});export{Ut as default};
