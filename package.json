@@ -36,7 +36,7 @@
     "markdown-to-text": "^0.1.1",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
-    "vite": "^2.9.14",
+    "vite": "^2.9.16",
     "vue-tsc": "^0.38.3"
   }
 }
