@@ -23,7 +23,7 @@ const patchMeta = ({
   shareUrl = defaultMetas.shareUrl
 }) => {
   // Patch title
-  const [titleEl] = document.getElementsByTagName('title')
+  const [titleEl] = Array.from(document.getElementsByTagName('title'))
   titleEl.textContent = `${siteName} | ${title} - ${description}`
 
   // Patch META
@@ -34,7 +34,7 @@ const patchMeta = ({
       <meta class="APP_META" property="og:url" content="${shareUrl}">
       <meta class="APP_META" name="twitter:card" content="summary_large_image">
       <meta class="APP_META" property="og:site_name" content="${siteName}">`
-  const [headEl] = document.getElementsByTagName('head')
+  const [headEl] = Array.from(document.getElementsByTagName('head'))
   if (!headEl) return
   headEl.innerHTML = `${headEl.innerHTML}${APP_META}`
 }

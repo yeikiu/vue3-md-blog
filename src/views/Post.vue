@@ -14,7 +14,7 @@ import { inject } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import router from '../router'
 import axios from 'redaxios'
-import { PostIndex } from '../types/PostIndex'
+import { type PostIndex } from '../types/PostIndex'
 import PatchMeta from '../components/PatchMeta.vue'
 import blogConfig from '../blog_config'
 

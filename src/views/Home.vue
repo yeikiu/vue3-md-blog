@@ -89,7 +89,7 @@ import { ref, computed, inject } from 'vue'
 import BlogHeader from '../components/BlogHeader.vue'
 import PatchMeta from '../components/PatchMeta.vue'
 import paginate from '../utils/paginate'
-import { PostIndex } from '../types/PostIndex'
+import { type PostIndex } from '../types/PostIndex'
 import blogConfig from '../blog_config'
 
 const { VUE_APP_POSTS_PER_PAGE, VUE_APP_MAIN_BG_CSS_COLOR, VUE_APP_MAIN_TEXT_CSS_COLOR } = blogConfig

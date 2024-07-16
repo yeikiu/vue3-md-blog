@@ -10,6 +10,7 @@
   ],
   "license": "CC0-1.0",
   "private": true,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/yeikiu/vue3-md-blog.git"
@@ -27,16 +28,16 @@
     "jszip": "^3.10.1",
     "prismjs": "^1.29.0",
     "redaxios": "^0.5.0",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.1"
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.3",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@types/node": "^20.14.10",
+    "@vitejs/plugin-vue": "^5.0.5",
     "markdown-to-text": "^0.1.1",
-    "ts-node": "^10.8.2",
-    "typescript": "^4.7.4",
-    "vite": "^2.9.14",
-    "vue-tsc": "^0.38.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vue-tsc": "^2.0.26"
   }
 }

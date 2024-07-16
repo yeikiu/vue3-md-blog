@@ -2,18 +2,21 @@
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
+    "verbatimModuleSyntax": true,
+    "importHelpers": true,
     "lib": ["esnext", "dom", "DOM.Iterable"],
     "skipLibCheck": true,
     "allowJs": true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
+  "references": [{ "path": "./tsconfig.node.json" }]}
